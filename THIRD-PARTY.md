@@ -44,33 +44,20 @@ genuine translation exists is Creative Commons, which publishes official
 per-language deeds — the CC BY-SA link therefore follows the interface language
 (`deed.fr` / `deed.en`).
 
-## Present in the repository only
+## Provenance
 
-The `map/` directory holds the original 2020 visualisation, kept as a reference
-implementation. It is not deployed, but it is distributed with the repository.
+The project began in 2020 as a D3 v5 page whose map-and-slider approach was
+adapted from published examples by **Mike Bostock** (bl.ocks.org/4060606) and
+**John Walley** (bl.ocks.org/9b6d8af7a209b95c5b9dff99073db420). Blocks of that era
+were commonly released under GPL-3.0, though the terms were not stated in the file
+itself.
 
-| Library | Version | Licence | Holder |
-|---|---|---|---|
-| D3 | 5.0.0 | **BSD-3-Clause** | © 2010–2017 Mike Bostock |
-| Bootstrap | 3.3.7 | MIT | © 2011–2016 Twitter, Inc. |
-| jQuery | 3.2.1 | MIT | JS Foundation and contributors |
-| jQuery UI | 1.12.1 | MIT | jQuery Foundation and contributors |
-| d3-tip | — | MIT | © 2013–2017 Justin Palmer |
-
-Note that D3 v5 is BSD-3-Clause while v7 is ISC — the project relicensed
-between those versions, so the two copies in this repository are not under the
-same terms.
-
-Each of these retains its licence header inside the minified file.
-
-## Provenance of the original code
-
-`map/index.html` is adapted from published examples by **Mike Bostock**
-(bl.ocks.org/4060606) and **John Walley**
-(bl.ocks.org/9b6d8af7a209b95c5b9dff99073db420). Blocks of that era were commonly
-released under GPL-3.0, though the terms are not stated in the file itself.
+That version has been removed from the working tree. It is still in git history —
+commit `ad4bdf8` contains it — and it vendored D3 5.0.0 (BSD-3-Clause), Bootstrap
+3.3.7, jQuery 3.2.1, jQuery UI 1.12.1 and d3-tip (all MIT). If it is ever restored
+or published separately, its provenance should be confirmed first.
 
 `app/` is an independent rewrite — different D3 major version, different
-architecture — and does not carry code from either example. If the `map/`
-directory is ever published separately, its provenance should be confirmed
-first.
+architecture — and carries no code from either example. It is now the only place in
+the repository with third-party code, so D3 v7 and Archivo above are the complete
+set.

@@ -1,0 +1,1004 @@
+De,Vers,Ouverture,Fermeture,Ligne
+Porte de Vincenne,Nation,1900-07-19,,Ligne 1
+Nation,Gare de Lyon,1900-07-19,1900-08-20,Ligne 1
+Gare de Lyon,Bastille,1900-07-19,,Ligne 1
+Bastille,Hôtel de Ville,1900-07-19,1900-08-06,Ligne 1
+Hôtel de Ville,Palais-Royal - Musée du Louvre,1900-07-19,1900-08-06,Ligne 1
+Palais-Royal - Musée du Louvre,Tuileries,1900-07-19,1900-08-13,Ligne 1
+Tuileries,Champs-Élysées - Clemenceau,1900-07-19,,Ligne 1
+Champs-Élysées - Clemenceau,Marbeuf,1900-07-19,,Ligne 1
+Marbeuf,Porte Maillot,1900-07-19,1900-08-13,Ligne 1
+Nation,Porte de Vincenne,1900-07-19,,Ligne 1
+Gare de Lyon,Nation,1900-07-19,1900-08-20,Ligne 1
+Bastille,Gare de Lyon,1900-07-19,,Ligne 1
+Hôtel de Ville,Bastille,1900-07-19,1900-08-06,Ligne 1
+Palais-Royal - Musée du Louvre,Hôtel de Ville,1900-07-19,1900-08-06,Ligne 1
+Champs-Élysées - Clemenceau,Tuileries,1900-07-19,1900-08-13,Ligne 1
+Tuileries,Palais-Royal - Musée du Louvre,1900-07-19,,Ligne 1
+Porte Maillot,Marbeuf,1900-07-19,1900-08-13,Ligne 1
+Marbeuf,Champs-Élysées - Clemenceau,1900-07-19,,Ligne 1
+Reuilly - Diderot,Gare de Lyon,1900-08-20,,Ligne 1
+Reuilly - Diderot,Nation,1900-08-20,,Ligne 1
+Gare de Lyon,Reuilly - Diderot,1900-08-20,,Ligne 1
+Nation,Reuilly - Diderot,1900-08-20,,Ligne 1
+Saint-Paul,Bastille,1900-08-06,,Ligne 1
+Saint-Paul,Hôtel de Ville,1900-08-06,,Ligne 1
+Bastille,Saint-Paul,1900-08-06,,Ligne 1
+Hôtel de Ville,Saint-Paul,1900-08-06,,Ligne 1
+Châtelet,Hôtel de Ville,1900-08-06,,Ligne 1
+Châtelet,Palais-Royal - Musée du Louvre,1900-08-06,1900-08-13,Ligne 1
+Hôtel de Ville,Châtelet,1900-08-06,,Ligne 1
+Palais-Royal - Musée du Louvre,Châtelet,1900-08-06,1900-08-13,Ligne 1
+Louvre - Rivoli,Palais-Royal - Musée du Louvre,1900-08-13,,Ligne 1
+Louvre - Rivoli,Châtelet,1900-08-13,,Ligne 1
+Palais-Royal - Musée du Louvre,Louvre - Rivoli,1900-08-13,,Ligne 1
+Châtelet,Louvre - Rivoli,1900-08-13,,Ligne 1
+Concorde,Tuileries,1900-08-13,,Ligne 1
+Concorde,Champs-Élysées - Clemenceau,1900-08-13,,Ligne 1
+Tuileries,Concorde,1900-08-13,,Ligne 1
+Champs-Élysées - Clemenceau,Concorde,1900-08-13,,Ligne 1
+George V,Porte Maillot,1900-08-13,1900-09-01,Ligne 1
+George V,Marbeuf,1900-08-13,,Ligne 1
+Porte Maillot,George V,1900-08-13,1900-09-01,Ligne 1
+Marbeuf,George V,1900-08-13,,Ligne 1
+Charles de Gaulle - Étoile,George V,1900-09-01,,Ligne 1
+Charles de Gaulle - Étoile,Argentine,1900-09-01,,Ligne 1
+Argentine,Charles de Gaulle - Étoile,1900-09-01,,Ligne 1
+George V,Charles de Gaulle - Étoile,1900-09-01,,Ligne 1
+Porte Maillot,Argentine,1900-09-01,,Ligne 1
+Argentine,Porte Maillot,1900-09-01,,Ligne 1
+Les Sablons,Porte Maillot,1937-04-29,,Ligne 1
+Les Sablons,Pont de Neuilly,1937-04-29,,Ligne 1
+Pont de Neuilly,Les Sablons,1937-04-29,,Ligne 1
+Porte Maillot,Les Sablons,1937-04-29,,Ligne 1
+Esplanade de La Défense,Pont de Neuilly,1992-04-01,,Ligne 1
+Pont de Neuilly,Esplanade de La Défense,1992-04-01,,Ligne 1
+Esplanade de La Défense,La Défense,1992-04-01,,Ligne 1
+La Défense,Esplanade de La Défense,1992-04-01,,Ligne 1
+Saint-Mandé,Porte de Vincenne,1934-03-24,,Ligne 1
+Porte de Vincenne,Saint-Mandé,1934-03-24,,Ligne 1
+Saint-Mandé,Bérault,1934-03-24,,Ligne 1
+Bérault,Saint-Mandé,1934-03-24,,Ligne 1
+Bérault,Château de Vincennes,1934-03-24,,Ligne 1
+Château de Vincennes,Bérault,1934-03-24,,Ligne 1
+Charles de Gaulle - Étoile,Kléber,1900-10-02,1903-11-05,Ligne 1
+Kléber,Charles de Gaulle - Étoile,1900-10-02,1903-11-05,Ligne 1
+Kléber,Boissière,1900-10-02,1903-11-05,Ligne 1
+Boissière,Kléber,1900-10-02,1903-11-05,Ligne 1
+Boissière,Trocadéro,1900-10-02,1903-11-05,Ligne 1
+Trocadéro,Boissière,1900-10-02,1903-11-05,Ligne 1
+Porte Dauphine,Victor Hugo,1900-12-13,,Ligne 2
+Victor Hugo,Charles de Gaulle - Étoile,1900-12-13,,Ligne 2
+Victor Hugo,Porte Dauphine,1900-12-13,,Ligne 2
+Charles de Gaulle - Étoile,Victor Hugo,1900-12-13,,Ligne 2
+Charles de Gaulle - Étoile,Ternes,1902-10-07,,Ligne 2
+Ternes,Charles de Gaulle - Étoile,1902-10-07,,Ligne 2
+Ternes,Courcelles,1902-10-07,,Ligne 2
+Courcelles,Ternes,1902-10-07,,Ligne 2
+Courcelles,Monceau,1902-10-07,,Ligne 2
+Monceau,Courcelles,1902-10-07,,Ligne 2
+Monceau,Pigalle,1902-10-07,1902-10-21,Ligne 2
+Pigalle,Monceau,1902-10-07,1902-10-21,Ligne 2
+Pigalle,Anvers,1902-10-07,,Ligne 2
+Anvers,Pigalle,1902-10-07,,Ligne 2
+Blanche,Pigalle,1902-10-21,,Ligne 2
+Pigalle,Blanche,1902-10-21,,Ligne 2
+Blanche,Monceau,1902-10-21,1902-10-26,Ligne 2
+Monceau,Blanche,1902-10-21,1902-10-26,Ligne 2
+Place de Clichy,Blanche,1902-10-26,,Ligne 2
+Blanche,Place de Clichy,1902-10-26,,Ligne 2
+Place de Clichy,Monceau,1902-10-26,1902-11-06,Ligne 2
+Monceau,Place de Clichy,1902-10-26,1902-11-06,Ligne 2
+Rome,Place de Clichy,1902-11-06,,Ligne 2
+Place de Clichy,Rome,1902-11-06,,Ligne 2
+Rome,Monceau,1902-11-06,,Ligne 2
+Monceau,Rome,1902-11-06,,Ligne 2
+Villiers,Rome,1903-01-21,,Ligne 2
+Rome,Villiers,1903-01-21,,Ligne 2
+Villiers,Monceau,1903-01-21,,Ligne 2
+Monceau,Villiers,1903-01-21,,Ligne 2
+Barbès - Rochechouart,Anvers,1903-01-31,,Ligne 2
+Anvers,Barbès - Rochechouart,1903-01-31,,Ligne 2
+Barbès - Rochechouart,La Chapelle,1903-01-31,,Ligne 2
+La Chapelle,Barbès - Rochechouart,1903-01-31,,Ligne 2
+Stalingrad,La Chapelle,1903-01-31,,Ligne 2
+La Chapelle,Stalingrad,1903-01-31,,Ligne 2
+Colonel Fabien,Stalingrad,1903-01-31,1903-02-23,Ligne 2
+Stalingrad,Colonel Fabien,1903-01-31,1903-02-23,Ligne 2
+Belleville,Colonel Fabien,1903-01-31,,Ligne 2
+Colonel Fabien,Belleville,1903-01-31,,Ligne 2
+Couronnes,Belleville,1903-01-31,,Ligne 2
+Belleville,Couronnes,1903-01-31,,Ligne 2
+Ménilmontant,Couronnes,1903-01-31,,Ligne 2
+Couronnes,Ménilmontant,1903-01-31,,Ligne 2
+Ménilmontant,Philippe Auguste,1903-01-31,1903-02-25,Ligne 2
+Philippe Auguste,Ménilmontant,1903-01-31,1903-02-25,Ligne 2
+Philippe Auguste,Alexandre Dumas,1903-01-31,,Ligne 2
+Alexandre Dumas,Philippe Auguste,1903-01-31,,Ligne 2
+Jaurès,Stalingrad,1903-02-23,,Ligne 2
+Stalingrad,Jaurès,1903-02-23,,Ligne 2
+Jaurès,Colonel Fabien,1903-02-23,,Ligne 2
+Colonel Fabien,Jaurès,1903-02-23,,Ligne 2
+Père Lachaise,Ménilmontant,1903-02-25,,Ligne 2
+Ménilmontant,Père Lachaise,1903-02-25,,Ligne 2
+Père Lachaise,Philippe Auguste,1903-02-25,,Ligne 2
+Philippe Auguste,Père Lachaise,1903-02-25,,Ligne 2
+Alexandre Dumas,Avron,1903-04-02,,Ligne 2
+Avron,Alexandre Dumas,1903-04-02,,Ligne 2
+Avron,Nation,1903-04-02,,Ligne 2
+Nation,Avron,1903-04-02,,Ligne 2
+Charles de Gaulle - Étoile,Kléber,1903-11-05,1907-10-17,Ligne 2 Sud
+Kléber,Charles de Gaulle - Étoile,1903-11-05,1907-10-17,Ligne 2 Sud
+Kléber,Boissière,1903-11-05,1907-10-17,Ligne 2 Sud
+Boissière,Kléber,1903-11-05,1907-10-17,Ligne 2 Sud
+Boissière,Trocadéro,1903-11-05,1907-10-17,Ligne 2 Sud
+Trocadéro,Boissière,1903-11-05,1907-10-17,Ligne 2 Sud
+Trocadéro,Passy,1906-04-24,1907-10-17,Ligne 2 Sud
+Passy,Trocadéro,1906-04-24,1907-10-17,Ligne 2 Sud
+Passy,Bir-Hakeim,1906-04-24,1907-10-17,Ligne 2 Sud
+Bir-Hakeim,Passy,1906-04-24,1907-10-17,Ligne 2 Sud
+Bir-Hakeim,Dupleix,1906-04-24,1907-10-17,Ligne 2 Sud
+Dupleix,Bir-Hakeim,1906-04-24,1907-10-17,Ligne 2 Sud
+Dupleix,La Motte-Picquet - Grenelle,1906-04-24,1907-10-17,Ligne 2 Sud
+La Motte-Picquet - Grenelle,Dupleix,1906-04-24,1907-10-17,Ligne 2 Sud
+La Motte-Picquet - Grenelle,Cambronne,1906-04-24,1907-10-17,Ligne 2 Sud
+Cambronne,La Motte-Picquet - Grenelle,1906-04-24,1907-10-17,Ligne 2 Sud
+Cambronne,Sèvres - Lecourbe,1906-04-24,1907-10-17,Ligne 2 Sud
+Sèvres - Lecourbe,Cambronne,1906-04-24,1907-10-17,Ligne 2 Sud
+Sèvres - Lecourbe,Pasteur,1906-04-24,1907-10-17,Ligne 2 Sud
+Pasteur,Sèvres - Lecourbe,1906-04-24,1907-10-17,Ligne 2 Sud
+Pasteur,Avenue du Maine,1906-04-24,1907-10-17,Ligne 2 Sud
+Avenue du Maine,Pasteur,1906-04-24,1907-10-17,Ligne 2 Sud
+Avenue du Maine,Edgar Quinet,1906-04-24,1907-10-17,Ligne 2 Sud
+Edgar Quinet,Avenue du Maine,1906-04-24,1907-10-17,Ligne 2 Sud
+Edgar Quinet,Raspail,1906-04-24,1907-10-17,Ligne 2 Sud
+Raspail,Edgar Quinet,1906-04-24,1907-10-17,Ligne 2 Sud
+Raspail,Denfert-Rochereau,1906-04-24,1907-10-17,Ligne 2 Sud
+Denfert-Rochereau,Raspail,1906-04-24,1907-10-17,Ligne 2 Sud
+Denfert-Rochereau,Saint-Jacques,1906-04-24,1907-10-17,Ligne 2 Sud
+Saint-Jacques,Denfert-Rochereau,1906-04-24,1907-10-17,Ligne 2 Sud
+Saint-Jacques,Glacière,1906-04-24,1907-10-17,Ligne 2 Sud
+Glacière,Saint-Jacques,1906-04-24,1907-10-17,Ligne 2 Sud
+Glacière,Corvisart,1906-04-24,1907-10-17,Ligne 2 Sud
+Corvisart,Glacière,1906-04-24,1907-10-17,Ligne 2 Sud
+Corvisart,Place d'Italie,1906-04-24,1907-10-17,Ligne 2 Sud
+Place d'Italie,Corvisart,1906-04-24,1907-10-17,Ligne 2 Sud
+Villiers,Europe,1904-10-19,,Ligne 3
+Europe,Villiers,1904-10-19,,Ligne 3
+Europe,Saint-Lazare,1904-10-19,,Ligne 3
+Saint-Lazare,Europe,1904-10-19,,Ligne 3
+Saint-Lazare,Havre - Caumartin,1904-10-19,,Ligne 3
+Havre - Caumartin,Saint-Lazare,1904-10-19,,Ligne 3
+Havre - Caumartin,Opéra,1904-10-19,,Ligne 3
+Opéra,Havre - Caumartin,1904-10-19,,Ligne 3
+Opéra,Bourse,1904-10-19,1904-11-03,Ligne 3
+Bourse,Opéra,1904-10-19,1904-11-03,Ligne 3
+Bourse,Arts et Métiers,1904-10-19,1904-11-19,Ligne 3
+Arts et Métiers,Bourse,1904-10-19,1904-11-19,Ligne 3
+Arts et Métiers,Temple,1904-10-19,,Ligne 3
+Temple,Arts et Métiers,1904-10-19,,Ligne 3
+Temple,République,1904-10-19,,Ligne 3
+République,Temple,1904-10-19,,Ligne 3
+République,Parmentier,1904-10-19,,Ligne 3
+Parmentier,République,1904-10-19,,Ligne 3
+Parmentier,Rue Saint-Maur,1904-10-19,,Ligne 3
+Rue Saint-Maur,Parmentier,1904-10-19,,Ligne 3
+Rue Saint-Maur,Père Lachaise,1904-10-19,,Ligne 3
+Père Lachaise,Rue Saint-Maur,1904-10-19,,Ligne 3
+Quatre-Septembre,Bourse,1904-11-03,,Ligne 3
+Bourse,Quatre-Septembre,1904-11-03,,Ligne 3
+Quatre-Septembre,Opéra,1904-11-03,,Ligne 3
+Opéra,Quatre-Septembre,1904-11-03,,Ligne 3
+Réaumur - Sébastopol,Arts et Métiers,1904-11-19,,Ligne 3
+Arts et Métiers,Réaumur - Sébastopol,1904-11-19,,Ligne 3
+Réaumur - Sébastopol,Bourse,1904-11-19,1904-11-20,Ligne 3
+Bourse,Réaumur - Sébastopol,1904-11-19,1904-11-20,Ligne 3
+Sentier,Réaumur - Sébastopol,1904-11-20,,Ligne 3
+Réaumur - Sébastopol,Sentier,1904-11-20,,Ligne 3
+Sentier,Bourse,1904-11-20,,Ligne 3
+Bourse,Sentier,1904-11-20,,Ligne 3
+Martin Nadaud,Père Lachaise,1905-01-25,1969-08-23,Ligne 3
+Père Lachaise,Martin Nadaud,1905-01-25,1969-08-23,Ligne 3
+Martin Nadaud,Gambetta,1905-01-25,1969-08-23,Ligne 3
+Gambetta,Martin Nadaud,1905-01-25,1969-08-23,Ligne 3
+Villiers,Malesherbes,1910-05-23,,Ligne 3
+Malesherbes,Villiers,1910-05-23,,Ligne 3
+Malesherbes,Wagram,1910-05-23,,Ligne 3
+Wagram,Malesherbes,1910-05-23,,Ligne 3
+Wagram,Pereire,1910-05-23,,Ligne 3
+Pereire,Wagram,1910-05-23,,Ligne 3
+Pereire,Porte de Champerret,1911-02-11,,Ligne 3
+Porte de Champerret,Pereire,1911-02-11,,Ligne 3
+Gambetta,Pelleport,1921-11-27,1971-03-27,Ligne 3
+Pelleport,Gambetta,1921-11-27,1971-03-27,Ligne 3
+Pelleport,Saint-Fargeau,1921-11-27,1971-03-27,Ligne 3
+Saint-Fargeau,Pelleport,1921-11-27,1971-03-27,Ligne 3
+Saint-Fargeau,Porte des Lilas,1921-11-27,1971-03-27,Ligne 3
+Porte des Lilas,Saint-Fargeau,1921-11-27,1971-03-27,Ligne 3
+Porte de Champerret,Louise Michel,1937-09-24,,Ligne 3
+Louise Michel,Porte de Champerret,1937-09-24,,Ligne 3
+Louise Michel,Anatole France,1937-09-24,,Ligne 3
+Anatole France,Louise Michel,1937-09-24,,Ligne 3
+Anatole France,Pont de Levallois - Bécon,1937-09-24,,Ligne 3
+Pont de Levallois - Bécon,Anatole France,1937-09-24,,Ligne 3
+Père Lachaise,Gambetta,1969-08-23,,Ligne 3
+Gambetta,Père Lachaise,1969-08-23,,Ligne 3
+Gambetta,Porte de Bagnolet,1971-04-02,,Ligne 3
+Porte de Bagnolet,Gambetta,1971-04-02,,Ligne 3
+Porte de Bagnolet,Gallieni,1971-04-02,,Ligne 3
+Gallieni,Porte de Bagnolet,1971-04-02,,Ligne 3
+Porte de Clignancourt,Simplon,1908-04-21,,Ligne 4
+Simplon,Porte de Clignancourt,1908-04-21,,Ligne 4
+Simplon,Marcadet,1908-04-21,,Ligne 4
+Marcadet,Simplon,1908-04-21,,Ligne 4
+Marcadet,Château Rouge,1908-04-21,,Ligne 4
+Château Rouge,Marcadet,1908-04-21,,Ligne 4
+Château Rouge,Barbès - Rochechouart,1908-04-21,,Ligne 4
+Barbès - Rochechouart,Château Rouge,1908-04-21,,Ligne 4
+Barbès - Rochechouart,Gare du Nord,1908-04-21,,Ligne 4
+Gare du Nord,Barbès - Rochechouart,1908-04-21,,Ligne 4
+Gare du Nord,Gare de l'Est,1908-04-21,,Ligne 4
+Gare de l'Est,Gare du Nord,1908-04-21,,Ligne 4
+Gare de l'Est,Château d'Eau,1908-04-21,,Ligne 4
+Château d'Eau,Gare de l'Est,1908-04-21,,Ligne 4
+Château d'Eau,Strasbourg - Saint-Denis,1908-04-21,,Ligne 4
+Strasbourg - Saint-Denis,Château d'Eau,1908-04-21,,Ligne 4
+Strasbourg - Saint-Denis,Réaumur - Sébastopol,1908-04-21,,Ligne 4
+Réaumur - Sébastopol,Strasbourg - Saint-Denis,1908-04-21,,Ligne 4
+Réaumur - Sébastopol,Étienne Marcel,1908-04-21,,Ligne 4
+Étienne Marcel,Réaumur - Sébastopol,1908-04-21,,Ligne 4
+Étienne Marcel,Châtelet,1908-04-21,1908-04-27,Ligne 4
+Châtelet,Étienne Marcel,1908-04-21,1908-04-27,Ligne 4
+Châtelet,Les Halles,1908-04-27,,Ligne 4
+Les Halles,Châtelet,1908-04-27,,Ligne 4
+Étienne Marcel,Les Halles,1908-04-27,,Ligne 4
+Les Halles,Étienne Marcel,1908-04-27,,Ligne 4
+Raspail,Denfert-Rochereau,1909-10-30,,Ligne 4
+Denfert-Rochereau,Raspail,1909-10-30,,Ligne 4
+Denfert-Rochereau,Mouton-Duvernet,1909-10-30,,Ligne 4
+Mouton-Duvernet,Denfert-Rochereau,1909-10-30,,Ligne 4
+Mouton-Duvernet,Alésia,1909-10-30,,Ligne 4
+Alésia,Mouton-Duvernet,1909-10-30,,Ligne 4
+Alésia,Porte d'Orléans,1909-10-30,,Ligne 4
+Porte d'Orléans,Alésia,1909-10-30,,Ligne 4
+Raspail,Vavin,1910-01-09,,Ligne 4
+Vavin,Raspail,1910-01-09,,Ligne 4
+Vavin,Saint-Placide,1910-01-09,1910-04-06,Ligne 4
+Saint-Placide,Vavin,1910-01-09,1910-04-06,Ligne 4
+Vavin,Montparnasse,1910-04-06,,Ligne 4
+Montparnasse,Vavin,1910-04-06,,Ligne 4
+Montparnasse,Saint-Placide,1910-04-06,,Ligne 4
+Saint-Placide,Montparnasse,1910-04-06,,Ligne 4
+Saint-Placide,Saint-Sulpice,1910-01-09,,Ligne 4
+Saint-Sulpice,Saint-Placide,1910-01-09,,Ligne 4
+Saint-Sulpice,Saint-Germain-des-Prés,1910-01-09,,Ligne 4
+Saint-Germain-des-Prés,Saint-Sulpice,1910-01-09,,Ligne 4
+Saint-Germain-des-Prés,Odéon,1910-01-09,,Ligne 4
+Odéon,Saint-Germain-des-Prés,1910-01-09,,Ligne 4
+Odéon,Châtelet,1910-01-09,1910-07-09,Ligne 4
+Châtelet,Odéon,1910-01-09,1910-07-09,Ligne 4
+Odéon,Saint-Michel,1910-07-09,,Ligne 4
+Saint-Michel,Odéon,1910-07-09,,Ligne 4
+Saint-Michel,Châtelet,1910-07-09,1910-12-10,Ligne 4
+Châtelet,Saint-Michel,1910-07-09,1910-12-10,Ligne 4
+Saint-Michel,Cité,1910-12-10,,Ligne 4
+Cité,Saint-Michel,1910-12-10,,Ligne 4
+Cité,Châtelet,1910-12-10,,Ligne 4
+Châtelet,Cité,1910-12-10,,Ligne 4
+Mairie de Montrouge,Porte d'Orléans,2013-03-23,,Ligne 4
+Porte d'Orléans,Mairie de Montrouge,2013-03-23,,Ligne 4
+Gare d'Austerlitz,Saint-Marcel,1906-06-02,,Ligne 5
+Saint-Marcel,Gare d'Austerlitz,1906-06-02,,Ligne 5
+Saint-Marcel,Place d'Italie,1906-06-02,1906-06-06,Ligne 5
+Place d'Italie,Saint-Marcel,1906-06-02,1906-06-06,Ligne 5
+Campo-Formio,Place d'Italie,1906-06-06,,Ligne 5
+Place d'Italie,Campo-Formio,1906-06-06,,Ligne 5
+Campo-Formio,Saint-Marcel,1906-06-06,,Ligne 5
+Saint-Marcel,Campo-Formio,1906-06-06,,Ligne 5
+Gare d'Austerlitz,Quai de la Rapée,1906-07-13,,Ligne 5
+Quai de la Rapée,Gare d'Austerlitz,1906-07-13,,Ligne 5
+Quai de la Rapée,Gare de Lyon,1906-08-01,1906-12-17,Ligne 5
+Gare de Lyon,Quai de la Rapée,1906-08-01,1906-12-17,Ligne 5
+Quai de la Rapée,Arsenal,1906-12-17,1939-09-03,Ligne 5
+Arsenal,Quai de la Rapée,1906-12-17,1939-09-03,Ligne 5
+Arsenal,Bastille,1906-12-17,1939-09-03,Ligne 5
+Bastille,Arsenal,1906-12-17,1939-09-03,Ligne 5
+Bastille,Richard-Lenoir,1906-12-17,1906-12-31,Ligne 5
+Richard-Lenoir,Bastille,1906-12-17,1906-12-31,Ligne 5
+Richard-Lenoir,Jacques Bonsergent,1906-12-17,1907-01-15,Ligne 5
+Jacques Bonsergent,Richard-Lenoir,1906-12-17,1907-01-15,Ligne 5
+Bréguet - Sabin,Bastille,1906-12-31,,Ligne 5
+Bastille,Bréguet - Sabin,1906-12-31,,Ligne 5
+Richard-Lenoir,Bréguet - Sabin,1906-12-31,,Ligne 5
+Bréguet - Sabin,Richard-Lenoir,1906-12-31,,Ligne 5
+Oberkampf,Richard-Lenoir,1907-01-15,,Ligne 5
+Richard-Lenoir,Oberkampf,1907-01-15,,Ligne 5
+Jacques Bonsergent,Oberkampf,1907-01-15,1907-11-15,Ligne 5
+Oberkampf,Jacques Bonsergent,1907-01-15,1907-11-15,Ligne 5
+Charles de Gaulle - Étoile,Kléber,1907-10-17,1942-10-06,Ligne 5
+Kléber,Charles de Gaulle - Étoile,1907-10-17,1942-10-06,Ligne 5
+Kléber,Boissière,1907-10-17,1942-10-06,Ligne 5
+Boissière,Kléber,1907-10-17,1942-10-06,Ligne 5
+Boissière,Trocadéro,1907-10-17,1942-10-06,Ligne 5
+Trocadéro,Boissière,1907-10-17,1942-10-06,Ligne 5
+Trocadéro,Passy,1907-10-17,1942-10-06,Ligne 5
+Passy,Trocadéro,1907-10-17,1942-10-06,Ligne 5
+Passy,Bir-Hakeim,1907-10-17,1942-10-06,Ligne 5
+Bir-Hakeim,Passy,1907-10-17,1942-10-06,Ligne 5
+Bir-Hakeim,Dupleix,1907-10-17,1942-10-06,Ligne 5
+Dupleix,Bir-Hakeim,1907-10-17,1942-10-06,Ligne 5
+Dupleix,La Motte-Picquet - Grenelle,1907-10-17,1942-10-06,Ligne 5
+La Motte-Picquet - Grenelle,Dupleix,1907-10-17,1942-10-06,Ligne 5
+La Motte-Picquet - Grenelle,Cambronne,1907-10-17,1942-10-06,Ligne 5
+Cambronne,La Motte-Picquet - Grenelle,1907-10-17,1942-10-06,Ligne 5
+Cambronne,Sèvres - Lecourbe,1907-10-17,1942-10-06,Ligne 5
+Sèvres - Lecourbe,Cambronne,1907-10-17,1942-10-06,Ligne 5
+Sèvres - Lecourbe,Pasteur,1907-10-17,1942-10-06,Ligne 5
+Pasteur,Sèvres - Lecourbe,1907-10-17,1942-10-06,Ligne 5
+Pasteur,Avenue du Maine,1907-10-17,1942-10-06,Ligne 5
+Avenue du Maine,Pasteur,1907-10-17,1942-10-06,Ligne 5
+Avenue du Maine,Edgar Quinet,1907-10-17,1942-10-06,Ligne 5
+Edgar Quinet,Avenue du Maine,1907-10-17,1942-10-06,Ligne 5
+Edgar Quinet,Raspail,1907-10-17,1942-10-06,Ligne 5
+Raspail,Edgar Quinet,1907-10-17,1942-10-06,Ligne 5
+Raspail,Denfert-Rochereau,1907-10-17,1942-10-06,Ligne 5
+Denfert-Rochereau,Raspail,1907-10-17,1942-10-06,Ligne 5
+Denfert-Rochereau,Saint-Jacques,1907-10-17,1942-10-06,Ligne 5
+Saint-Jacques,Denfert-Rochereau,1907-10-17,1942-10-06,Ligne 5
+Saint-Jacques,Glacière,1907-10-17,1942-10-06,Ligne 5
+Glacière,Saint-Jacques,1907-10-17,1942-10-06,Ligne 5
+Glacière,Corvisart,1907-10-17,1942-10-06,Ligne 5
+Corvisart,Glacière,1907-10-17,1942-10-06,Ligne 5
+Corvisart,Place d'Italie,1907-10-17,1942-10-06,Ligne 5
+Place d'Italie,Corvisart,1907-10-17,1942-10-06,Ligne 5
+République,Oberkampf,1907-11-15,,Ligne 5
+Oberkampf,République,1907-11-15,,Ligne 5
+Jacques Bonsergent,République,1907-11-15,,Ligne 5
+République,Jacques Bonsergent,1907-11-15,,Ligne 5
+Gare de l'Est,Jacques Bonsergent,1907-11-15,,Ligne 5
+Jacques Bonsergent,Gare de l'Est,1907-11-15,,Ligne 5
+Gare du Nord,Gare de l'Est,1907-11-15,,Ligne 5
+Gare de l'Est,Gare du Nord,1907-11-15,,Ligne 5
+Quai de la Rapée,Bastille,1939-09-02,,Ligne 5
+Bastille,Quai de la Rapée,1939-09-02,,Ligne 5
+Gare du Nord,Stalingrad,1942-10-12,,Ligne 5
+Stalingrad,Gare du Nord,1942-10-12,,Ligne 5
+Stalingrad,Jaurès,1942-10-12,,Ligne 5
+Jaurès,Stalingrad,1942-10-12,,Ligne 5
+Jaurès,Laumière,1942-10-12,,Ligne 5
+Laumière,Jaurès,1942-10-12,,Ligne 5
+Laumière,Ourcq,1942-10-12,,Ligne 5
+Ourcq,Laumière,1942-10-12,,Ligne 5
+Ourcq,Porte de Pantin,1942-10-12,,Ligne 5
+Porte de Pantin,Ourcq,1942-10-12,,Ligne 5
+Porte de Pantin,Hoche,1942-10-12,,Ligne 5
+Hoche,Porte de Pantin,1942-10-12,,Ligne 5
+Hoche,Église de Pantin,1942-10-12,,Ligne 5
+Église de Pantin,Hoche,1942-10-12,,Ligne 5
+Église de Pantin,Bobigny - Pantin - Raymond Queneau,1985-04-25,,Ligne 5
+Bobigny - Pantin - Raymond Queneau,Église de Pantin,1985-04-25,,Ligne 5
+Bobigny - Pantin - Raymond Queneau,Bobigny - Pablo Picasso,1985-04-25,,Ligne 5
+Bobigny - Pablo Picasso,Bobigny - Pantin - Raymond Queneau,1985-04-25,,Ligne 5
+Nation,Picpus,1909-03-01,,Ligne 6
+Picpus,Nation,1909-03-01,,Ligne 6
+Picpus,Bel-Air,1909-03-01,1939-09-03,Ligne 6
+Bel-Air,Picpus,1909-03-01,1939-09-03,Ligne 6
+Bel-Air,Daumesnil,1909-03-01,1939-09-03,Ligne 6
+Daumesnil,Bel-Air,1909-03-01,1939-09-03,Ligne 6
+Daumesnil,Dugommier,1909-03-01,,Ligne 6
+Dugommier,Daumesnil,1909-03-01,,Ligne 6
+Dugommier,Bercy,1909-03-01,,Ligne 6
+Bercy,Dugommier,1909-03-01,,Ligne 6
+Bercy,Quai de la Gare,1909-03-01,,Ligne 6
+Quai de la Gare,Bercy,1909-03-01,,Ligne 6
+Quai de la Gare,Chevaleret,1909-03-01,,Ligne 6
+Chevaleret,Quai de la Gare,1909-03-01,,Ligne 6
+Chevaleret,Nationale,1909-03-01,,Ligne 6
+Nationale,Chevaleret,1909-03-01,,Ligne 6
+Nationale,Place d'Italie,1909-03-01,,Ligne 6
+Place d'Italie,Nationale,1909-03-01,,Ligne 6
+Picpus,Daumesnil,1939-09-03,1963-01-07,Ligne 6
+Daumesnil,Picpus,1939-09-03,1963-01-07,Ligne 6
+Charles de Gaulle - Étoile,Kléber,1942-10-06,,Ligne 6
+Kléber,Charles de Gaulle - Étoile,1942-10-06,,Ligne 6
+Kléber,Boissière,1942-10-06,,Ligne 6
+Boissière,Kléber,1942-10-06,,Ligne 6
+Boissière,Trocadéro,1942-10-06,,Ligne 6
+Trocadéro,Boissière,1942-10-06,,Ligne 6
+Trocadéro,Passy,1942-10-06,,Ligne 6
+Passy,Trocadéro,1942-10-06,,Ligne 6
+Passy,Bir-Hakeim,1942-10-06,,Ligne 6
+Bir-Hakeim,Passy,1942-10-06,,Ligne 6
+Bir-Hakeim,Dupleix,1942-10-06,,Ligne 6
+Dupleix,Bir-Hakeim,1942-10-06,,Ligne 6
+Dupleix,La Motte-Picquet - Grenelle,1942-10-06,,Ligne 6
+La Motte-Picquet - Grenelle,Dupleix,1942-10-06,,Ligne 6
+La Motte-Picquet - Grenelle,Cambronne,1942-10-06,,Ligne 6
+Cambronne,La Motte-Picquet - Grenelle,1942-10-06,,Ligne 6
+Cambronne,Sèvres - Lecourbe,1942-10-06,,Ligne 6
+Sèvres - Lecourbe,Cambronne,1942-10-06,,Ligne 6
+Sèvres - Lecourbe,Pasteur,1942-10-06,,Ligne 6
+Pasteur,Sèvres - Lecourbe,1942-10-06,,Ligne 6
+Pasteur,Avenue du Maine,1942-10-06,,Ligne 6
+Avenue du Maine,Pasteur,1942-10-06,,Ligne 6
+Avenue du Maine,Edgar Quinet,1942-10-06,,Ligne 6
+Edgar Quinet,Avenue du Maine,1942-10-06,,Ligne 6
+Edgar Quinet,Raspail,1942-10-06,,Ligne 6
+Raspail,Edgar Quinet,1942-10-06,,Ligne 6
+Raspail,Denfert-Rochereau,1942-10-06,,Ligne 6
+Denfert-Rochereau,Raspail,1942-10-06,,Ligne 6
+Denfert-Rochereau,Saint-Jacques,1942-10-06,,Ligne 6
+Saint-Jacques,Denfert-Rochereau,1942-10-06,,Ligne 6
+Saint-Jacques,Glacière,1942-10-06,,Ligne 6
+Glacière,Saint-Jacques,1942-10-06,,Ligne 6
+Glacière,Corvisart,1942-10-06,,Ligne 6
+Corvisart,Glacière,1942-10-06,,Ligne 6
+Corvisart,Place d'Italie,1942-10-06,,Ligne 6
+Place d'Italie,Corvisart,1942-10-06,,Ligne 6
+Picpus,Bel-Air,1963-01-07,,Ligne 6
+Bel-Air,Picpus,1963-01-07,,Ligne 6
+Bel-Air,Daumesnil,1963-01-07,,Ligne 6
+Daumesnil,Bel-Air,1963-01-07,,Ligne 6
+Opéra,Chaussée d'Antin - La Fayette,1910-11-05,,Ligne 7
+Chaussée d'Antin - La Fayette,Opéra,1910-11-05,,Ligne 7
+Chaussée d'Antin - La Fayette,Cadet,1910-11-05,1911-06-06,Ligne 7
+Cadet,Chaussée d'Antin - La Fayette,1910-11-05,1911-06-06,Ligne 7
+Cadet,Poissonnière,1910-11-05,,Ligne 7
+Poissonnière,Cadet,1910-11-05,,Ligne 7
+Poissonnière,Gare de l'Est,1910-11-05,,Ligne 7
+Gare de l'Est,Poissonnière,1910-11-05,,Ligne 7
+Gare de l'Est,Château-Landon,1910-11-05,,Ligne 7
+Château-Landon,Gare de l'Est,1910-11-05,,Ligne 7
+Château-Landon,Louis Blanc,1910-11-05,,Ligne 7
+Louis Blanc,Château-Landon,1910-11-05,,Ligne 7
+Louis Blanc,Stalingrad,1910-11-05,,Ligne 7
+Stalingrad,Louis Blanc,1910-11-05,,Ligne 7
+Stalingrad,Riquet,1910-11-05,,Ligne 7
+Riquet,Stalingrad,1910-11-05,,Ligne 7
+Riquet,Crimée,1910-11-05,,Ligne 7
+Crimée,Riquet,1910-11-05,,Ligne 7
+Crimée,Corentin Cariou,1910-11-05,,Ligne 7
+Corentin Cariou,Crimée,1910-11-05,,Ligne 7
+Corentin Cariou,Porte de la Villette,1910-11-05,,Ligne 7
+Porte de la Villette,Corentin Cariou,1910-11-05,,Ligne 7
+Louis Blanc,Jaurès,1911-01-18,1967-12-03,Ligne 7
+Jaurès,Louis Blanc,1911-01-18,1967-12-03,Ligne 7
+Jaurès,Bolivar,1911-01-18,1967-12-03,Ligne 7
+Bolivar,Jaurès,1911-01-18,1967-12-03,Ligne 7
+Bolivar,Botzaris,1911-01-18,1912-02-13,Ligne 7
+Botzaris,Bolivar,1911-01-18,1912-02-13,Ligne 7
+Botzaris,Pré-Saint-Gervais,1911-01-18,1912-02-13,Ligne 7
+Danube,Botzaris,1911-01-18,1967-12-03,Ligne 7
+Pré-Saint-Gervais,Danube,1911-01-18,1967-12-03,Ligne 7
+Le Peletier,Cadet,1911-06-06,,Ligne 7
+Cadet,Le Peletier,1911-06-06,,Ligne 7
+Le Peletier,Chaussée d'Antin - La Fayette,1911-06-06,,Ligne 7
+Chaussée d'Antin - La Fayette,Le Peletier,1911-06-06,,Ligne 7
+Buttes Chaumont,Bolivar,1912-02-13,1967-12-03,Ligne 7
+Bolivar,Buttes Chaumont,1912-02-13,1967-12-03,Ligne 7
+Buttes Chaumont,Botzaris,1912-02-13,1967-12-03,Ligne 7
+Botzaris,Buttes Chaumont,1912-02-13,1967-12-03,Ligne 7
+Place des Fêtes,Pré-Saint-Gervais,1912-02-13,1967-12-03,Ligne 7
+Botzaris,Place des Fêtes,1912-02-13,1967-12-03,Ligne 7
+Opéra,Pyramides,1916-07-01,,Ligne 7
+Pyramides,Opéra,1916-07-01,,Ligne 7
+Pyramides,Palais-Royal - Musée du Louvre,1916-07-01,,Ligne 7
+Palais-Royal - Musée du Louvre,Pyramides,1916-07-01,,Ligne 7
+Palais-Royal - Musée du Louvre,Pont-Neuf,1926-04-16,,Ligne 7
+Pont-Neuf,Palais-Royal - Musée du Louvre,1926-04-16,,Ligne 7
+Pont-Neuf,Pont Notre-Dame,1926-04-16,,Ligne 7
+Pont Notre-Dame,Pont-Neuf,1926-04-16,,Ligne 7
+Pont Notre-Dame,Pont Marie,1926-04-16,,Ligne 7
+Pont Marie,Pont Notre-Dame,1926-04-16,,Ligne 7
+Pont Marie,Sully - Morland,1930-06-03,,Ligne 7
+Sully - Morland,Pont Marie,1930-06-03,,Ligne 7
+Sully - Morland,Jussieu,1931-04-26,,Ligne 7
+Jussieu,Sully - Morland,1931-04-26,,Ligne 7
+Jussieu,Place Monge,1931-04-26,,Ligne 7
+Place Monge,Jussieu,1931-04-26,,Ligne 7
+Place Monge,Censier - Daubenton,1931-04-26,,Ligne 7
+Censier - Daubenton,Place Monge,1931-04-26,,Ligne 7
+Censier - Daubenton,Les Gobelins,1931-04-26,,Ligne 7
+Les Gobelins,Censier - Daubenton,1931-04-26,,Ligne 7
+Les Gobelins,Place d'Italie,1931-04-26,,Ligne 7
+Place d'Italie,Les Gobelins,1931-04-26,,Ligne 7
+Place d'Italie,Tolbiac,1931-04-26,,Ligne 7
+Tolbiac,Place d'Italie,1931-04-26,,Ligne 7
+Tolbiac,Maison Blanche,1931-04-26,,Ligne 7
+Maison Blanche,Tolbiac,1931-04-26,,Ligne 7
+Maison Blanche,Porte d'Italie,1931-04-26,,Ligne 7
+Porte d'Italie,Maison Blanche,1931-04-26,,Ligne 7
+Porte d'Italie,Porte de Choisy,1931-04-26,,Ligne 7
+Porte de Choisy,Porte d'Italie,1931-04-26,,Ligne 7
+Porte de Choisy,Porte d'Ivry,1931-04-26,,Ligne 7
+Porte d'Ivry,Porte de Choisy,1931-04-26,,Ligne 7
+Porte d'Ivry,Pierre et Marie Curie,1946-05-01,,Ligne 7
+Pierre et Marie Curie,Porte d'Ivry,1946-05-01,,Ligne 7
+Pierre et Marie Curie,Mairie d'Ivry,1946-05-01,,Ligne 7
+Mairie d'Ivry,Pierre et Marie Curie,1946-05-01,,Ligne 7
+Maison Blanche,Le Kremlin-Bicêtre,1982-12-10,,Ligne 7
+Le Kremlin-Bicêtre,Maison Blanche,1982-12-10,,Ligne 7
+Le Kremlin-Bicêtre,Villejuif - Léo Lagrange,1985-02-28,,Ligne 7
+Villejuif - Léo Lagrange,Le Kremlin-Bicêtre,1985-02-28,,Ligne 7
+Villejuif - Léo Lagrange,Villejuif - Paul Vaillant-Couturier,1985-02-28,,Ligne 7
+Villejuif - Paul Vaillant-Couturier,Villejuif - Léo Lagrange,1985-02-28,,Ligne 7
+Villejuif - Paul Vaillant-Couturier,Villejuif - Louis Aragon,1985-02-28,,Ligne 7
+Villejuif - Louis Aragon,Villejuif - Paul Vaillant-Couturier,1985-02-28,,Ligne 7
+Porte de la Villette,Aubervilliers - Pantin - Quatre Chemins,1979-10-04,,Ligne 7
+Aubervilliers - Pantin - Quatre Chemins,Porte de la Villette,1979-10-04,,Ligne 7
+Aubervilliers - Pantin - Quatre Chemins,Fort d'Aubervilliers,1979-10-04,,Ligne 7
+Fort d'Aubervilliers,Aubervilliers - Pantin - Quatre Chemins,1979-10-04,,Ligne 7
+Fort d'Aubervilliers,La Courneuve - 8 Mai 1945,1987-05-06,,Ligne 7
+La Courneuve - 8 Mai 1945,Fort d'Aubervilliers,1987-05-06,,Ligne 7
+Charles Michels,Avenue Émile-Zola,1913-07-13,1937-07-27,Ligne 8
+Avenue Émile-Zola,Charles Michels,1913-07-13,1937-07-27,Ligne 8
+Avenue Émile-Zola,La Motte-Picquet - Grenelle,1913-07-13,1937-07-27,Ligne 8
+La Motte-Picquet - Grenelle,Avenue Émile-Zola,1913-07-13,1937-07-27,Ligne 8
+La Motte-Picquet - Grenelle,Champs de Mars,1913-07-13,1939-09-03,Ligne 8
+Champs de Mars,La Motte-Picquet - Grenelle,1913-07-13,1939-09-03,Ligne 8
+Champs de Mars,École Militaire,1913-07-13,1939-09-03,Ligne 8
+École Militaire,Champs de Mars,1913-07-13,1939-09-03,Ligne 8
+École Militaire,La Tour-Maubourg,1913-07-13,,Ligne 8
+La Tour-Maubourg,École Militaire,1913-07-13,,Ligne 8
+La Tour-Maubourg,Madeleine,1913-07-13,1913-12-24,Ligne 8
+Madeleine,La Tour-Maubourg,1913-07-13,1913-12-24,Ligne 8
+Madeleine,Opéra,1913-07-13,,Ligne 8
+Opéra,Madeleine,1913-07-13,,Ligne 8
+Charles Michels,Javel - André Citroën,1913-09-30,1937-07-27,Ligne 8
+Javel - André Citroën,Charles Michels,1913-09-30,1937-07-27,Ligne 8
+Javel - André Citroën,Église d'Auteuil,1913-09-30,1937-07-27,Ligne 8
+Église d'Auteuil,Michel-Ange - Auteuil,1913-09-30,1937-07-27,Ligne 8
+Michel-Ange - Auteuil,Porte d'Auteuil,1913-09-30,1937-07-27,Ligne 8
+Mirabeau,Javel - André Citroën,1913-09-30,1937-07-27,Ligne 8
+Chardon-Lagache,Mirabeau,1913-09-30,1937-07-27,Ligne 8
+Michel-Ange - Molitor,Chardon-Lagache,1913-09-30,1937-07-27,Ligne 8
+Porte d'Auteuil,Michel-Ange - Molitor,1913-09-30,1937-07-27,Ligne 8
+La Tour-Maubourg,Invalides,1913-12-24,,Ligne 8
+Invalides,La Tour-Maubourg,1913-12-24,,Ligne 8
+Invalides,Madeleine,1913-12-24,1914-03-12,Ligne 8
+Madeleine,Invalides,1913-12-24,1914-03-12,Ligne 8
+Invalides,Concorde,1914-03-12,,Ligne 8
+Concorde,Invalides,1914-03-12,,Ligne 8
+Concorde,Madeleine,1914-03-12,,Ligne 8
+Madeleine,Concorde,1914-03-12,,Ligne 8
+Opéra,Richelieu - Drouot,1928-06-30,,Ligne 8
+Richelieu - Drouot,Opéra,1928-06-30,,Ligne 8
+Richelieu - Drouot,Grands Boulevards,1931-05-05,,Ligne 8
+Grands Boulevards,Richelieu - Drouot,1931-05-05,,Ligne 8
+Grands Boulevards,Bonne-Nouvelle,1931-05-05,,Ligne 8
+Bonne-Nouvelle,Grands Boulevards,1931-05-05,,Ligne 8
+Bonne-Nouvelle,Strasbourg - Saint-Denis,1931-05-05,,Ligne 8
+Strasbourg - Saint-Denis,Bonne-Nouvelle,1931-05-05,,Ligne 8
+Strasbourg - Saint-Denis,Saint-Martin,1931-05-05,1939-09-03,Ligne 8
+Saint-Martin,Strasbourg - Saint-Denis,1931-05-05,1939-09-03,Ligne 8
+Saint-Martin,République,1931-05-05,1939-09-03,Ligne 8
+République,Saint-Martin,1931-05-05,1939-09-03,Ligne 8
+République,Filles du Calvaire,1931-05-05,,Ligne 8
+Filles du Calvaire,République,1931-05-05,,Ligne 8
+Filles du Calvaire,Saint-Sébastien - Froissart,1931-05-05,,Ligne 8
+Saint-Sébastien - Froissart,Filles du Calvaire,1931-05-05,,Ligne 8
+Saint-Sébastien - Froissart,Chemin Vert,1931-05-05,,Ligne 8
+Chemin Vert,Saint-Sébastien - Froissart,1931-05-05,,Ligne 8
+Chemin Vert,Bastille,1931-05-05,,Ligne 8
+Bastille,Chemin Vert,1931-05-05,,Ligne 8
+Bastille,Ledru-Rollin,1931-05-05,,Ligne 8
+Ledru-Rollin,Bastille,1931-05-05,,Ligne 8
+Ledru-Rollin,Faidherbe - Chaligny,1931-05-05,,Ligne 8
+Faidherbe - Chaligny,Ledru-Rollin,1931-05-05,,Ligne 8
+Faidherbe - Chaligny,Reuilly - Diderot,1931-05-05,,Ligne 8
+Reuilly - Diderot,Faidherbe - Chaligny,1931-05-05,,Ligne 8
+Reuilly - Diderot,Montgallet,1931-05-05,,Ligne 8
+Montgallet,Reuilly - Diderot,1931-05-05,,Ligne 8
+Montgallet,Daumesnil,1931-05-05,,Ligne 8
+Daumesnil,Montgallet,1931-05-05,,Ligne 8
+Daumesnil,Michel Bizot,1931-05-05,,Ligne 8
+Michel Bizot,Daumesnil,1931-05-05,,Ligne 8
+Michel Bizot,Porte Dorée,1931-05-05,,Ligne 8
+Porte Dorée,Michel Bizot,1931-05-05,,Ligne 8
+Porte Dorée,Porte de Charenton,1931-05-05,,Ligne 8
+Porte de Charenton,Porte Dorée,1931-05-05,,Ligne 8
+La Motte-Picquet - Grenelle,Commerce,1937-07-27,,Ligne 8
+Commerce,La Motte-Picquet - Grenelle,1937-07-27,,Ligne 8
+Commerce,Félix Faure,1937-07-27,,Ligne 8
+Félix Faure,Commerce,1937-07-27,,Ligne 8
+Félix Faure,Boucicaut,1937-07-27,,Ligne 8
+Boucicaut,Félix Faure,1937-07-27,,Ligne 8
+Boucicaut,Lourmel,1937-07-27,,Ligne 8
+Lourmel,Boucicaut,1937-07-27,,Ligne 8
+Lourmel,Balard,1937-07-27,,Ligne 8
+Balard,Lourmel,1937-07-27,,Ligne 8
+La Motte-Picquet - Grenelle,École Militaire,1939-09-03,,Ligne 8
+École Militaire,La Motte-Picquet - Grenelle,1939-09-03,,Ligne 8
+Strasbourg - Saint-Denis,République,1939-09-03,,Ligne 8
+République,Strasbourg - Saint-Denis,1939-09-03,,Ligne 8
+Porte de Charenton,Liberté,1942-10-05,,Ligne 8
+Liberté,Porte de Charenton,1942-10-05,,Ligne 8
+Liberté,Charenton - Écoles,1942-10-05,,Ligne 8
+Charenton - Écoles,Liberté,1942-10-05,,Ligne 8
+Charenton - Écoles,École vétérinaire de Maisons-Alfort,1970-09-19,,Ligne 8
+École vétérinaire de Maisons-Alfort,Charenton - Écoles,1970-09-19,,Ligne 8
+École vétérinaire de Maisons-Alfort,Maisons-Alfort - Stade,1970-09-19,,Ligne 8
+Maisons-Alfort - Stade,École vétérinaire de Maisons-Alfort,1970-09-19,,Ligne 8
+Maisons-Alfort - Stade,Maisons-Alfort - Les Juilliottes,1972-04-27,,Ligne 8
+Maisons-Alfort - Les Juilliottes,Maisons-Alfort - Stade,1972-04-27,,Ligne 8
+Maisons-Alfort - Les Juilliottes,Créteil - L'Échat,1973-09-24,,Ligne 8
+Créteil - L'Échat,Maisons-Alfort - Les Juilliottes,1973-09-24,,Ligne 8
+Créteil - L'Échat,Créteil - Université,1974-09-10,,Ligne 8
+Créteil - Université,Créteil - L'Échat,1974-09-10,,Ligne 8
+Créteil - Université,Créteil - Préfecture,1974-09-10,,Ligne 8
+Créteil - Préfecture,Créteil - Université,1974-09-10,,Ligne 8
+Créteil - Préfecture,Pointe du Lac,2011-10-08,,Ligne 8
+Pointe du Lac,Créteil - Préfecture,2011-10-08,,Ligne 8
+Exelmans,Michel-Ange - Molitor,1922-11-08,,Ligne 9
+Michel-Ange - Molitor,Exelmans,1922-11-08,,Ligne 9
+Michel-Ange - Molitor,Michel-Ange - Auteuil,1922-11-08,,Ligne 9
+Michel-Ange - Auteuil,Michel-Ange - Molitor,1922-11-08,,Ligne 9
+Michel-Ange - Auteuil,Jasmin,1922-11-08,,Ligne 9
+Jasmin,Michel-Ange - Auteuil,1922-11-08,,Ligne 9
+Jasmin,Ranelagh,1922-11-08,,Ligne 9
+Ranelagh,Jasmin,1922-11-08,,Ligne 9
+Ranelagh,La Muette,1922-11-08,,Ligne 9
+La Muette,Ranelagh,1922-11-08,,Ligne 9
+La Muette,Rue de la Pompe,1922-11-08,,Ligne 9
+Rue de la Pompe,La Muette,1922-11-08,,Ligne 9
+Rue de la Pompe,Trocadéro,1922-11-08,,Ligne 9
+Trocadéro,Rue de la Pompe,1922-11-08,,Ligne 9
+Trocadéro,Iéna,1923-05-27,,Ligne 9
+Iéna,Trocadéro,1923-05-27,,Ligne 9
+Iéna,Alma - Marceau,1923-05-27,,Ligne 9
+Alma - Marceau,Iéna,1923-05-27,,Ligne 9
+Alma - Marceau,Rond-point des Champs-Élysées,1923-05-27,,Ligne 9
+Rond-point des Champs-Élysées,Alma - Marceau,1923-05-27,,Ligne 9
+Rond-point des Champs-Élysées,Saint-Philippe du Roule,1923-05-27,,Ligne 9
+Saint-Philippe du Roule,Rond-point des Champs-Élysées,1923-05-27,,Ligne 9
+Saint-Philippe du Roule,Miromesnil,1923-05-27,,Ligne 9
+Miromesnil,Saint-Philippe du Roule,1923-05-27,,Ligne 9
+Miromesnil,Saint-Augustin,1923-05-27,,Ligne 9
+Saint-Augustin,Miromesnil,1923-05-27,,Ligne 9
+Saint-Augustin,Havre - Caumartin,1923-06-03,,Ligne 9
+Havre - Caumartin,Saint-Augustin,1923-06-03,,Ligne 9
+Havre - Caumartin,Chaussée d'Antin - La Fayette,1923-06-03,,Ligne 9
+Chaussée d'Antin - La Fayette,Havre - Caumartin,1923-06-03,,Ligne 9
+Exelmans,Porte de Saint-Cloud,1923-09-29,,Ligne 9
+Porte de Saint-Cloud,Exelmans,1923-09-29,,Ligne 9
+Chaussée d'Antin - La Fayette,Richelieu - Drouot,1928-06-30,,Ligne 9
+Richelieu - Drouot,Chaussée d'Antin - La Fayette,1928-06-30,,Ligne 9
+Richelieu - Drouot,Grands Boulevards,1933-12-10,,Ligne 9
+Grands Boulevards,Richelieu - Drouot,1933-12-10,,Ligne 9
+Grands Boulevards,Bonne-Nouvelle,1933-12-10,,Ligne 9
+Bonne-Nouvelle,Grands Boulevards,1933-12-10,,Ligne 9
+Bonne-Nouvelle,Strasbourg - Saint-Denis,1933-12-10,,Ligne 9
+Strasbourg - Saint-Denis,Bonne-Nouvelle,1933-12-10,,Ligne 9
+Strasbourg - Saint-Denis,Saint-Martin,1933-12-10,1939-09-02,Ligne 9
+Saint-Martin,Strasbourg - Saint-Denis,1933-12-10,1939-09-02,Ligne 9
+Saint-Martin,République,1933-12-10,1939-09-02,Ligne 9
+République,Saint-Martin,1933-12-10,1939-09-02,Ligne 9
+République,Oberkampf,1933-12-10,,Ligne 9
+Oberkampf,République,1933-12-10,,Ligne 9
+Oberkampf,Saint-Ambroise,1933-12-10,,Ligne 9
+Saint-Ambroise,Oberkampf,1933-12-10,,Ligne 9
+Saint-Ambroise,Voltaire,1933-12-10,,Ligne 9
+Voltaire,Saint-Ambroise,1933-12-10,,Ligne 9
+Voltaire,Charonne,1933-12-10,,Ligne 9
+Charonne,Voltaire,1933-12-10,,Ligne 9
+Charonne,Rue des Boulets,1933-12-10,,Ligne 9
+Rue des Boulets,Charonne,1933-12-10,,Ligne 9
+Rue des Boulets,Nation,1933-12-10,,Ligne 9
+Nation,Rue des Boulets,1933-12-10,,Ligne 9
+Nation,Buzenval,1933-12-10,,Ligne 9
+Buzenval,Nation,1933-12-10,,Ligne 9
+Buzenval,Maraîchers,1933-12-10,,Ligne 9
+Maraîchers,Buzenval,1933-12-10,,Ligne 9
+Maraîchers,Porte de Montreuil,1933-12-10,,Ligne 9
+Porte de Montreuil,Maraîchers,1933-12-10,,Ligne 9
+Porte de Saint-Cloud,Marcel Sembat,1934-02-03,,Ligne 9
+Marcel Sembat,Porte de Saint-Cloud,1934-02-03,,Ligne 9
+Marcel Sembat,Billancourt,1934-02-03,,Ligne 9
+Billancourt,Marcel Sembat,1934-02-03,,Ligne 9
+Billancourt,Pont de Sèvres,1934-02-03,,Ligne 9
+Pont de Sèvres,Billancourt,1934-02-03,,Ligne 9
+Porte de Montreuil,Robespierre,1937-10-14,,Ligne 9
+Robespierre,Porte de Montreuil,1937-10-14,,Ligne 9
+Robespierre,Croix de Chavaux,1937-10-14,,Ligne 9
+Croix de Chavaux,Robespierre,1937-10-14,,Ligne 9
+Croix de Chavaux,Mairie de Montreuil,1937-10-14,,Ligne 9
+Mairie de Montreuil,Croix de Chavaux,1937-10-14,,Ligne 9
+Strasbourg - Saint-Denis,République,1939-09-02,,Ligne 9
+République,Strasbourg - Saint-Denis,1939-09-02,,Ligne 9
+Invalides,Varenne,1923-12-30,1937-07-27,Ligne 10
+Varenne,Invalides,1923-12-30,1937-07-27,Ligne 10
+Varenne,Saint-François-Xavier,1923-12-30,1937-07-27,Ligne 10
+Saint-François-Xavier,Varenne,1923-12-30,1937-07-27,Ligne 10
+Saint-François-Xavier,Duroc,1923-12-30,1937-07-27,Ligne 10
+Duroc,Saint-François-Xavier,1923-12-30,1937-07-27,Ligne 10
+Duroc,Vaneau,1923-12-30,,Ligne 10
+Vaneau,Duroc,1923-12-30,,Ligne 10
+Vaneau,Sèvres - Babylone,1923-12-30,,Ligne 10
+Sèvres - Babylone,Vaneau,1923-12-30,,Ligne 10
+Sèvres - Babylone,Croix-Rouge,1923-12-30,1939-09-03,Ligne 10
+Croix-Rouge,Sèvres - Babylone,1923-12-30,1939-09-03,Ligne 10
+Croix-Rouge,Mabillon,1925-03-10,1939-09-03,Ligne 10
+Mabillon,Croix-Rouge,1925-03-10,1939-09-03,Ligne 10
+Mabillon,Odéon,1926-02-14,,Ligne 10
+Odéon,Mabillon,1926-02-14,,Ligne 10
+Odéon,Cluny - La Sorbonne,1930-02-15,1939-09-03,Ligne 10
+Cluny - La Sorbonne,Odéon,1930-02-15,1939-09-03,Ligne 10
+Cluny - La Sorbonne,Maubert - Mutualité,1930-02-15,1939-09-03,Ligne 10
+Maubert - Mutualité,Cluny - La Sorbonne,1930-02-15,1939-09-03,Ligne 10
+Maubert - Mutualité,Place Monge,1930-02-15,1931-04-26,Ligne 10
+Place Monge,Maubert - Mutualité,1930-02-15,1931-04-26,Ligne 10
+Place Monge,Censier - Daubenton,1930-02-15,1931-04-26,Ligne 10
+Censier - Daubenton,Place Monge,1930-02-15,1931-04-26,Ligne 10
+Censier - Daubenton,Les Gobelins,1930-02-15,1931-04-26,Ligne 10
+Les Gobelins,Censier - Daubenton,1930-02-15,1931-04-26,Ligne 10
+Les Gobelins,Place d'Italie,1930-02-15,1931-04-26,Ligne 10
+Place d'Italie,Les Gobelins,1930-02-15,1931-04-26,Ligne 10
+Place d'Italie,Tolbiac,1930-03-07,1931-04-26,Ligne 10
+Tolbiac,Place d'Italie,1930-03-07,1931-04-26,Ligne 10
+Tolbiac,Maison Blanche,1930-03-07,1931-04-26,Ligne 10
+Maison Blanche,Tolbiac,1930-03-07,1931-04-26,Ligne 10
+Maison Blanche,Porte d'Italie,1930-03-07,1931-04-26,Ligne 10
+Porte d'Italie,Maison Blanche,1930-03-07,1931-04-26,Ligne 10
+Porte d'Italie,Porte de Choisy,1930-03-07,1931-04-26,Ligne 10
+Porte de Choisy,Porte d'Italie,1930-03-07,1931-04-26,Ligne 10
+Maubert - Mutualité,Cardinal Lemoine,1931-04-26,,Ligne 10
+Cardinal Lemoine,Maubert - Mutualité,1931-04-26,,Ligne 10
+Cardinal Lemoine,Jussieu,1931-04-26,,Ligne 10
+Jussieu,Cardinal Lemoine,1931-04-26,,Ligne 10
+Charles Michels,Avenue Émile-Zola,1937-07-27,,Ligne 10
+Avenue Émile-Zola,Charles Michels,1937-07-27,,Ligne 10
+Avenue Émile-Zola,La Motte-Picquet - Grenelle,1937-07-27,,Ligne 10
+La Motte-Picquet - Grenelle,Avenue Émile-Zola,1937-07-27,,Ligne 10
+Charles Michels,Javel - André Citroën,1937-07-27,,Ligne 10
+Javel - André Citroën,Charles Michels,1937-07-27,,Ligne 10
+Javel - André Citroën,Église d'Auteuil,1937-07-27,,Ligne 10
+Église d'Auteuil,Michel-Ange - Auteuil,1937-07-27,,Ligne 10
+Michel-Ange - Auteuil,Porte d'Auteuil,1937-07-27,,Ligne 10
+Mirabeau,Javel - André Citroën,1937-07-27,,Ligne 10
+Chardon-Lagache,Mirabeau,1937-07-27,,Ligne 10
+Michel-Ange - Molitor,Chardon-Lagache,1937-07-27,,Ligne 10
+Porte d'Auteuil,Michel-Ange - Molitor,1937-07-27,1980-10-03,Ligne 10
+Duroc,La Motte-Picquet - Grenelle,1937-07-29,1937-09-29,Ligne 10
+La Motte-Picquet - Grenelle,Duroc,1937-07-29,1937-09-29,Ligne 10
+Duroc,Ségur,1937-09-29,,Ligne 10
+Ségur,Duroc,1937-09-29,,Ligne 10
+La Motte-Picquet - Grenelle,Ségur,1937-09-29,,Ligne 10
+Ségur,La Motte-Picquet - Grenelle,1937-09-29,,Ligne 10
+Odéon,Maubert - Mutualité,1939-09-03,1988-12-15,Ligne 10
+Maubert - Mutualité,Odéon,1939-09-03,1988-12-15,Ligne 10
+Sèvres - Babylone,Mabillon,1939-09-03,,Ligne 10
+Mabillon,Sèvres - Babylone,1939-09-03,,Ligne 10
+Boulogne - Jean Jaurès,Michel-Ange - Molitor,1980-10-03,,Ligne 10
+Porte d'Auteuil,Boulogne - Jean Jaurès,1980-10-03,,Ligne 10
+Boulogne - Jean Jaurès,Boulogne - Pont de Saint-Cloud,1981-10-02,,Ligne 10
+Boulogne - Pont de Saint-Cloud,Boulogne - Jean Jaurès,1981-10-02,,Ligne 10
+Odéon,Cluny - La Sorbonne,1988-12-15,,Ligne 10
+Cluny - La Sorbonne,Odéon,1988-12-15,,Ligne 10
+Cluny - La Sorbonne,Maubert - Mutualité,1988-12-15,,Ligne 10
+Maubert - Mutualité,Cluny - La Sorbonne,1988-12-15,,Ligne 10
+Châtelet,Hôtel de Ville,1935-04-28,,Ligne 11
+Hôtel de Ville,Châtelet,1935-04-28,,Ligne 11
+Hôtel de Ville,Rambuteau,1935-04-28,,Ligne 11
+Rambuteau,Hôtel de Ville,1935-04-28,,Ligne 11
+Rambuteau,Arts et Métiers,1935-04-28,,Ligne 11
+Arts et Métiers,Rambuteau,1935-04-28,,Ligne 11
+Arts et Métiers,République,1935-04-28,,Ligne 11
+République,Arts et Métiers,1935-04-28,,Ligne 11
+République,Goncourt,1935-04-28,,Ligne 11
+Goncourt,République,1935-04-28,,Ligne 11
+Goncourt,Belleville,1935-04-28,,Ligne 11
+Belleville,Goncourt,1935-04-28,,Ligne 11
+Belleville,Pyrénées,1935-04-28,,Ligne 11
+Pyrénées,Belleville,1935-04-28,,Ligne 11
+Pyrénées,Jourdain,1935-04-28,,Ligne 11
+Jourdain,Pyrénées,1935-04-28,,Ligne 11
+Jourdain,Place des Fêtes,1935-04-28,,Ligne 11
+Place des Fêtes,Jourdain,1935-04-28,,Ligne 11
+Place des Fêtes,Télégraphe,1935-04-28,,Ligne 11
+Télégraphe,Place des Fêtes,1935-04-28,,Ligne 11
+Télégraphe,Porte des Lilas,1935-04-28,,Ligne 11
+Porte des Lilas,Télégraphe,1935-04-28,,Ligne 11
+Porte des Lilas,Mairie des Lilas,1937-02-17,,Ligne 11
+Mairie des Lilas,Porte des Lilas,1937-02-17,,Ligne 11
+Notre-Dame-de-Lorette,Trinité - d'Estienne d'Orves,1910-11-05,,Ligne 12
+Trinité - d'Estienne d'Orves,Notre-Dame-de-Lorette,1910-11-05,,Ligne 12
+Trinité - d'Estienne d'Orves,Saint-Lazare,1910-11-05,,Ligne 12
+Saint-Lazare,Trinité - d'Estienne d'Orves,1910-11-05,,Ligne 12
+Saint-Lazare,Madeleine,1910-11-05,,Ligne 12
+Madeleine,Saint-Lazare,1910-11-05,,Ligne 12
+Madeleine,Concorde,1910-11-05,,Ligne 12
+Concorde,Madeleine,1910-11-05,,Ligne 12
+Concorde,Assemblée nationale,1910-11-05,,Ligne 12
+Assemblée nationale,Concorde,1910-11-05,,Ligne 12
+Assemblée nationale,Solférino,1910-11-05,,Ligne 12
+Solférino,Assemblée nationale,1910-11-05,,Ligne 12
+Solférino,Rue du Bac,1910-11-05,,Ligne 12
+Rue du Bac,Solférino,1910-11-05,,Ligne 12
+Rue du Bac,Sèvres - Babylone,1910-11-05,,Ligne 12
+Sèvres - Babylone,Rue du Bac,1910-11-05,,Ligne 12
+Sèvres - Babylone,Rennes,1910-11-05,1939-09-03,Ligne 12
+Rennes,Sèvres - Babylone,1910-11-05,1939-09-03,Ligne 12
+Rennes,Notre-Dame-des-Champs,1910-11-05,1939-09-03,Ligne 12
+Notre-Dame-des-Champs,Rennes,1910-11-05,1939-09-03,Ligne 12
+Notre-Dame-des-Champs,Montparnasse,1910-11-05,,Ligne 12
+Montparnasse,Notre-Dame-des-Champs,1910-11-05,,Ligne 12
+Montparnasse,Falguière,1910-11-05,,Ligne 12
+Falguière,Montparnasse,1910-11-05,,Ligne 12
+Falguière,Pasteur,1910-11-05,,Ligne 12
+Pasteur,Falguière,1910-11-05,,Ligne 12
+Pasteur,Volontaires,1910-11-05,,Ligne 12
+Volontaires,Pasteur,1910-11-05,,Ligne 12
+Volontaires,Vaugirard,1910-11-05,,Ligne 12
+Vaugirard,Volontaires,1910-11-05,,Ligne 12
+Vaugirard,Convention,1910-11-05,,Ligne 12
+Convention,Vaugirard,1910-11-05,,Ligne 12
+Convention,Porte de Versailles,1910-11-05,,Ligne 12
+Porte de Versailles,Convention,1910-11-05,,Ligne 12
+Notre-Dame-de-Lorette,Saint-Georges,1911-04-08,,Ligne 12
+Saint-Georges,Notre-Dame-de-Lorette,1911-04-08,,Ligne 12
+Saint-Georges,Pigalle,1911-04-08,,Ligne 12
+Pigalle,Saint-Georges,1911-04-08,,Ligne 12
+Pigalle,Lamarck - Caulaincourt,1912-10-31,1913-01-30,Ligne 12
+Lamarck - Caulaincourt,Pigalle,1912-10-31,1913-01-30,Ligne 12
+Lamarck - Caulaincourt,Jules Joffrin,1912-10-31,,Ligne 12
+Jules Joffrin,Lamarck - Caulaincourt,1912-10-31,,Ligne 12
+Pigalle,Abbesses,1913-01-30,,Ligne 12
+Abbesses,Pigalle,1913-01-30,,Ligne 12
+Abbesses,Lamarck - Caulaincourt,1913-01-30,,Ligne 12
+Lamarck - Caulaincourt,Abbesses,1913-01-30,,Ligne 12
+Jules Joffrin,Poissonniers,1916-08-23,,Ligne 12
+Poissonniers,Jules Joffrin,1916-08-23,,Ligne 12
+Poissonniers,Marx Dormoy,1916-08-23,,Ligne 12
+Marx Dormoy,Poissonniers,1916-08-23,,Ligne 12
+Marx Dormoy,Porte de la Chapelle,1916-08-23,,Ligne 12
+Porte de la Chapelle,Marx Dormoy,1916-08-23,,Ligne 12
+Porte de Versailles,Corentin Celton,1934-03-24,,Ligne 12
+Corentin Celton,Porte de Versailles,1934-03-24,,Ligne 12
+Corentin Celton,Mairie d'Issy,1934-03-24,,Ligne 12
+Mairie d'Issy,Corentin Celton,1934-03-24,,Ligne 12
+Sèvres - Babylone,Notre-Dame-des-Champs,1939-09-02,1968-05-20,Ligne 12
+Notre-Dame-des-Champs,Sèvres - Babylone,1939-09-02,1968-05-20,Ligne 12
+Sèvres - Babylone,Rennes,1968-05-20,,Ligne 12
+Rennes,Sèvres - Babylone,1968-05-20,,Ligne 12
+Rennes,Notre-Dame-des-Champs,1968-05-20,,Ligne 12
+Notre-Dame-des-Champs,Rennes,1968-05-20,,Ligne 12
+Porte de la Chapelle,Front Populaire,2012-12-18,,Ligne 12
+Front Populaire,Porte de la Chapelle,2012-12-18,,Ligne 12
+Saint-Lazare,Liège,1911-02-26,1939-09-03,Ligne 13
+Liège,Saint-Lazare,1911-02-26,1939-09-03,Ligne 13
+Liège,Place de Clichy,1911-02-26,1939-09-03,Ligne 13
+Place de Clichy,Liège,1911-02-26,1939-09-03,Ligne 13
+Place de Clichy,La Fourche,1911-02-26,,Ligne 13
+La Fourche,Place de Clichy,1911-02-26,,Ligne 13
+La Fourche,Guy Môquet,1911-02-26,,Ligne 13
+Guy Môquet,La Fourche,1911-02-26,,Ligne 13
+Guy Môquet,Porte de Saint-Ouen,1911-02-26,,Ligne 13
+Porte de Saint-Ouen,Guy Môquet,1911-02-26,,Ligne 13
+La Fourche,Brochant,1912-01-20,,Ligne 13
+Brochant,La Fourche,1912-01-20,,Ligne 13
+Brochant,Porte de Clichy,1912-01-20,,Ligne 13
+Porte de Clichy,Brochant,1912-01-20,,Ligne 13
+Saint-Lazare,Place de Clichy,1939-09-03,1968-09-16,Ligne 13
+Place de Clichy,Saint-Lazare,1939-09-03,1968-09-16,Ligne 13
+Porte de Saint-Ouen,Garibaldi,1952-06-30,,Ligne 13
+Garibaldi,Porte de Saint-Ouen,1952-06-30,,Ligne 13
+Garibaldi,Mairie de Saint-Ouen,1952-06-30,,Ligne 13
+Mairie de Saint-Ouen,Garibaldi,1952-06-30,,Ligne 13
+Mairie de Saint-Ouen,Carrefour Pleyel,1952-06-30,,Ligne 13
+Carrefour Pleyel,Mairie de Saint-Ouen,1952-06-30,,Ligne 13
+Saint-Lazare,Liège,1968-09-16,,Ligne 13
+Liège,Saint-Lazare,1968-09-16,,Ligne 13
+Liège,Place de Clichy,1968-09-16,,Ligne 13
+Place de Clichy,Liège,1968-09-16,,Ligne 13
+Miromesnil,Saint-Lazare,1973-04-27,,Ligne 13
+Saint-Lazare,Miromesnil,1973-04-27,,Ligne 13
+Miromesnil,Champs-Élysées - Clemenceau,1975-02-18,,Ligne 13
+Champs-Élysées - Clemenceau,Miromesnil,1975-02-18,,Ligne 13
+Carrefour Pleyel,Saint-Denis - Porte de Paris,1976-06-20,,Ligne 13
+Saint-Denis - Porte de Paris,Carrefour Pleyel,1976-06-20,,Ligne 13
+Saint-Denis - Porte de Paris,Basilique de Saint-Denis,1976-06-20,,Ligne 13
+Basilique de Saint-Denis,Saint-Denis - Porte de Paris,1976-06-20,,Ligne 13
+Champs-Élysées - Clemenceau,Invalides,1976-11-09,,Ligne 13
+Invalides,Champs-Élysées - Clemenceau,1976-11-09,,Ligne 13
+Plaisance,Pernety,1976-11-09,,Ligne 13
+Pernety,Plaisance,1976-11-09,,Ligne 13
+Pernety,Gaîté,1976-11-09,,Ligne 13
+Gaîté,Pernety,1976-11-09,,Ligne 13
+Gaîté,Avenue du Maine,1976-11-09,,Ligne 13
+Avenue du Maine,Gaîté,1976-11-09,,Ligne 13
+Avenue du Maine,Duroc,1976-11-09,,Ligne 13
+Duroc,Avenue du Maine,1976-11-09,,Ligne 13
+Invalides,Varenne,1976-11-09,,Ligne 13
+Varenne,Invalides,1976-11-09,,Ligne 13
+Varenne,Saint-François-Xavier,1976-11-09,,Ligne 13
+Saint-François-Xavier,Varenne,1976-11-09,,Ligne 13
+Saint-François-Xavier,Duroc,1976-11-09,,Ligne 13
+Duroc,Saint-François-Xavier,1976-11-09,,Ligne 13
+Plaisance,Porte de Vanves,1976-11-09,,Ligne 13
+Porte de Vanves,Plaisance,1976-11-09,,Ligne 13
+Porte de Vanves,Malakoff - Plateau de Vanves,1976-11-09,,Ligne 13
+Malakoff - Plateau de Vanves,Porte de Vanves,1976-11-09,,Ligne 13
+Malakoff - Plateau de Vanves,Malakoff - Rue Étienne-Dolet,1976-11-09,,Ligne 13
+Malakoff - Rue Étienne-Dolet,Malakoff - Plateau de Vanves,1976-11-09,,Ligne 13
+Malakoff - Rue Étienne-Dolet,Châtillon - Montrouge,1976-11-09,,Ligne 13
+Châtillon - Montrouge,Malakoff - Rue Étienne-Dolet,1976-11-09,,Ligne 13
+Porte de Clichy,Mairie de Clichy,1980-05-03,,Ligne 13
+Mairie de Clichy,Porte de Clichy,1980-05-03,,Ligne 13
+Mairie de Clichy,Gabriel Péri,1980-05-03,,Ligne 13
+Gabriel Péri,Mairie de Clichy,1980-05-03,,Ligne 13
+Saint-Denis - Université,Basilique de Saint-Denis,1998-05-25,,Ligne 13
+Basilique de Saint-Denis,Saint-Denis - Université,1998-05-25,,Ligne 13
+Gabriel Péri,Les Agnettes,2008-06-14,,Ligne 13
+Les Agnettes,Gabriel Péri,2008-06-14,,Ligne 13
+Les Agnettes,Les Courtilles,2008-06-14,,Ligne 13
+Les Courtilles,Les Agnettes,2008-06-14,,Ligne 13
+Madeleine,Pyramides,1998-10-15,,Ligne 14
+Pyramides,Madeleine,1998-10-15,,Ligne 14
+Pyramides,Châtelet,1998-10-15,,Ligne 14
+Châtelet,Pyramides,1998-10-15,,Ligne 14
+Châtelet,Gare de Lyon,1998-10-15,,Ligne 14
+Gare de Lyon,Châtelet,1998-10-15,,Ligne 14
+Gare de Lyon,Bercy,1998-10-15,,Ligne 14
+Bercy,Gare de Lyon,1998-10-15,,Ligne 14
+Bercy,Cour Saint-Émilion,1998-10-15,,Ligne 14
+Cour Saint-Émilion,Bercy,1998-10-15,,Ligne 14
+Cour Saint-Émilion,Bibliothèque François-Mitterrand,1998-10-15,,Ligne 14
+Bibliothèque François-Mitterrand,Cour Saint-Émilion,1998-10-15,,Ligne 14
+Madeleine,Saint-Lazare,2003-12-16,,Ligne 14
+Saint-Lazare,Madeleine,2003-12-16,,Ligne 14
+Bibliothèque François-Mitterrand,Olympiades,2007-06-26,,Ligne 14
+Olympiades,Bibliothèque François-Mitterrand,2007-06-26,,Ligne 14
+Gambetta,Pelleport,1971-03-27,,Ligne 3 bis
+Pelleport,Gambetta,1971-03-27,,Ligne 3 bis
+Pelleport,Saint-Fargeau,1971-03-27,,Ligne 3 bis
+Saint-Fargeau,Pelleport,1971-03-27,,Ligne 3 bis
+Saint-Fargeau,Porte des Lilas,1971-03-27,,Ligne 3 bis
+Porte des Lilas,Saint-Fargeau,1971-03-27,,Ligne 3 bis
+Louis Blanc,Jaurès,1967-12-03,,Ligne 7 bis
+Jaurès,Louis Blanc,1967-12-03,,Ligne 7 bis
+Jaurès,Bolivar,1967-12-03,,Ligne 7 bis
+Bolivar,Jaurès,1967-12-03,,Ligne 7 bis
+Danube,Botzaris,1967-12-03,,Ligne 7 bis
+Pré-Saint-Gervais,Danube,1967-12-03,,Ligne 7 bis
+Buttes Chaumont,Bolivar,1967-12-03,,Ligne 7 bis
+Bolivar,Buttes Chaumont,1967-12-03,,Ligne 7 bis
+Buttes Chaumont,Botzaris,1967-12-03,,Ligne 7 bis
+Botzaris,Buttes Chaumont,1967-12-03,,Ligne 7 bis
+Place des Fêtes,Pré-Saint-Gervais,1967-12-03,,Ligne 7 bis
+Botzaris,Place des Fêtes,1967-12-03,,Ligne 7 bis
+Porte de Vanves,Plaisance,1937-01-21,1976-11-09,Ligne 14 (ancienne)
+Plaisance,Porte de Vanves,1937-01-21,1976-11-09,Ligne 14 (ancienne)
+Plaisance,Pernety,1937-01-21,1976-11-09,Ligne 14 (ancienne)
+Pernety,Plaisance,1937-01-21,1976-11-09,Ligne 14 (ancienne)
+Pernety,Gaîté,1937-01-21,1976-11-09,Ligne 14 (ancienne)
+Gaîté,Pernety,1937-01-21,1976-11-09,Ligne 14 (ancienne)
+Gaîté,Avenue du Maine,1937-01-21,1976-11-09,Ligne 14 (ancienne)
+Avenue du Maine,Gaîté,1937-01-21,1976-11-09,Ligne 14 (ancienne)
+Avenue du Maine,Duroc,1937-07-27,1976-11-09,Ligne 14 (ancienne)
+Duroc,Avenue du Maine,1937-07-27,1976-11-09,Ligne 14 (ancienne)
+Invalides,Varenne,1937-07-27,1939-09-03,Ligne 14 (ancienne)
+Varenne,Invalides,1937-07-27,1939-09-03,Ligne 14 (ancienne)
+Varenne,Saint-François-Xavier,1937-07-27,1939-09-03,Ligne 14 (ancienne)
+Saint-François-Xavier,Varenne,1937-07-27,1939-09-03,Ligne 14 (ancienne)
+Saint-François-Xavier,Duroc,1937-07-27,1976-11-09,Ligne 14 (ancienne)
+Duroc,Saint-François-Xavier,1937-07-27,1976-11-09,Ligne 14 (ancienne)
+Invalides,Saint-François-Xavier,1939-09-03,1962-12-24,Ligne 14 (ancienne)
+Saint-François-Xavier,Invalides,1939-09-03,1962-12-24,Ligne 14 (ancienne)
+Invalides,Varenne,1962-12-24,1976-11-09,Ligne 14 (ancienne)
+Varenne,Invalides,1962-12-24,1976-11-09,Ligne 14 (ancienne)
+Varenne,Saint-François-Xavier,1962-12-24,1976-11-09,Ligne 14 (ancienne)
+Saint-François-Xavier,Varenne,1962-12-24,1976-11-09,Ligne 14 (ancienne)
+Marbeuf,Rond-point des Champs-Élysées,1942-10-06,,Couloirs
+Rond-point des Champs-Élysées,Marbeuf,1942-10-06,,Couloirs
+Châtelet,Pont Notre-Dame,1934-04-15,,Couloirs
+Pont Notre-Dame,Châtelet,1934-04-15,,Couloirs
+Châtelet,Les Halles,1977-12-09,,Couloirs
+Les Halles,Châtelet,1977-12-09,,Couloirs
+Montparnasse,Avenue du Maine,1937-01-31,,Couloirs
+Avenue du Maine,Montparnasse,1937-01-31,,Couloirs
+Poissonniers,Marcadet,1931-08-25,,Couloirs
+Marcadet,Poissonniers,1931-08-25,,Couloirs
+Saint-Augustin,Saint-Lazare,2003-12-16,,Couloirs
+Saint-Lazare,Saint-Augustin,2003-12-16,,Couloirs
+Place des Fêtes,Porte des Lilas,1921-11-27,1939-09-03,Voie des Fêtes et voie navette
+Porte des Lilas,Pré-Saint-Gervais,1921-11-27,1939-09-03,Voie des Fêtes et voie navette

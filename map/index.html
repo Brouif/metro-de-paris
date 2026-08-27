@@ -1,0 +1,397 @@
+<!-- 
+
+    Adapted from Mike Bostock at bl.ocks.org
+    https://bl.ocks.org/mbostock/4060606
+
+    Adapted from John Walley at bl.ocks.org
+    https://bl.ocks.org/johnwalley/9b6d8af7a209b95c5b9dff99073db420
+
+ -->
+
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Metro de Paris</title>
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <!-- jQuery UI CSS -->
+    <!-- jQuery<link rel="stylesheet" href="css/jquery-ui.min.css"> -->
+    <!-- jQuery<link rel="stylesheet" href="css/jquery-ui.structure.min.css"> -->
+    <!-- jQuery<link rel="stylesheet" href="css/jquery-ui.theme.min.css"> -->
+    <!-- Custom styling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+  <header>
+    <h1 class="text">Chronologie du métro de Paris</h1>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1"><p id="play"></p>
+        <button id="play-button">Play</button>
+      </div>
+      <div class="col-md-11">
+        <div id="slider-time"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1" id="map_info"> 
+          <div class="col-sd">
+            <h2> 
+              <p class="text" id="value-time"></p> 
+            </h2>
+          </div>
+          <div class="col-sd">
+            <div id="legend-box"> </div>
+          </div>
+      </div>
+      <div class="col-md-11" id="map-area">
+      </div>  
+  </div>
+</div>
+</div>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+<script src="https://unpkg.com/d3-simple-slider"></script>
+  <!-- External JS libraries -->
+<!-- <script src="js/jquery.min.js"></script> -->
+<!-- <script src="js/jquery-ui.min.js"></script> -->
+<!-- <script src="js/bootstrap.min.js"></script> -->
+<!-- <script src="js/d3.min.js"></script> -->
+<script>
+
+    var margin = {top:25, right:25, bottom:0, left:20},
+        width = 800 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+
+    var step = 1000 * 60 * 60 * 24 * 365.25
+    var moving = false
+
+    var mapCenter = [2.33, 48.865]
+    var ininitalScale = 200000
+    var scaleFactor = 1
+    var legendRectSize = 18
+    var legendSpacing = 4
+
+    var formatDate = d3.timeFormat("%Y")
+    var formatDateMap = d3.timeFormat("%Y-%m-%d")
+    var parseDate = d3.timeParse("%m/%d/%y");
+
+    var startDate = new Date("1899-01-01"),
+        endDate = new Date("2020-04-01");
+
+    x = d3.scaleTime()
+        .domain([startDate, endDate])
+    
+    // slider
+    var sliderTime = d3
+      .sliderBottom(x)
+      .step(step)
+      .width(750)
+      .ticks(10)
+      .tickFormat(formatDate)
+      .displayFormat(formatDate)
+      .default(startDate)
+      .on('onchange', function(d){
+        d3.select('p#value-time').text(formatDate(d));
+        d3.selectAll('.station').remove();
+        d3.selectAll('.ligne').remove();
+        d3.selectAll('.legend').remove();
+        update();
+        gMap.selectAll('path').attr('transform', transform)
+        currentDate = sliderTime.value()
+      });
+
+    var gTime = d3
+      .select('#slider-time')
+      .append('svg')
+      .attr('width', 750 + margin.left + margin.right)
+      .attr('height', 60)
+      .append('g')
+      .attr('transform', 'translate(15,15)')
+      .attr("id", "date");
+
+    gTime.call(sliderTime);
+
+    var currentDate = new sliderTime.value()
+
+    d3.select('p#value-time')
+      .text(formatDate(sliderTime.value()))
+    
+    var playButton = d3.select("#play-button");
+
+    var svgMap = d3.select("#map-area").append('svg')
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+    var gMap = svgMap.append("g");
+
+    var svgLegend = d3.select("#legend-box").append('svg')
+        .attr("width", 200 + margin.top + margin.bottom)
+        .attr("height", height + margin.top + margin.bottom)
+    gLegend = svgLegend.append("g");
+
+    var projection = d3.geoMercator()
+      .center(mapCenter)
+      .scale(ininitalScale)
+      .translate([ width/2, height/2 ])
+      ;
+    var geoGenerator = d3.geoPath().projection(projection)
+
+    // Tooltip
+    var tooltip = d3.select("body").append("div") 
+      .attr("class", "tooltip")       
+      .style("opacity", 0)
+
+    // Zoom 
+    var zoom = d3.zoom()
+      .scaleExtent([0.5, 8])
+      .on('zoom', function() {
+          gMap.selectAll('path').attr('transform', d3.event.transform)
+          transform = d3.event.transform
+    });
+    svgMap.call(zoom)
+
+    var transform = d3.selectAll('path').attr('transform')
+
+    d3.json("../data/seine.geojson").then(function(data){
+      var seine = gMap
+        .selectAll(".seine")
+        .data(data.features)
+        .enter()
+        .append("path")
+        .attr('class', 'seine')
+        .attr("d", d3.geoPath().projection(projection))
+        .style('fill', 'grey')
+        .style('stroke-width', 0)
+        .style('fill-opacity', 0.3)
+    });
+
+    var promises = [d3.json("../data/stations_historiques.geojson"),
+                    d3.json("../data/lignes_historiques.geojson")
+                    ];
+    var stations_lignes = Promise.all(promises)
+
+    stations_lignes.then(function(data){
+      map_data = data
+
+      playButton
+        .on("click", function() {
+        currentDate = sliderTime.value()
+        var button = d3.select(this);
+        if (button.text() == "Pause") {
+          moving = false;
+          clearInterval(timer);
+          timer = 0;
+          button.text("Play");
+          console.log(moving)
+        } else {
+          moving = true;
+          timer = setInterval(move_step, 250);
+          button.text("Pause");
+          console.log(moving)
+        }
+      })
+
+      update()
+    });
+
+    function move_step(){
+      currentDate.setDate(currentDate.getDate() + 365)
+      console.log(currentDate)
+      sliderTime.value(currentDate)
+      if (currentDate >= endDate) {
+        moving = false
+        button.text("Pause");
+        console.log(moving)
+      }
+    }
+
+    function load_lignes(data){
+      var lignes = gMap
+        .selectAll(".ligne")
+        .data(data.features)
+        .enter()
+        .append("path")
+        .attr("d", geoGenerator)
+        .attr('class', 'ligne')
+    }
+
+    function draw_lignes(ref_date){
+      d3.selectAll(".ligne")
+        .filter(function(d){
+          return (d["properties"]["end_date"]>ref_date) & (d["properties"]["start_date"]<=ref_date) 
+        })
+        .style('stroke', function(d){ return d["properties"]["couleur"]})
+        .style('stroke-width', 2.5)
+    }
+
+    function load_stations(data){
+      var stations = gMap
+        .selectAll(".station")
+        .data(data.features)
+        .enter()
+        .append("path")
+        .attr('class', 'station')  
+    }
+
+    function draw_stations(ref_date){
+      d3.selectAll(".station")
+        .filter(function(d){
+          return (d["properties"]["end_date"]>ref_date) & (d["properties"]["start_date"]<=ref_date) 
+        })
+        .attr("d", geoGenerator.pointRadius(3))
+        .style("fill", function(d){ return d["properties"]["couleur"]}) 
+    }
+
+    function load_legend(data){
+      var legend = gLegend
+        .selectAll(".legend")
+        .data(data.features)
+        .enter()
+        .filter(function(d){return d["properties"]["ligne"] != "Couloirs"})
+        .append("g")
+        .attr('class', 'legend')
+    }
+
+    function draw_legend(ref_date){
+      var legend = d3.selectAll(".legend")
+        .filter(function(d){
+          return (d["properties"]["end_date"]>ref_date) & (d["properties"]["start_date"]<=ref_date) 
+        })
+        .attr('transform', function(d, i) {                     
+            var _height = legendRectSize + legendSpacing;          
+            var _offset =  _height * 20 / 2;     
+            var horz = 10;                       
+            var vert = i * _height + 10;                       
+            return 'translate(' + horz + ',' + vert + ')';        
+        })
+      
+      legend
+        .append('rect')                                    
+        .attr('width', legendRectSize)                          
+        .attr('height', legendRectSize)                         
+        .style('fill', function(d){ return d["properties"]["couleur"]})                                   
+        .style('stroke', function(d){ return d["properties"]["couleur"]});  
+
+      legend
+        .append('text')                                    
+        .attr('x', legendRectSize + legendSpacing)              
+        .attr('y', legendRectSize - legendSpacing)              
+        .text(function(d){ return d["properties"]["ligne"]})
+        .on("mouseover", function(d){
+          d3.select(this).style("fill", "blue")
+        })
+        .on("mouseout", function(d){
+          d3.select(this).style("fill", "black")
+        })
+    }
+
+    function mouseover_lignes(){
+      d3.selectAll(".ligne")
+        .on("mouseover", function(d){
+            var ligne = d["properties"]["ligne"]
+            show_tooltip_on_mouseover(ligne); 
+            d3.selectAll(".ligne").style("opacity", 0.1);
+            d3.select(this).style('opacity', 1);
+            
+            d3.selectAll(".station")
+              .filter(function(e){return ! e["properties"]["lignes"].includes(ligne)})
+              .style("fill-opacity", 0.1);
+
+            d3.selectAll(".legend")
+              .filter(function(e){return ligne == e["properties"]["ligne"]})
+              .style("fill", "blue")
+          })
+        .on("mouseout", function(d){
+            hide_tooltip_on_mouseout(d);
+            d3.selectAll(".ligne").style("opacity", 1);
+            d3.selectAll(".station").style("fill-opacity", 1);
+            d3.selectAll(".legend").style("fill", "black");
+          });
+    }
+
+    function mouseover_stations(){
+      d3.selectAll(".station")
+        .on("mouseover", function(d){
+          var station_lignes = d["properties"]["lignes"];
+          show_tooltip_on_mouseover(d["properties"]['nom']);
+          d3.selectAll(".station")
+            .filter(function(e){return ! e["properties"]["lignes"].some(r => station_lignes.includes(r))})
+            .style("fill-opacity", 0.1);
+          d3.selectAll(".ligne")
+            .filter(function(e){return ! station_lignes.includes(e["properties"]["ligne"])})
+            .style("opacity", 0.1);
+          d3.selectAll(".legend")
+            .filter(function(e){return station_lignes.includes(e["properties"]["ligne"])})
+            .style("fill", "blue")
+        })
+        .on("mouseout", function(d){
+          hide_tooltip_on_mouseout(d);
+          d3.selectAll(".station").style("fill-opacity", 1);
+          d3.selectAll(".ligne").style("opacity", 1);
+          d3.selectAll(".legend").style("fill", "black")
+        })
+    }
+
+    function mouseover_legend(){
+      d3.selectAll('.legend') 
+        .on("mouseover", function(d){
+            var ligne = d["properties"]["ligne"]
+            d3.selectAll(".ligne")
+              .filter(function(e){return e["properties"]["ligne"] != ligne})
+              .style("opacity", 0.1);
+            d3.selectAll(".station")
+              .filter(function(e){return ! e["properties"]["lignes"].includes(ligne)})
+              .style("fill-opacity", 0.1);
+          })
+        .on("mouseout", function(d){
+            d3.selectAll(".ligne").style("opacity", 1);
+            d3.selectAll(".station").style("fill-opacity", 1);
+          }); 
+    }
+
+    function show_tooltip_on_mouseover(d){
+      tooltip.transition()    
+            .duration(100)    
+            .style("opacity", .9);    
+      tooltip.html(d)  
+            .style("left", (d3.event.pageX) + "px")   
+            .style("top", (d3.event.pageY - 28) + "px")
+    }
+
+    function hide_tooltip_on_mouseout(d){
+      tooltip.transition()    
+            .duration(300)    
+            .style("opacity", 0)
+    }
+
+    function update(){
+
+      var ref_date = formatDateMap(sliderTime.value())
+
+      load_lignes(map_data[1])
+      draw_lignes(ref_date)
+      mouseover_lignes()
+
+      load_stations(map_data[0])
+      draw_stations(ref_date)
+      mouseover_stations()
+
+      load_legend(map_data[1])
+      draw_legend(ref_date)
+      mouseover_legend()
+      
+    }
+
+</script>  
+
+
+</body>

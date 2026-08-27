@@ -3,8 +3,9 @@
 The bundled data comes from four sources under three different sets of terms.
 None of them is affected by the project's MIT licence, which covers code only.
 
-**Read this before republishing the data.** Two of the sources carry share-alike
-obligations, and one has terms that have not been confirmed.
+**Read this before republishing the data.** Every source carries a share-alike
+obligation, under one of two incompatible regimes — CC BY-SA for the history,
+ODbL for all of the geography.
 
 ## Per file
 
@@ -26,18 +27,12 @@ share-alike obligation is real and applies to anything derived from it.
 The Seine, the Marne, the canals, and the lakes in both Bois. Built from
 `data/raw_data/PLAN_EAU.kml` by `tools/build_context.py`.
 
-- **Source:** **Apur** (Atelier Parisien d'Urbanisme), dataset *PLAN D'EAU* —
-  the hydrographic network of Greater Paris and Île-de-France.
-  <https://opendata.apur.org/maps/plan-eau>
-- **Licence:** ⚠️ **not confirmed**
-
-Apur's geocatalogue names them as the data owner but does not identify a
-licence, stating only *"restriction induite par l'existence d'une licence"*,
-with copyright and moral rights listed as access constraints.
-
-Attribution to Apur is safe to state and is made in-app. **Redistribution terms
-are unconfirmed** — if this app is deployed publicly, confirm them with
-`data@apur.org` first. This is the one open item in the project's licensing.
+- **Source:** **Apur** (Atelier Parisien d'Urbanisme), dataset *PLAN EAU* —
+  the hydrographic network of Île-de-France.
+  <https://opendata.apur.org/datasets/5e20951f1b7148d48503dceb480f7f6f_0>
+- **Licence:** **ODbL 1.0**, confirmed from Apur's own dataset metadata
+  (`license: ODbL-1.0`)
+- **Obligations:** attribution, and share-alike on derived databases
 
 *(An earlier version of the README credited this layer to Ville de Paris. That
 was wrong: the file spans départements 75–95, and its `C_DEP` + `L_EAU` schema

@@ -194,10 +194,10 @@ Map and slider approach adapted from Mike Bostock and John Walley.
 - **Station and line history** — scraped from
   [fr.wikipedia.org](https://fr.wikipedia.org/wiki/Liste_des_stations_du_métro_de_Paris)
   (see `data_set_creation/`). **CC BY-SA**, share-alike applies.
-- **Water** — [Apur](https://opendata.apur.org/maps/plan-eau), *Plan d'eau*.
-  ⚠️ Reuse terms unconfirmed; see [DATA-LICENSES.md](DATA-LICENSES.md) before
-  deploying publicly. *(Earlier versions of this file credited Ville de Paris.
-  That was wrong — the dataset is Apur's and covers all of Île-de-France.)*
+- **Water** — [Apur](https://opendata.apur.org/datasets/5e20951f1b7148d48503dceb480f7f6f_0),
+  *PLAN EAU* — **ODbL 1.0**. *(Earlier versions of this file credited Ville de
+  Paris. That was wrong — the dataset is Apur's and covers all of
+  Île-de-France.)*
 - **Parks** — Ville de Paris `espaces_verts` (**ODbL**) plus
   © OpenStreetMap contributors (**ODbL**) for Luxembourg and the Tuileries.
 - **Software** — D3 (ISC), Archivo (SIL OFL 1.1).

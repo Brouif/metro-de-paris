@@ -45,8 +45,10 @@ window.METRO_I18N = {
       "Partage dans les mêmes conditions.</p>" +
 
       "<p><b>Cours d'eau et canaux</b><br>" +
-      "<a href='https://opendata.apur.org/maps/plan-eau' target='_blank' rel='noopener'>Apur</a>, " +
-      "jeu de données <i>Plan d'eau</i>. Conditions de réutilisation non confirmées.</p>" +
+      "<a href='https://opendata.apur.org/datasets/5e20951f1b7148d48503dceb480f7f6f_0' " +
+      "target='_blank' rel='noopener'>Apur</a>, jeu de données <i>Plan eau</i> — " +
+      "<a href='https://opendatacommons.org/licenses/odbl/1-0/' " +
+      "target='_blank' rel='noopener'>ODbL&nbsp;1.0</a>.</p>" +
 
       "<p><b>Parcs et jardins</b><br>" +
       "Ville de Paris, <i>espaces verts</i> " +
@@ -110,8 +112,10 @@ window.METRO_I18N = {
       "target='_blank' rel='noopener'>CC BY-SA</a>. Share-alike applies.</p>" +
 
       "<p><b>Rivers and canals</b><br>" +
-      "<a href='https://opendata.apur.org/maps/plan-eau' target='_blank' rel='noopener'>Apur</a>, " +
-      "<i>Plan d'eau</i> dataset. Reuse terms not confirmed.</p>" +
+      "<a href='https://opendata.apur.org/datasets/5e20951f1b7148d48503dceb480f7f6f_0' " +
+      "target='_blank' rel='noopener'>Apur</a>, <i>Plan eau</i> dataset — " +
+      "<a href='https://opendatacommons.org/licenses/odbl/1-0/' " +
+      "target='_blank' rel='noopener'>ODbL&nbsp;1.0</a>.</p>" +
 
       "<p><b>Parks and gardens</b><br>" +
       "Ville de Paris, <i>espaces verts</i> " +

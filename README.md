@@ -31,7 +31,8 @@ data/                 source GeoJSON, the editable source of truth
 tools/build_data.py     data/*.geojson  ->  app/js/data.js
 tools/build_context.py  raw water + park sources -> data/{water,parks}.geojson
 tools/serve.py          no-cache dev server for app/
-map/                    the original 2020 D3 v5 version, kept for reference
+data_set_creation/      how the historical data was built — see its README
+archive/                hand-edited intermediates from that pipeline
 ```
 
 ## Running it
@@ -193,7 +194,8 @@ Map and slider approach adapted from Mike Bostock and John Walley.
 
 - **Station and line history** — scraped from
   [fr.wikipedia.org](https://fr.wikipedia.org/wiki/Liste_des_stations_du_métro_de_Paris)
-  (see `data_set_creation/`). **CC BY-SA**, share-alike applies.
+  (see [`data_set_creation/`](data_set_creation/README.md)). **CC BY-SA**,
+  share-alike applies.
 - **Water** — [Apur](https://opendata.apur.org/datasets/5e20951f1b7148d48503dceb480f7f6f_0),
   *PLAN EAU* — **ODbL 1.0**. *(Earlier versions of this file credited Ville de
   Paris. That was wrong — the dataset is Apur's and covers all of

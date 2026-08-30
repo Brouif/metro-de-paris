@@ -146,8 +146,9 @@ def build(lines_src, stations_src):
         colors.setdefault(props["ligne"], props["couleur"])
     colors.update({k: v for k, v in HISTORICAL_COLOURS.items() if k in colors})
 
-    # Every feature that is still open carries the date the dataset was built as
-    # a sentinel end_date, which is normalised to end=None, i.e. "still open".
+    # Every feature that is still open carries the same sentinel end_date, which
+    # is normalised to end=None, i.e. "still open". The notebook puts it one day
+    # past the last opening in the data, so it is also where the timeline ends.
     # The non-numeric guard below is left in for a literal "NaT" the 2020 build
     # produced for Victor Hugo's pre-1931 site; the 2026 rebuild dates it
     # properly, so nothing in the current data reaches it.
@@ -169,6 +170,10 @@ def build(lines_src, stations_src):
             "line": props["ligne"],
             "start": props["start_date"],
             "end": end_of(props["end_date"]),
+            # A projection rather than a record: track that has not been built.
+            # It comes from the source files, not from comparing dates to the
+            # clock, so a line stays projected until someone says otherwise.
+            "planned": bool(props.get("projet")),
             "geometry": {"type": "MultiLineString", "coordinates": segments},
         })
 
@@ -186,6 +191,13 @@ def build(lines_src, stations_src):
     for feature in stations_src["features"]:
         props = feature["properties"]
         lineage.setdefault(props["nom de référence"], []).append(props)
+
+    # When a station's record was cut short only because its line set changed —
+    # Maison Blanche in 2024, Pont de Sèvres when line 15 arrives — the record's
+    # own start date is not when the station appeared. The tooltip needs the
+    # lineage's first date for that, or a station standing since 1934 reports
+    # itself as dating from 2027.
+    first_seen = {k: min(p["start_date"] for p in g) for k, g in lineage.items()}
 
     current_name = {}
     for key, group in lineage.items():
@@ -228,7 +240,11 @@ def build(lines_src, stations_src):
             "lines": props["lignes"],
             "color": colour,
             "interchange": colour == INTERCHANGE,
+            "planned": bool(props.get("projet")),
             "start": props["start_date"],
+            # When this station first appeared, as opposed to when this record
+            # of it starts. Only differs where a later record was split off.
+            "since": first_seen[props["nom de référence"]],
             "end": end_of(props["end_date"]),
             "lon": round(lon, PRECISION),
             "lat": round(lat, PRECISION),
@@ -264,11 +280,13 @@ def main():
         fh.write(body)
         fh.write(";\n")
 
-    print(f"  lines:    {len(payload['lines'])}")
+    print(f"  lines:    {len(payload['lines'])} "
+          f"({sum(1 for l in payload['lines'] if l['planned'])} planned)")
     print(f"  stations: {len(payload['stations'])} "
           f"({sum(1 for s in payload['stations'] if s['interchange'])} interchange, "
           f"{sum(1 for s in payload['stations'] if s['now'])} pre-rename, "
-          f"{sum(1 for s in payload['stations'] if s['was'])} with former names)")
+          f"{sum(1 for s in payload['stations'] if s['was'])} with former names, "
+          f"{sum(1 for s in payload['stations'] if s['planned'])} planned)")
     print(f"  colors:   {len(payload['colors'])}")
     print(f"  span:     {payload['meta']['first']} -> {payload['meta']['last']}")
     print(f"  wrote:    {os.path.relpath(OUT, ROOT)} "

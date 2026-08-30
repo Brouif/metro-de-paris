@@ -27,6 +27,10 @@
   var domainStart = new Date(1900, 0, 1);
   var domainEnd = iso2date(DATA.meta.last);
   var domainSpan = domainEnd - domainStart;
+  // Where the record stops and the projection starts. The dataset was built on
+  // this day, so everything after it is a plan rather than something that
+  // happened, whatever the planned features' own dates say.
+  var todayIso = DATA.meta.generated;
   var firstYear = domainStart.getFullYear();
   var lastYear = domainEnd.getFullYear();
 
@@ -115,7 +119,12 @@
 
   function period(f) {
     var from = f.start.slice(0, 4);
-    return f.end === null ? fmt("tip.since", from)
+    // "depuis 2027" would state a projection as fact, so planned features get
+    // their own phrasing rather than the historical one.
+    if (f.planned) return fmt("tip.planned", from);
+    // A still-open record dates from the station, not from the record: the
+    // two differ wherever a record was split off because the line set moved.
+    return f.end === null ? fmt("tip.since", (f.since || f.start).slice(0, 4))
                           : fmt("tip.range", from, f.end.slice(0, 4));
   }
 
@@ -128,6 +137,10 @@
   var tooltipEl = document.getElementById("tooltip");
   var scrubEl = document.getElementById("scrubber");
   var fillEl = document.getElementById("fill");
+  var futureEl = document.getElementById("future");
+  var todayEl = document.getElementById("today");
+  var yearFlagEl = document.getElementById("year-flag");
+  var legendNoteEl = document.getElementById("legend-note");
   var handleEl = document.getElementById("handle");
   var playBtn = document.getElementById("play");
   var playIcon = document.getElementById("play-icon");
@@ -167,7 +180,11 @@
     if (casingIsDark === darkMedia.matches) return;
     casingIsDark = darkMedia.matches;
     casingNodes.attr("stroke", function (d) { return casingFor(DATA.colors[d.line]); });
-    stationNodes.attr("stroke", function (d) { return casingFor(d.color); });
+    // A planned station is drawn hollow, so the ring is the only thing carrying
+    // its colour: it takes the colour itself rather than the casing shade.
+    stationNodes.attr("stroke", function (d) {
+      return d.planned ? d.color : casingFor(d.color);
+    });
   }
 
   darkMedia.addEventListener("change", syncCasings);
@@ -183,14 +200,27 @@
 
   // Fit to the network rather than to the context layers, which come from
   // départment-wide datasets and reach well past Paris.
+  //
+  // Projected track is left out of the fit as well. Including it would pull
+  // Saclay and Chelles into frame and shrink 126 years of built network to
+  // about 60% at every year, to make room for track nobody has ridden. The
+  // planned lines run off the edges instead; the zoom floor is what lets you
+  // pull back far enough to see where they go.
   var fitTarget = {
     type: "FeatureCollection",
-    features: DATA.lines.map(function (l) {
-      return { type: "Feature", geometry: l.geometry, properties: {} };
-    })
+    features: DATA.lines.filter(function (l) { return !l.planned; })
+      .map(function (l) {
+        return { type: "Feature", geometry: l.geometry, properties: {} };
+      })
   };
 
   // ------------------------------------------------------- build once
+
+  // Whether a feature is a projection never changes, so it is baked into the
+  // class at join time; render() only ever toggles .hidden and .dim.
+  function classFor(base) {
+    return function (d) { return d.planned ? base + " planned" : base; };
+  }
 
   var parksPath = gParks.append("path").attr("class", "parks");
   var waterPath = gWater.append("path").attr("class", "water");
@@ -198,21 +228,24 @@
   var casingNodes = gCasing.selectAll("path")
     .data(DATA.lines)
     .join("path")
-    .attr("class", "casing");
+    .attr("class", classFor("casing"));
 
   var lineNodes = gLines.selectAll("path")
     .data(DATA.lines)
     .join("path")
-    .attr("class", "line")
+    .attr("class", classFor("line"))
     .attr("stroke", function (d) { return DATA.colors[d.line]; })
     .on("pointerenter", function (event, d) {
       if (event.pointerType === "touch") return;
       setHighlight(new Set([d.line]));
-      // Name only. Each record is a geometry version rather than the line, so
-      // its dates describe the current shape, not the line's life: line 1's
-      // most recent record starts in 1992 at the La Défense extension, which
-      // read as "since 1992" for a line that opened in 1900.
-      showTooltip(event, "<div class='t-name'>" + esc(lineLabel(d.line)) + "</div>");
+      // Name only, plus the projected note where there is one. Each record is a
+      // geometry version rather than the line, so its dates describe the current
+      // shape, not the line's life: line 1's most recent record starts in 1992 at
+      // the La Défense extension, which read as "since 1992" for a line that
+      // opened in 1900. A projected line has no such history to misreport.
+      showTooltip(event, "<div class='t-name'>" + esc(lineLabel(d.line)) + "</div>" +
+        (d.planned ? "<div class='t-meta'>" + esc(fmt("tip.planned", d.start.slice(0, 4))) +
+                     "</div>" : ""));
     })
     .on("pointermove", moveTooltip)
     .on("pointerleave", clearHover)
@@ -224,7 +257,7 @@
   var stationNodes = gStations.selectAll("circle")
     .data(DATA.stations)
     .join("circle")
-    .attr("class", "station")
+    .attr("class", classFor("station"))
     .attr("fill", function (d) { return d.color; })
     .on("pointerenter", function (event, d) {
       if (event.pointerType === "touch") return;
@@ -292,6 +325,7 @@
 
     applyZoomScale();
     buildTicks(w);
+    positionEra();
     positionScrubber();
   }
 
@@ -323,6 +357,9 @@
     }
 
     yearEl.textContent = state.date.getFullYear();
+    // The one signal that cannot be missed at a glance: past today, the year
+    // itself is labelled as a projection.
+    yearFlagEl.classList.toggle("on", ref > todayIso);
     scrubEl.setAttribute("aria-valuenow", state.date.getFullYear());
     positionScrubber();
     buildLegend(ref);
@@ -338,12 +375,14 @@
     // platform cluster (Châtelet has three, Franklin D. Roosevelt four), so the
     // legend counts distinct station names rather than features.
     var seen = Object.create(null);
+    var planned = Object.create(null);
     var i, d, j, line;
 
     for (i = 0; i < DATA.lines.length; i++) {
       d = DATA.lines[i];
       if (d.line !== NOT_A_LINE && isOpen(d, ref)) {
         seen[d.line] = seen[d.line] || Object.create(null);
+        if (d.planned) planned[d.line] = 1;
       }
     }
     for (i = 0; i < DATA.stations.length; i++) {
@@ -360,7 +399,10 @@
     for (i = 0; i < names.length; i++) {
       counts[names[i]] = Object.keys(seen[names[i]]).length;
     }
-    var key = names.join("|");
+    legendNoteEl.classList.toggle("on", names.some(function (n) { return planned[n]; }));
+    // Planned-ness is part of the key: a chip that changes from solid to hollow
+    // is a different chip, even though the set of line names has not moved.
+    var key = names.map(function (n) { return planned[n] ? n + "*" : n; }).join("|");
     if (key === legendState) {           // same set of lines: only counts moved
       for (i = 0; i < names.length; i++) {
         var c = chipsEl.children[i].querySelector(".count");
@@ -373,10 +415,12 @@
     chipsEl.textContent = "";
     names.forEach(function (name) {
       var chip = document.createElement("div");
-      chip.className = "chip";
+      chip.className = planned[name] ? "chip planned" : "chip";
       chip.dataset.line = name;
       chip.innerHTML =
-        "<span class='swatch' style='background:" + DATA.colors[name] + "'></span>" +
+        (planned[name]
+          ? "<span class='swatch' style='border-color:" + DATA.colors[name] + "'></span>"
+          : "<span class='swatch' style='background:" + DATA.colors[name] + "'></span>") +
         "<span class='label'>" + esc(chipLabel(name)) + "</span>" +
         "<span class='count'>" + (counts[name] || "") + "</span>";
       chip.addEventListener("pointerenter", function () {
@@ -469,8 +513,13 @@
 
   // --------------------------------------------------------------- zoom
 
+  // The floor used to be 1: you could never pull back from the initial fit.
+  // That fit now frames the built network alone, so a floor of 1 would leave
+  // the projected termini permanently off-screen. 0.5 clears the widest of
+  // them — Saclay to Chelles needs about 0.55 — and "Reset view" still
+  // returns to the built frame.
   var zoom = d3.zoom()
-    .scaleExtent([1, 14])
+    .scaleExtent([0.5, 14])
     .on("zoom", function (event) {
       state.transform = event.transform;
       gRoot.attr("transform", event.transform);
@@ -509,6 +558,20 @@
     var x = INSET + t * scrubWidth();
     fillEl.style.width = (x - INSET) + "px";
     handleEl.style.left = x + "px";
+  }
+
+  // The stretch of track past today, and the rule marking today itself. Both
+  // depend on the width rather than on the handle, so this runs on layout
+  // rather than on every frame.
+  function positionEra() {
+    var t = (iso2date(todayIso) - domainStart) / domainSpan;
+    var projected = t > 0 && t < 1;
+    futureEl.classList.toggle("on", projected);
+    todayEl.classList.toggle("on", projected);
+    if (!projected) return;
+    var x = INSET + t * scrubWidth();
+    futureEl.style.left = x + "px";
+    todayEl.style.left = x + "px";
   }
 
   function buildTicks(width) {

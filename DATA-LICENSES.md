@@ -23,6 +23,14 @@ Station and line history — names, opening and closing dates, geometry.
 - **Obligations:** attribution, and **share-alike** — a derivative of this data
   must be released under the same terms
 
+The files also hold a **projection**: five Grand Paris Express sections that
+have not opened, carried on the `projet` property and sourced the same way —
+dates from the per-line articles, coordinates from the `Modèle:Grand Paris
+Express/*` station tables. Same licence, different epistemic status: those
+features record what is announced, not what exists, and the announced dates
+have moved before. They live in `data/raw_data/futur_*.csv` upstream, kept
+apart from the historical record on purpose.
+
 This is the project's oldest data and, until now, the least documented. The
 share-alike obligation is real and applies to anything derived from it.
 

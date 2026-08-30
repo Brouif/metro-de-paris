@@ -1,7 +1,8 @@
 # Chronologie du métro de Paris
 
-An interactive map of the Paris metro's growth from 1900 to 2026. Drag the
-timeline or press play, and the network builds itself year by year. Hovering a
+An interactive map of the Paris metro's growth from 1900 to 2026, and of the
+lines due to open by 2028. Drag the timeline or press play, and the network
+builds itself year by year. Hovering a
 line, a station or a legend entry highlights it across all three. The river,
 canals and main parks are drawn underneath for orientation.
 
@@ -106,6 +107,11 @@ sources change, which is rare.
 Each feature carries `start` and `end`; `end: null` means "still open". A
 feature is drawn for a given date when `start <= date && (end === null || end > date)`.
 
+It also carries `planned`, which separates **record** from **projection**:
+track that has not been built. Planned features are drawn dashed, with hollow
+stations, and stay that way at every year — they never resolve into solid
+lines, because they never happened. See [Projections](#projections).
+
 ### Extending the timeline
 
 The two history GeoJSONs are **generated**, not hand-edited. Add the new
@@ -116,14 +122,25 @@ each link, since a station's line set is read from the rows where it appears as
 followed by `tools/build_data.py`. See
 [data_set_creation/README.md](data_set_creation/README.md) for how to run it.
 
-Leave `end_date` / `Fermeture` empty for anything still open: the notebook
-fills it with the day it runs, and `build_data.py` derives that sentinel back
-out of the data rather than hard-coding a date. Nothing in the app or the
-scripts needs touching to move the end of the timeline.
+Lines that have not opened go in `data/raw_data/futur_station.csv` and
+`data/raw_data/futur_correspondances.csv` instead — same two schemas, read by
+the same notebook, flagged `projet` on the way through. **The day a line opens,
+move its rows into the `evolution_*` pair**: that promotion is the whole point
+of the split, and nothing else marks a projection as having come true.
 
-The data currently runs to **29 August 2026**. The last event in it is the
-opening of Villejuif - Gustave Roussy on line 14, 18 January 2025; no Grand
-Paris Express line has opened yet.
+Leave `end_date` / `Fermeture` empty for anything still open. The notebook
+closes those rows on a single sentinel — one day past the last opening in the
+data, or the day it runs, whichever is later — and `build_data.py` derives that
+sentinel back out rather than hard-coding a date. Nothing in the app or the
+scripts needs touching to move either end of the timeline.
+
+The record runs to **29 August 2026**, ending with Villejuif - Gustave Roussy
+on line 14, 18 January 2025. The projection runs to **December 2028** and holds
+the five Grand Paris Express sections already in testing: line 18 to Christ de
+Saclay, line 15 South, the first sections of lines 16 and 17, and line 16's
+completion to Noisy-Champs. The later sections — 15 West and East, 17 to
+Le Mesnil-Amelot, 18 to Versailles — are deliberately left out: their dates have
+moved repeatedly and none is in testing.
 
 ## Design system
 
@@ -155,6 +172,35 @@ away from whichever ground it sits on. `syncCasings()` checks the theme on each
 render rather than relying only on the `matchMedia` change event, since that
 event is the only thing standing between a theme switch and 740 wrongly-shaded
 strokes.
+
+### Projections
+
+The dataset now holds two different kinds of thing, and the design's job is to
+keep them apart: 126 years of **record**, and a handful of lines that are
+**projection**. Presenting a planned line in the same visual language as the
+1900 opening of line 1 would be a claim the data cannot support.
+
+So planned track is **dashed** and planned stations are **hollow rings**, at
+every year — a projection never resolves into a solid line, however far the
+scrubber travels. Dashes rather than a fade, because opacity is already spoken
+for by the hover dim: a dimmed built line and a highlighted planned one would
+come out the same grey. The distinction survives both themes and carries no
+colour information, so it holds for colour-blind readers too. The casing takes
+the same dash pattern, or it would read as a solid line under a dotted one.
+
+The timeline says it twice more. The stretch of track past today is drawn in
+the same dashed language, with a rule marking the boundary, and past it the
+year readout itself is labelled *projet* / *planned* — the one signal that
+cannot be missed at a glance. Tooltips drop "depuis 1900" for "en projet ·
+ouverture prévue en 2027".
+
+**The map is still framed on the built network alone.** Grand Paris Express
+reaches Saclay and Chelles; fitting the frame to include them would shrink the
+historic core to about 60% at every year, spending the map's whole budget on
+track nobody has ridden. The planned lines run off the edges instead, and the
+zoom floor was lowered from 1 to 0.5 — it used to be impossible to pull back
+from the initial fit — so you can zoom out to see where they go. *Reset view*
+returns to the built frame.
 
 ## Notes on the data
 

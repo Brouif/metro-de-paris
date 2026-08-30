@@ -8,7 +8,7 @@ window.METRO_I18N = {
     "html.lang": "fr",
     "doc.title": "Chronologie du métro de Paris",
     "title": "Chronologie du métro de Paris",
-    "subtitle": "L'expansion du réseau, 1900 – 2020",
+    "subtitle": "L'expansion du réseau, 1900 – 2026",
     "legend": "Lignes en service",
     "notes.title": "Noms historiques",
     "notes.body":
@@ -76,7 +76,7 @@ window.METRO_I18N = {
     "html.lang": "en",
     "doc.title": "The Paris Métro through time",
     "title": "The Paris Métro through time",
-    "subtitle": "How the network grew, 1900 – 2020",
+    "subtitle": "How the network grew, 1900 – 2026",
     "legend": "Lines in service",
     "notes.title": "Historical names",
     "notes.body":

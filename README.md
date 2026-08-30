@@ -1,6 +1,6 @@
 # Chronologie du métro de Paris
 
-An interactive map of the Paris metro's growth from 1900 to 2020. Drag the
+An interactive map of the Paris metro's growth from 1900 to 2026. Drag the
 timeline or press play, and the network builds itself year by year. Hovering a
 line, a station or a legend entry highlights it across all three. The river,
 canals and main parks are drawn underneath for orientation.
@@ -106,18 +106,24 @@ sources change, which is rare.
 Each feature carries `start` and `end`; `end: null` means "still open". A
 feature is drawn for a given date when `start <= date && (end === null || end > date)`.
 
-### Adding post-2020 lines
+### Extending the timeline
 
-Add features to `data/lignes_historiques.geojson` and
-`data/stations_historiques.geojson` using the existing property names
-(`ligne` / `lignes`, `couleur`, `start_date`, `end_date`), then re-run the
-script. Set `end_date` to the current maximum so it is recognised as open —
-`build_data.py` derives that sentinel from the data rather than hard-coding a
-date, so extending the range does not require touching the script.
+The two history GeoJSONs are **generated**, not hand-edited. Add the new
+stations to `data/raw_data/evolution_station.csv` and the new inter-station
+links to `data/raw_data/evolution_correspondances.csv` — both directions for
+each link, since a station's line set is read from the rows where it appears as
+`De` — then re-run `data_set_creation/lines and stations to json.ipynb`
+followed by `tools/build_data.py`. See
+[data_set_creation/README.md](data_set_creation/README.md) for how to run it.
 
-Still missing as of this writing: line 14 north and south extensions (2024),
-line 11 to Rosny–Bois-Perrier (2024), line 4 to Bagneux (2022), and line 12 to
-Mairie d'Aubervilliers (2022).
+Leave `end_date` / `Fermeture` empty for anything still open: the notebook
+fills it with the day it runs, and `build_data.py` derives that sentinel back
+out of the data rather than hard-coding a date. Nothing in the app or the
+scripts needs touching to move the end of the timeline.
+
+The data currently runs to **29 August 2026**. The last event in it is the
+opening of Villejuif - Gustave Roussy on line 14, 18 January 2025; no Grand
+Paris Express line has opened yet.
 
 ## Design system
 

@@ -147,8 +147,10 @@ def build(lines_src, stations_src):
     colors.update({k: v for k, v in HISTORICAL_COLOURS.items() if k in colors})
 
     # Every feature that is still open carries the date the dataset was built as
-    # a sentinel end_date; stations add a literal "NaT" for one unknown closure.
-    # Both are normalised to end=None, i.e. "still open".
+    # a sentinel end_date, which is normalised to end=None, i.e. "still open".
+    # The non-numeric guard below is left in for a literal "NaT" the 2020 build
+    # produced for Victor Hugo's pre-1931 site; the 2026 rebuild dates it
+    # properly, so nothing in the current data reaches it.
     ends = [f["properties"]["end_date"] for f in lines_src["features"]]
     ends += [f["properties"]["end_date"] for f in stations_src["features"]]
     horizon = max(e for e in ends if e[:1].isdigit())

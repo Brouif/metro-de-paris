@@ -27,6 +27,8 @@
   var domainStart = new Date(1900, 0, 1);
   var domainEnd = iso2date(DATA.meta.last);
   var domainSpan = domainEnd - domainStart;
+  var firstYear = domainStart.getFullYear();
+  var lastYear = domainEnd.getFullYear();
 
   // ---------------------------------------------------------------- i18n
 
@@ -514,7 +516,7 @@
       .forEach(function (n) { n.remove(); });
 
     var every = width < 420 ? 40 : width < 700 ? 20 : 10;
-    for (var y = 1900; y <= 2020; y += every) {
+    for (var y = firstYear; y <= lastYear; y += every) {
       var t = (new Date(y, 0, 1) - domainStart) / domainSpan;
       if (t < 0 || t > 1) continue;
       var el = document.createElement("div");
@@ -751,6 +753,11 @@
   // coalesce. layout() cannot change the size it observes, so calling it
   // straight from the callback risks no feedback loop either.
   new ResizeObserver(layout).observe(mapEl);
+
+  // aria-valuemax is the one slider bound the markup does not carry: it is
+  // wherever the data happens to end, so it is set here rather than left to
+  // rot in index.html the way it did at 2020.
+  scrubEl.setAttribute("aria-valuemax", lastYear);
 
   layout();
   applyLang();        // paints every string, then renders

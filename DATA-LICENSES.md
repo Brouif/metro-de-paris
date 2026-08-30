@@ -14,7 +14,11 @@ ODbL for all of the geography.
 Station and line history — names, opening and closing dates, geometry.
 
 - **Source:** [fr.wikipedia.org](https://fr.wikipedia.org/wiki/Liste_des_stations_du_métro_de_Paris),
-  scraped by `data_set_creation/Wikipedia scrapping.ipynb`
+  scraped by `data_set_creation/Wikipedia scrapping.ipynb` for everything up to
+  2013. The 2020–2025 openings were added in 2026 from the same encyclopedia:
+  dates from the per-line articles, coordinates from the MediaWiki
+  `prop=coordinates` API, which returns the values the 2020 scrape had already
+  captured for the stations present in both.
 - **Licence:** **CC BY-SA** (Wikipedia's text licence)
 - **Obligations:** attribution, and **share-alike** — a derivative of this data
   must be released under the same terms

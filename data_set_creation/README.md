@@ -2,12 +2,15 @@
 
 These notebooks are the provenance record for
 `data/lignes_historiques.geojson` and `data/stations_historiques.geojson`, the two
-files everything else in the project is derived from. They were run once, in 2020,
-and are kept so the origin of the data — and its **CC BY-SA** obligation, inherited
-from Wikipedia — stays auditable. See [DATA-LICENSES.md](../DATA-LICENSES.md).
+files everything else in the project is derived from. They are kept so the origin
+of the data — and its **CC BY-SA** obligation, inherited from Wikipedia — stays
+auditable. See [DATA-LICENSES.md](../DATA-LICENSES.md).
 
-They are a historical record, not maintained code. Read the caveats below before
-assuming any of it re-runs.
+The first five were run once, in 2020: a historical record, not maintained code.
+Read the caveats below before assuming any of it re-runs. **The last one,
+`lines and stations to json.ipynb`, is live** — it was re-run on 29 August 2026 to
+extend the timeline from 2013 to 2026, and is how the two GeoJSONs should be
+regenerated whenever the CSVs change.
 
 ## The chain
 
@@ -70,9 +73,37 @@ record of an approach that was tried.
 **`Lignes du metro.xlsx` and `correspondances_date_non_formatees.xlsx` were compiled
 by hand** from the line-by-line opening dates; they have no upstream script.
 
+## Re-running the final notebook
+
+Everything it needs is in the two CSVs, so it re-runs on its own. From the
+repository root:
+
+```
+python3 -m venv .venv
+.venv/bin/pip install pandas numpy geopandas shapely
+```
+
+then run the notebook from the repository root and `python3 tools/build_data.py`
+after it. Open dates are left blank in the CSVs; the notebook fills them with the
+day it runs, so **the sentinel moves every time it is re-run** and `data.js` has to
+be rebuilt from the same pass.
+
+The 2026 run was checked against the committed 2020 output first, with the
+sentinel pinned back to `2020-05-04`: all 153 line features and 587 station
+features came back identical, which is what makes the regenerated files
+trustworthy. Two things did change, both deliberate:
+
+- `lignes` on a merged interchange was built with `list(set(...))`, whose order is
+  not stable between runs. It is now `sorted(set(...))`, matching what the cell
+  above it already did, so a re-run produces the same bytes twice.
+- Victor Hugo's pre-1931 site used to come out with `end_date: "NaT"`, which the
+  app read as "still open" and drew forever. It is now closed on 1 January 1931,
+  the date already sitting in `evolution_station.csv`.
+
 ## Dependencies
 
-`pandas`, `numpy`, `geopandas`, `shapely`, `openpyxl`, and — for the scraper —
+`pandas`, `numpy`, `geopandas`, `shapely` (the 2026 run used pandas 3.0.5,
+geopandas 1.1.4 and shapely 2.1.2), `openpyxl`, and — for the scraper —
 `requests`, `beautifulsoup4`, `mwparserfromhell`. Several notebooks call
 `locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')` to parse French month names, which
 needs that locale present on the system.

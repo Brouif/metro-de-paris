@@ -146,9 +146,12 @@ def build(lines_src, stations_src):
         colors.setdefault(props["ligne"], props["couleur"])
     colors.update({k: v for k, v in HISTORICAL_COLOURS.items() if k in colors})
 
-    # Every feature that is still open carries the date the dataset was built as
-    # a sentinel end_date; stations add a literal "NaT" for one unknown closure.
-    # Both are normalised to end=None, i.e. "still open".
+    # Every feature that is still open carries the same sentinel end_date, which
+    # is normalised to end=None, i.e. "still open". The notebook puts it one day
+    # past the last opening in the data, so it is also where the timeline ends.
+    # The non-numeric guard below is left in for a literal "NaT" the 2020 build
+    # produced for Victor Hugo's pre-1931 site; the 2026 rebuild dates it
+    # properly, so nothing in the current data reaches it.
     ends = [f["properties"]["end_date"] for f in lines_src["features"]]
     ends += [f["properties"]["end_date"] for f in stations_src["features"]]
     horizon = max(e for e in ends if e[:1].isdigit())
@@ -167,6 +170,10 @@ def build(lines_src, stations_src):
             "line": props["ligne"],
             "start": props["start_date"],
             "end": end_of(props["end_date"]),
+            # A projection rather than a record: track that has not been built.
+            # It comes from the source files, not from comparing dates to the
+            # clock, so a line stays projected until someone says otherwise.
+            "planned": bool(props.get("projet")),
             "geometry": {"type": "MultiLineString", "coordinates": segments},
         })
 
@@ -184,6 +191,32 @@ def build(lines_src, stations_src):
     for feature in stations_src["features"]:
         props = feature["properties"]
         lineage.setdefault(props["nom de référence"], []).append(props)
+
+    # A record ends whenever anything about the station changes — a line arriving,
+    # the platforms moving — not only when the station closes. Reporting a
+    # record's own dates therefore invents closures: Pont de Sèvres, whose record
+    # is cut in 2027 by line 15's arrival, read as "1934–2027" as though it were
+    # about to shut, and its successor read as "depuis 2027" for a station
+    # standing since 1934.
+    #
+    # So each record also carries the span of the run it belongs to: the
+    # consecutive, contiguous records that are the same station under the same
+    # name. A rename ends a run, which is what keeps the Marbeuf records reading
+    # "1900–1942" rather than swallowing the name they were renamed to.
+    span = {}
+    for key, group in lineage.items():
+        ordered = sorted(group, key=lambda p: p["start_date"])
+        i = 0
+        while i < len(ordered):
+            j = i
+            while (j + 1 < len(ordered)
+                   and ordered[j + 1]["nom"] == ordered[i]["nom"]
+                   and ordered[j + 1]["start_date"] == ordered[j]["end_date"]):
+                j += 1
+            run = (ordered[i]["start_date"], end_of(ordered[j]["end_date"]))
+            for props in ordered[i:j + 1]:
+                span[id(props)] = run
+            i = j + 1
 
     current_name = {}
     for key, group in lineage.items():
@@ -226,7 +259,12 @@ def build(lines_src, stations_src):
             "lines": props["lignes"],
             "color": colour,
             "interchange": colour == INTERCHANGE,
+            "planned": bool(props.get("projet")),
             "start": props["start_date"],
+            # The run this record belongs to, rather than the record itself:
+            # what the tooltip should say the station's dates are.
+            "since": span[id(props)][0],
+            "until": span[id(props)][1],
             "end": end_of(props["end_date"]),
             "lon": round(lon, PRECISION),
             "lat": round(lat, PRECISION),
@@ -262,11 +300,13 @@ def main():
         fh.write(body)
         fh.write(";\n")
 
-    print(f"  lines:    {len(payload['lines'])}")
+    print(f"  lines:    {len(payload['lines'])} "
+          f"({sum(1 for l in payload['lines'] if l['planned'])} planned)")
     print(f"  stations: {len(payload['stations'])} "
           f"({sum(1 for s in payload['stations'] if s['interchange'])} interchange, "
           f"{sum(1 for s in payload['stations'] if s['now'])} pre-rename, "
-          f"{sum(1 for s in payload['stations'] if s['was'])} with former names)")
+          f"{sum(1 for s in payload['stations'] if s['was'])} with former names, "
+          f"{sum(1 for s in payload['stations'] if s['planned'])} planned)")
     print(f"  colors:   {len(payload['colors'])}")
     print(f"  span:     {payload['meta']['first']} -> {payload['meta']['last']}")
     print(f"  wrote:    {os.path.relpath(OUT, ROOT)} "

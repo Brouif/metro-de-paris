@@ -287,6 +287,10 @@ Cité,Châtelet,1910-12-10,,Ligne 4
 Châtelet,Cité,1910-12-10,,Ligne 4
 Mairie de Montrouge,Porte d'Orléans,2013-03-23,,Ligne 4
 Porte d'Orléans,Mairie de Montrouge,2013-03-23,,Ligne 4
+Mairie de Montrouge,Barbara,2022-01-13,,Ligne 4
+Barbara,Mairie de Montrouge,2022-01-13,,Ligne 4
+Barbara,Bagneux - Lucie Aubrac,2022-01-13,,Ligne 4
+Bagneux - Lucie Aubrac,Barbara,2022-01-13,,Ligne 4
 Gare d'Austerlitz,Saint-Marcel,1906-06-02,,Ligne 5
 Saint-Marcel,Gare d'Austerlitz,1906-06-02,,Ligne 5
 Saint-Marcel,Place d'Italie,1906-06-02,1906-06-06,Ligne 5
@@ -802,6 +806,18 @@ Télégraphe,Porte des Lilas,1935-04-28,,Ligne 11
 Porte des Lilas,Télégraphe,1935-04-28,,Ligne 11
 Porte des Lilas,Mairie des Lilas,1937-02-17,,Ligne 11
 Mairie des Lilas,Porte des Lilas,1937-02-17,,Ligne 11
+Mairie des Lilas,Serge Gainsbourg,2024-06-13,,Ligne 11
+Serge Gainsbourg,Mairie des Lilas,2024-06-13,,Ligne 11
+Serge Gainsbourg,Romainville - Carnot,2024-06-13,,Ligne 11
+Romainville - Carnot,Serge Gainsbourg,2024-06-13,,Ligne 11
+Romainville - Carnot,Montreuil - Hôpital,2024-06-13,,Ligne 11
+Montreuil - Hôpital,Romainville - Carnot,2024-06-13,,Ligne 11
+Montreuil - Hôpital,La Dhuys,2024-06-13,,Ligne 11
+La Dhuys,Montreuil - Hôpital,2024-06-13,,Ligne 11
+La Dhuys,Coteaux Beauclair,2024-06-13,,Ligne 11
+Coteaux Beauclair,La Dhuys,2024-06-13,,Ligne 11
+Coteaux Beauclair,Rosny - Bois-Perrier,2024-06-13,,Ligne 11
+Rosny - Bois-Perrier,Coteaux Beauclair,2024-06-13,,Ligne 11
 Notre-Dame-de-Lorette,Trinité - d'Estienne d'Orves,1910-11-05,1931-03-27,Ligne A
 Trinité - d'Estienne d'Orves,Notre-Dame-de-Lorette,1910-11-05,1931-03-27,Ligne A
 Trinité - d'Estienne d'Orves,Saint-Lazare,1910-11-05,1931-03-27,Ligne A
@@ -916,6 +932,10 @@ Rennes,Notre-Dame-des-Champs,1968-05-20,,Ligne 12
 Notre-Dame-des-Champs,Rennes,1968-05-20,,Ligne 12
 Porte de la Chapelle,Front Populaire,2012-12-18,,Ligne 12
 Front Populaire,Porte de la Chapelle,2012-12-18,,Ligne 12
+Front Populaire,Aimé Césaire,2022-05-31,,Ligne 12
+Aimé Césaire,Front Populaire,2022-05-31,,Ligne 12
+Aimé Césaire,Mairie d'Aubervilliers,2022-05-31,,Ligne 12
+Mairie d'Aubervilliers,Aimé Césaire,2022-05-31,,Ligne 12
 Saint-Lazare,Liège,1911-02-26,1931-03-27,Ligne B
 Liège,Saint-Lazare,1911-02-26,1931-03-27,Ligne B
 Liège,Place de Clichy,1911-02-26,1931-03-27,Ligne B
@@ -1014,6 +1034,34 @@ Madeleine,Saint-Lazare,2003-12-16,,Ligne 14
 Saint-Lazare,Madeleine,2003-12-16,,Ligne 14
 Bibliothèque François-Mitterrand,Olympiades,2007-06-26,,Ligne 14
 Olympiades,Bibliothèque François-Mitterrand,2007-06-26,,Ligne 14
+Saint-Lazare,Pont Cardinet,2020-12-14,,Ligne 14
+Pont Cardinet,Saint-Lazare,2020-12-14,,Ligne 14
+Pont Cardinet,Saint-Ouen,2020-12-14,2021-01-28,Ligne 14
+Saint-Ouen,Pont Cardinet,2020-12-14,2021-01-28,Ligne 14
+Saint-Ouen,Mairie de Saint-Ouen,2020-12-14,,Ligne 14
+Mairie de Saint-Ouen,Saint-Ouen,2020-12-14,,Ligne 14
+Pont Cardinet,Porte de Clichy,2021-01-28,,Ligne 14
+Porte de Clichy,Pont Cardinet,2021-01-28,,Ligne 14
+Porte de Clichy,Saint-Ouen,2021-01-28,,Ligne 14
+Saint-Ouen,Porte de Clichy,2021-01-28,,Ligne 14
+Mairie de Saint-Ouen,Saint-Denis - Pleyel,2024-06-24,,Ligne 14
+Saint-Denis - Pleyel,Mairie de Saint-Ouen,2024-06-24,,Ligne 14
+Olympiades,Maison Blanche,2024-06-24,,Ligne 14
+Maison Blanche,Olympiades,2024-06-24,,Ligne 14
+Maison Blanche,Hôpital Bicêtre,2024-06-24,,Ligne 14
+Hôpital Bicêtre,Maison Blanche,2024-06-24,,Ligne 14
+Hôpital Bicêtre,L'Haÿ-les-Roses,2024-06-24,2025-01-18,Ligne 14
+L'Haÿ-les-Roses,Hôpital Bicêtre,2024-06-24,2025-01-18,Ligne 14
+L'Haÿ-les-Roses,Chevilly-Larue,2024-06-24,,Ligne 14
+Chevilly-Larue,L'Haÿ-les-Roses,2024-06-24,,Ligne 14
+Chevilly-Larue,Thiais - Orly,2024-06-24,,Ligne 14
+Thiais - Orly,Chevilly-Larue,2024-06-24,,Ligne 14
+Thiais - Orly,Aéroport d'Orly,2024-06-24,,Ligne 14
+Aéroport d'Orly,Thiais - Orly,2024-06-24,,Ligne 14
+Hôpital Bicêtre,Villejuif - Gustave Roussy,2025-01-18,,Ligne 14
+Villejuif - Gustave Roussy,Hôpital Bicêtre,2025-01-18,,Ligne 14
+Villejuif - Gustave Roussy,L'Haÿ-les-Roses,2025-01-18,,Ligne 14
+L'Haÿ-les-Roses,Villejuif - Gustave Roussy,2025-01-18,,Ligne 14
 Gambetta,Pelleport,1971-03-27,,Ligne 3 bis
 Pelleport,Gambetta,1971-03-27,,Ligne 3 bis
 Pelleport,Saint-Fargeau,1971-03-27,,Ligne 3 bis

@@ -169,6 +169,27 @@ h1 {
   color: #fff;
 }
 
+/* The flag sits under the year rather than beside it, so turning it on never
+   shifts the year readout sideways mid-playback. */
+.year-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 4px;
+}
+
+.year-flag {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 600;
+  color: var(--faint);
+  visibility: hidden;
+  margin-top: -2px;
+}
+
+.year-flag.on { visibility: visible; }
+
 .year {
   font-variant-numeric: tabular-nums;
   font-stretch: 76%;       /* the narrow cut, from the same variable file */
@@ -176,7 +197,6 @@ h1 {
   font-weight: 700;
   letter-spacing: 0;
   min-width: 4.2ch;
-  margin-left: 4px;
 }
 
 /* The scrubber is a plain div; the track, ticks and handle are absolutely
@@ -207,6 +227,33 @@ h1 {
 
 .track { left: 9px; right: 9px; background: var(--border); }
 .fill { left: 9px; background: var(--accent); }
+
+/* Past today the timeline stops being a record. The track takes the same
+   dashed language as the planned lines on the map, drawn over the fill so
+   that scrubbing into the future does not paint it solid again. */
+.future {
+  position: absolute;
+  top: 19px;
+  height: 4px;
+  right: 9px;
+  border-radius: 2px;
+  pointer-events: none;
+  display: none;
+  background: repeating-linear-gradient(
+    90deg, var(--panel) 0 2px, transparent 2px 5px);
+}
+
+.today {
+  position: absolute;
+  top: 13px;
+  width: 1px;
+  height: 16px;
+  background: var(--faint);
+  pointer-events: none;
+  display: none;
+}
+
+.future.on, .today.on { display: block; }
 
 .tick {
   position: absolute;
@@ -330,6 +377,24 @@ main {
   flex: none;
 }
 
+/* Hollow, mirroring the hollow stations on the map. */
+.chip.planned .swatch {
+  background: none !important;
+  border: 2px solid;
+}
+
+.chip.planned .label { font-style: italic; }
+
+.legend-note {
+  display: none;
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--faint);
+}
+
+.legend-note.on { display: block; }
+
 .count {
   margin-left: auto;
   color: var(--faint);
@@ -398,6 +463,26 @@ main {
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
   pointer-events: none;
+}
+
+/* Projected track. Dashed rather than faded, because the fade is already
+   spoken for by the hover dim: a dimmed built line and a highlighted planned
+   one would be the same grey. The casing takes the same pattern, or it would
+   read as a solid line under a dotted one.
+
+   vector-effect holds the stroke width constant under zoom but not the dash
+   spacing, so the pattern is set in the same units the stroke is drawn in and
+   checked at both ends of the zoom range. */
+.line.planned, .casing.planned {
+  stroke-dasharray: 5 4;
+  stroke-linecap: butt;
+}
+
+/* A station that does not exist yet is a ring, not a dot. The fill is the
+   land tone rather than none, so the dashed line does not run through it. */
+.station.planned {
+  fill: var(--land) !important;
+  stroke-width: 1.3;
 }
 
 .hidden { opacity: 0 !important; pointer-events: none; }
@@ -480,10 +565,12 @@ main {
   }
 
   .transport { grid-area: play; }
-  .year { grid-area: year; font-size: 26px; margin-left: 0; }
+  .year-box { grid-area: year; margin-left: 0; }
+  .year { font-size: 26px; }
   /* stacked here, so the horizontal offset would only misalign it */
   .scrubber { grid-area: scrub; height: 50px; margin-left: 0; }
-  .track, .fill { top: 21px; }
+  .track, .fill, .future { top: 21px; }
+  .today { top: 15px; }
   .tick { top: 33px; }
   .handle { top: 23px; width: 20px; height: 20px; margin: -10px 0 0 -10px; }
   .speed { grid-area: speed; justify-self: start; }

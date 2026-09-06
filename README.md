@@ -1,7 +1,8 @@
 # Chronologie du métro de Paris
 
-An interactive map of the Paris metro's growth from 1900 to 2020. Drag the
-timeline or press play, and the network builds itself year by year. Hovering a
+An interactive map of the Paris metro's growth from 1900 to 2026, and of the
+lines due to open by 2028. Drag the timeline or press play, and the network
+builds itself year by year. Hovering a
 line, a station or a legend entry highlights it across all three. The river,
 canals and main parks are drawn underneath for orientation.
 
@@ -106,18 +107,40 @@ sources change, which is rare.
 Each feature carries `start` and `end`; `end: null` means "still open". A
 feature is drawn for a given date when `start <= date && (end === null || end > date)`.
 
-### Adding post-2020 lines
+It also carries `planned`, which separates **record** from **projection**:
+track that has not been built. Planned features are drawn dashed, with hollow
+stations, and stay that way at every year — they never resolve into solid
+lines, because they never happened. See [Projections](#projections).
 
-Add features to `data/lignes_historiques.geojson` and
-`data/stations_historiques.geojson` using the existing property names
-(`ligne` / `lignes`, `couleur`, `start_date`, `end_date`), then re-run the
-script. Set `end_date` to the current maximum so it is recognised as open —
-`build_data.py` derives that sentinel from the data rather than hard-coding a
-date, so extending the range does not require touching the script.
+### Extending the timeline
 
-Still missing as of this writing: line 14 north and south extensions (2024),
-line 11 to Rosny–Bois-Perrier (2024), line 4 to Bagneux (2022), and line 12 to
-Mairie d'Aubervilliers (2022).
+The two history GeoJSONs are **generated**, not hand-edited. Add the new
+stations to `data/raw_data/evolution_station.csv` and the new inter-station
+links to `data/raw_data/evolution_correspondances.csv` — both directions for
+each link, since a station's line set is read from the rows where it appears as
+`De` — then re-run `data_set_creation/lines and stations to json.ipynb`
+followed by `tools/build_data.py`. See
+[data_set_creation/README.md](data_set_creation/README.md) for how to run it.
+
+Lines that have not opened go in `data/raw_data/futur_station.csv` and
+`data/raw_data/futur_correspondances.csv` instead — same two schemas, read by
+the same notebook, flagged `projet` on the way through. **The day a line opens,
+move its rows into the `evolution_*` pair**: that promotion is the whole point
+of the split, and nothing else marks a projection as having come true.
+
+Leave `end_date` / `Fermeture` empty for anything still open. The notebook
+closes those rows on a single sentinel — one day past the last opening in the
+data, or the day it runs, whichever is later — and `build_data.py` derives that
+sentinel back out rather than hard-coding a date. Nothing in the app or the
+scripts needs touching to move either end of the timeline.
+
+The record runs to **29 August 2026**, ending with Villejuif - Gustave Roussy
+on line 14, 18 January 2025. The projection runs to **December 2028** and holds
+the five Grand Paris Express sections already in testing: line 18 to Christ de
+Saclay, line 15 South, the first sections of lines 16 and 17, and line 16's
+completion to Noisy-Champs. The later sections — 15 West and East, 17 to
+Le Mesnil-Amelot, 18 to Versailles — are deliberately left out: their dates have
+moved repeatedly and none is in testing.
 
 ## Design system
 
@@ -150,6 +173,35 @@ render rather than relying only on the `matchMedia` change event, since that
 event is the only thing standing between a theme switch and 740 wrongly-shaded
 strokes.
 
+### Projections
+
+The dataset now holds two different kinds of thing, and the design's job is to
+keep them apart: 126 years of **record**, and a handful of lines that are
+**projection**. Presenting a planned line in the same visual language as the
+1900 opening of line 1 would be a claim the data cannot support.
+
+So planned track is **dashed** and planned stations are **hollow rings**, at
+every year — a projection never resolves into a solid line, however far the
+scrubber travels. Dashes rather than a fade, because opacity is already spoken
+for by the hover dim: a dimmed built line and a highlighted planned one would
+come out the same grey. The distinction survives both themes and carries no
+colour information, so it holds for colour-blind readers too. The casing takes
+the same dash pattern, or it would read as a solid line under a dotted one.
+
+The timeline says it twice more. The stretch of track past today is drawn in
+the same dashed language, with a rule marking the boundary, and past it the
+year readout itself is labelled *projet* / *planned* — the one signal that
+cannot be missed at a glance. Tooltips drop "depuis 1900" for "en projet ·
+ouverture prévue en 2027".
+
+**The map is still framed on the built network alone.** Grand Paris Express
+reaches Saclay and Chelles; fitting the frame to include them would shrink the
+historic core to about 60% at every year, spending the map's whole budget on
+track nobody has ridden. The planned lines run off the edges instead, and the
+zoom floor was lowered from 1 to 0.5 — it used to be impossible to pull back
+from the initial fit — so you can zoom out to see where they go. *Reset view*
+returns to the built frame.
+
 ## Notes on the data
 
 - Large interchanges carry several records, one per platform cluster — Châtelet
@@ -169,6 +221,23 @@ strokes.
   it was assembled from — Montparnasse - Bienvenüe reports Avenue du Maine,
   Bienvenüe and Montparnasse. Lineages with no open record are closed stations
   (Arsenal, Croix-Rouge, Saint-Martin) and get neither field.
+- **A record is a version of a station, not the station.** One is cut whenever
+  anything changes — a line arriving, the platforms moving — so its own dates
+  describe the version, not the life. Pont de Sèvres, whose record is cut in
+  2027 by line 15, would otherwise read "1934–2027" as though it were closing.
+  Each station therefore also carries `since` / `until`: the span of the run of
+  records that are the same station under the same name, which is what the
+  tooltip shows. Only a rename or a real closure ends a run, so Marbeuf still
+  reads 1900–1942 and Arsenal still reads 1906–1939.
+- **Four stations were rebuilt on a new site** — Victor Hugo (311 m), Porte
+  Maillot, Les Halles and Porte de Versailles. A line's shape is sampled at the
+  start of each of its snapshots, so unless the move cuts a snapshot the line
+  keeps the old position for good: line 2 held Victor Hugo 311 m off its 1931
+  site for the rest of the timeline, leaving the dot visibly detached from the
+  track. Station dates are part of each line's key dates for that reason, and
+  snapshots that come out identical are merged again so the extra cuts cost
+  nothing. Stations that stay put still sit exactly on their line; the only
+  ones that do not are the multi-cluster interchanges above, by design.
 - Park names from the city dataset are stored in capitals without accents, so
   they come out as "Parc Andre Citroen". Nothing displays them today, but that
   is worth knowing before adding park labels.

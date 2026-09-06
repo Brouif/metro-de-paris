@@ -221,6 +221,23 @@ returns to the built frame.
   it was assembled from — Montparnasse - Bienvenüe reports Avenue du Maine,
   Bienvenüe and Montparnasse. Lineages with no open record are closed stations
   (Arsenal, Croix-Rouge, Saint-Martin) and get neither field.
+- **A record is a version of a station, not the station.** One is cut whenever
+  anything changes — a line arriving, the platforms moving — so its own dates
+  describe the version, not the life. Pont de Sèvres, whose record is cut in
+  2027 by line 15, would otherwise read "1934–2027" as though it were closing.
+  Each station therefore also carries `since` / `until`: the span of the run of
+  records that are the same station under the same name, which is what the
+  tooltip shows. Only a rename or a real closure ends a run, so Marbeuf still
+  reads 1900–1942 and Arsenal still reads 1906–1939.
+- **Four stations were rebuilt on a new site** — Victor Hugo (311 m), Porte
+  Maillot, Les Halles and Porte de Versailles. A line's shape is sampled at the
+  start of each of its snapshots, so unless the move cuts a snapshot the line
+  keeps the old position for good: line 2 held Victor Hugo 311 m off its 1931
+  site for the rest of the timeline, leaving the dot visibly detached from the
+  track. Station dates are part of each line's key dates for that reason, and
+  snapshots that come out identical are merged again so the extra cuts cost
+  nothing. Stations that stay put still sit exactly on their line; the only
+  ones that do not are the multi-cluster interchanges above, by design.
 - Park names from the city dataset are stored in capitals without accents, so
   they come out as "Parc Andre Citroen". Nothing displays them today, but that
   is worth knowing before adding park labels.

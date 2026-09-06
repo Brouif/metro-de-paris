@@ -192,12 +192,31 @@ def build(lines_src, stations_src):
         props = feature["properties"]
         lineage.setdefault(props["nom de référence"], []).append(props)
 
-    # When a station's record was cut short only because its line set changed —
-    # Maison Blanche in 2024, Pont de Sèvres when line 15 arrives — the record's
-    # own start date is not when the station appeared. The tooltip needs the
-    # lineage's first date for that, or a station standing since 1934 reports
-    # itself as dating from 2027.
-    first_seen = {k: min(p["start_date"] for p in g) for k, g in lineage.items()}
+    # A record ends whenever anything about the station changes — a line arriving,
+    # the platforms moving — not only when the station closes. Reporting a
+    # record's own dates therefore invents closures: Pont de Sèvres, whose record
+    # is cut in 2027 by line 15's arrival, read as "1934–2027" as though it were
+    # about to shut, and its successor read as "depuis 2027" for a station
+    # standing since 1934.
+    #
+    # So each record also carries the span of the run it belongs to: the
+    # consecutive, contiguous records that are the same station under the same
+    # name. A rename ends a run, which is what keeps the Marbeuf records reading
+    # "1900–1942" rather than swallowing the name they were renamed to.
+    span = {}
+    for key, group in lineage.items():
+        ordered = sorted(group, key=lambda p: p["start_date"])
+        i = 0
+        while i < len(ordered):
+            j = i
+            while (j + 1 < len(ordered)
+                   and ordered[j + 1]["nom"] == ordered[i]["nom"]
+                   and ordered[j + 1]["start_date"] == ordered[j]["end_date"]):
+                j += 1
+            run = (ordered[i]["start_date"], end_of(ordered[j]["end_date"]))
+            for props in ordered[i:j + 1]:
+                span[id(props)] = run
+            i = j + 1
 
     current_name = {}
     for key, group in lineage.items():
@@ -242,9 +261,10 @@ def build(lines_src, stations_src):
             "interchange": colour == INTERCHANGE,
             "planned": bool(props.get("projet")),
             "start": props["start_date"],
-            # When this station first appeared, as opposed to when this record
-            # of it starts. Only differs where a later record was split off.
-            "since": first_seen[props["nom de référence"]],
+            # The run this record belongs to, rather than the record itself:
+            # what the tooltip should say the station's dates are.
+            "since": span[id(props)][0],
+            "until": span[id(props)][1],
             "end": end_of(props["end_date"]),
             "lon": round(lon, PRECISION),
             "lat": round(lat, PRECISION),

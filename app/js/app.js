@@ -122,10 +122,14 @@
     // "depuis 2027" would state a projection as fact, so planned features get
     // their own phrasing rather than the historical one.
     if (f.planned) return fmt("tip.planned", from);
-    // A still-open record dates from the station, not from the record: the
-    // two differ wherever a record was split off because the line set moved.
-    return f.end === null ? fmt("tip.since", (f.since || f.start).slice(0, 4))
-                          : fmt("tip.range", from, f.end.slice(0, 4));
+    // Records are cut whenever the station changes — a line arriving, the
+    // platforms moving — so a record's own dates would invent closures.
+    // since/until span the run of records that are the same station under the
+    // same name; only a rename or a real closure ends one.
+    var start = (f.since || f.start).slice(0, 4);
+    var stop = f.until !== undefined ? f.until : f.end;
+    return stop === null ? fmt("tip.since", start)
+                         : fmt("tip.range", start, stop.slice(0, 4));
   }
 
   // ------------------------------------------------------------------- DOM

@@ -1,10 +1,26 @@
 # Chronologie du métro de Paris
 
-An interactive map of the Paris metro's growth from 1900 to 2026, and of the
-lines due to open by 2028. Drag the timeline or press play, and the network
-builds itself year by year. Hovering a
-line, a station or a legend entry highlights it across all three. The river,
-canals and main parks are drawn underneath for orientation.
+How did the Paris metro come to be? If you live here it is furniture — the thing
+you take without looking, the noise under the pavement. But it is also 126 years
+of continuous construction, begun on 19 July 1900 with ten stations between
+Porte Maillot and Porte de Vincennes, fought over by rival companies until the
+Nord-Sud was absorbed in 1930, and still not finished: sections of four Grand
+Paris Express lines are in testing as this is written. Stations have been
+renamed, merged into each other, closed, and in four cases rebuilt on a
+different site. This is a map of all of it, year by year.
+
+<!-- TODO: live URL goes here -->
+
+![The map at 1928, zoomed on the inner network: ten numbered lines plus the Nord-Sud
+company's A and B, two years before they became 12 and 13](docs/screenshot.png)
+
+## What it does
+
+Drag the timeline or press play, and the network builds itself year by year.
+Hovering a line, a station or a legend entry highlights it across all three. The
+river, canals and main parks are drawn underneath for orientation. Sixteen lines
+run today; twenty line identities appear across the record, the other four
+absorbed into their successors.
 
 One play button, plus a toggle beside it that reverses the direction of time.
 The play arrow points the way time will move and flips when you reverse, so the
@@ -19,21 +35,138 @@ either way, since they are proper nouns.
 
 Everything ships as static files — no build step, no server, no CDN.
 
+## Methodology
+
+### Where the data comes from
+
+The station and line history was scraped from the French Wikipedia
+[list of metro stations](https://fr.wikipedia.org/wiki/Liste_des_stations_du_métro_de_Paris)
+in 2020, and extended in 2026 from the per-line articles and the MediaWiki
+coordinates API to cover the openings from 2013 onward. The projected Grand
+Paris Express sections come from the `Modèle:Grand Paris Express` tables. All of
+it is **CC BY-SA**, and share-alike travels with it — see
+[DATA-LICENSES.md](DATA-LICENSES.md).
+
+The water and parks underneath are separate, and unrelated to the metro
+pipeline: Apur's *PLAN EAU* (ODbL) and the City of Paris green-space register
+(ODbL) plus two state-owned gardens from OpenStreetMap.
+
+### The chain
+
+Four hand-maintained CSVs are the editable source of truth. Everything below
+them is generated, and should never be edited by hand.
+
 ```
-app/                  the app (this is what you deploy)
+data/raw_data/stations_history.csv    one row per version of a station
+data/raw_data/segments_history.csv    one row per adjacent pair on a line
+data/raw_data/stations_planned.csv    the same two schemas, for lines
+data/raw_data/segments_planned.csv    that have not been built
+        |
+        |  data_set_creation/lines and stations to json.ipynb
+        v
+data/stations_history.geojson         641 points
+data/lines_history.geojson            168 line snapshots
+        |
+        |  tools/build_data.py   (+ data/water.geojson, data/parks.geojson)
+        v
+app/js/data.js                        what the app actually loads
+```
+
+The five earlier notebooks in `data_set_creation/` are the 2020 provenance
+record — a scrape, a spreadsheet join, two date-parsing passes and one dead end —
+and are not maintained code. Two steps in that chain were done by hand and
+cannot be re-run. See
+[data_set_creation/README.md](data_set_creation/README.md) for the full account.
+
+### The vocabulary
+
+Three words carry most of the weight, and reading any of them the obvious way
+gets the data wrong:
+
+- **A station row is one *version* of a station**, not the station. A new row is
+  cut whenever anything changes — a line arriving, the platforms moving — so its
+  dates describe that version, not the station's life.
+- **A segment row is one pair of *adjacent* stations** on a line, with the dates
+  that pair was connected. The lines on the map are drawn by joining them up.
+  Both directions of each pair are required: a station's line set is read from
+  the rows where it appears as `from_station`.
+- **`lineage` is a lineage key, not the current name.** It usually is the modern
+  name, but for stations later folded into a larger complex it is the older one —
+  `Marbeuf` and `Rond-point des Champs-Élysées` both end as Franklin D.
+  Roosevelt. `from_station` and `to_station` match against `lineage`, not
+  `name`.
+
+### How a line gets its shape
+
+A line's geometry is not fixed. Its segments are melted into one geometry and
+re-sampled at each of the line's key dates, producing a series of snapshots that
+the app switches between as the timeline moves. Station dates are part of those
+key dates, which matters: four stations were rebuilt on a new site, and without
+a cut at the move the line would keep the old position for good — line 2 held
+Victor Hugo 311 m off its 1931 site, visibly detached from the track. Snapshots
+that come out identical are merged again, so the extra cuts cost nothing.
+
+### Record and projection
+
+The dataset holds two different kinds of thing: 126 years of **record**, and a
+handful of lines that are **projection**. The `planned` flag that separates them
+comes from **which file a row is in** — never from comparing a date to the
+clock. A date test would promote line 15 to "built" the first time anyone
+rebuilt after its announced opening date, asserting as fact something nobody had
+checked. The day a line really opens, its rows move into the `*_history` pair by
+hand; nothing else marks a projection as having come true.
+
+Every feature also carries `start` and `end`, with `end: null` meaning "still
+open". A feature is drawn for a given date when
+`start <= date && (end === null || end > date)`.
+
+### The open sentinel
+
+Open-ended dates are left blank in the CSVs. The notebook closes them on a
+single sentinel — one day past the last opening in the data, or the day it runs,
+whichever is later — and `build_data.py` derives that sentinel back out rather
+than hard-coding a date, mapping it to `end: null`. It used to be simply the run
+date, which worked while the data stopped at the present; with the timeline
+reaching into 2028 that would close the built network mid-run and drop a
+projected line from the output entirely.
+
+The practical consequence: **the notebook and `build_data.py` must be run in the
+same pass**, because the second derives a value the first computed.
+
+## The file system
+
+```
+app/                      the app (this is what you deploy)
   index.html
   css/app.css
-  js/d3.v7.min.js     vendored, not loaded from a CDN
-  js/data.js          generated — see below
-  js/i18n.js          all UI strings, French and English
-  fonts/              Archivo, self-hosted variable font
+  js/d3.v7.min.js         vendored, not loaded from a CDN
+  js/data.js              generated — never hand-edit
+  js/i18n.js              all UI strings, French and English
   js/app.js
-data/                 source GeoJSON, the editable source of truth
-tools/build_data.py     data/*.geojson  ->  app/js/data.js
-tools/build_context.py  raw water + park sources -> data/{water,parks}.geojson
-tools/serve.py          no-cache dev server for app/
-data_set_creation/      how the historical data was built — see its README
-archive/                hand-edited intermediates from that pipeline
+  fonts/                  Archivo, self-hosted variable font
+  favicon.svg
+  .nojekyll               so GitHub Pages serves the directory as-is
+data/
+  raw_data/
+    stations_history.csv    \
+    segments_history.csv     |  the editable source of truth
+    stations_planned.csv     |
+    segments_planned.csv    /
+    PLAN_EAU.kml           raw water source (Apur)
+    parks_paris.geojson    raw park source (Ville de Paris)
+    parks_osm.json         Luxembourg and the Tuileries (OpenStreetMap)
+    correspondances_date_non_formatees.xlsx   2020 input, kept for provenance
+  stations_history.geojson  generated by the notebook
+  lines_history.geojson     generated by the notebook
+  water.geojson             generated by tools/build_context.py
+  parks.geojson             generated by tools/build_context.py
+tools/
+  build_data.py           data/*.geojson  ->  app/js/data.js
+  build_context.py        raw water + park sources -> data/{water,parks}.geojson
+  serve.py                no-cache dev server for app/
+data_set_creation/        how the historical data was built — see its README
+archive/                  hand-edited 2020 intermediates, French names on purpose
+docs/                     images for this file
 ```
 
 ## Running it
@@ -54,153 +187,130 @@ That serves `app/` with caching disabled. `python3 -m http.server` works too,
 but it sends `Last-Modified`, so browsers hold on to `app.css` and `index.html`
 and will quietly show you a stale build after an edit.
 
-## Deploying
+To deploy, copy `app/` anywhere static — it needs no configuration: drag it into
+Netlify, point Vercel at it, or push it to GitHub Pages, where the `.nojekyll`
+file is already in place.
 
-`app/` is a plain static directory, so any static host works with no
-configuration: drag it into Netlify, point Vercel at it, or push it to GitHub
-Pages. A `.nojekyll` file is already in place so Pages serves the directory
-as-is.
+## Adding a station
 
-## Updating the data
+Edit the CSVs, then regenerate. Never touch `data/*.geojson` or `app/js/data.js`
+by hand.
 
-`data/*.geojson` is the source of truth; `app/js/data.js` is generated from it
-and should never be hand-edited. After changing the GeoJSON:
+1. **Add one row per version** to `data/raw_data/stations_history.csv`:
 
-```bash
-python3 tools/build_data.py
-```
+   ```
+   name,end_date,start_date,latitude,longitude,lineage,note
+   ```
 
-The script builds a line-name → colour lookup, rounds coordinates to 5 decimals,
-normalises the dates, and simplifies the water and park outlines. It also
-rewinds their polygon rings: `d3-geo` treats polygons as spherical and requires
-**clockwise** exterior rings, the opposite of what RFC 7946 and the source data
-use. Without that step d3 fills the entire globe instead of the river.
+   Dates are `YYYY-MM-DD`; leave `end_date` empty for anything still open.
+   `lineage` is the lineage key — usually the modern name, but the older one for
+   a station later merged into a larger complex. `note` is documentation for
+   whoever reads the CSV next and is not carried into the GeoJSON.
 
-To add a UI string, add the key to both languages in `app/js/i18n.js` and mark
-the element in `index.html` with `data-i18n`, `data-i18n-html` or
-`data-i18n-aria-label`. No code change is needed.
+2. **Add its links** to `data/raw_data/segments_history.csv`:
 
-## Refreshing the context layers
+   ```
+   from_station,to_station,start_date,end_date,line
+   ```
+
+   One row per adjacent pair, **in both directions**, matched on `lineage`.
+
+3. **For a line that has not opened yet**, use `stations_planned.csv` and
+   `segments_planned.csv` instead — same two schemas, read by the same notebook,
+   flagged `planned` on the way through. Moving the rows into the `*_history`
+   pair is what promotes a projection to record, and it is a manual step by
+   design.
+
+4. **Re-run** `data_set_creation/lines and stations to json.ipynb` **from the
+   repository root** — it uses repo-root-relative paths, unlike the archived
+   notebooks. It needs pandas, numpy, geopandas and shapely; see
+   [data_set_creation/README.md](data_set_creation/README.md) for the venv.
+
+5. **Then run `python3 tools/build_data.py`**, in the same pass — see
+   [The open sentinel](#the-open-sentinel).
+
+   ```bash
+   python3 tools/build_data.py
+   ```
+
+   It builds a line-name → colour lookup, rounds coordinates to 5 decimals,
+   normalises the dates, and simplifies and rewinds the water and park outlines.
+   (`d3-geo` treats polygons as spherical and requires **clockwise** exterior
+   rings, the opposite of RFC 7946 and the source data. Without that step d3
+   fills the entire globe instead of the river.)
+
+Nothing in the app or the scripts needs touching to move either end of the
+timeline. The record currently runs to **29 August 2026**, ending with
+Villejuif - Gustave Roussy on line 14, 18 January 2025. The projection runs to
+**December 2028** and holds the five Grand Paris Express sections already in
+testing: line 18 to Christ de Saclay, line 15 South, the first sections of lines
+16 and 17, and line 16's completion to Noisy-Champs. The later sections — 15
+West and East, 17 to Le Mesnil-Amelot, 18 to Versailles — are deliberately left
+out: their dates have moved repeatedly and none is in testing.
+
+### UI strings
+
+Add the key to both languages in `app/js/i18n.js` and mark the element in
+`index.html` with `data-i18n`, `data-i18n-html` or `data-i18n-aria-label`. No
+code change is needed.
+
+### Context layers
 
 `tools/build_context.py` rebuilds `data/water.geojson` and `data/parks.geojson`
-from the raw sources in `data/raw_data/`. It only needs re-running when those
-sources change, which is rare.
+from the raw sources. It only needs re-running when those change, which is rare.
 
-- **Water** comes from the Paris `PLAN_EAU` dataset already in the repo. The
-  original visualisation filtered it to `L_EAU == "Seine"`; the app now keeps
-  every body near the network, which adds the Marne, the Canal Saint-Martin,
-  the Canal de l'Ourcq, the Bassin de la Villette and the lakes in both Bois —
-  87 named bodies in all.
+Water is the Apur `PLAN_EAU` dataset, filtered to the 87 named bodies near the
+network — the Seine and Marne, the Canal Saint-Martin, the Canal de l'Ourcq, the
+Bassin de la Villette, the lakes in both Bois. Geometry is **clipped** to the
+bounding box rather than kept or dropped whole, because the Seine's downstream
+arm is a single polygon running from Mantes all the way up to Paris: any cutoff
+tight enough to exclude Mantes also amputated the river just west of the city.
+Clipping keeps what is on screen and discards the rest, with the cut edge well
+outside the frame.
 
-  Geometry is **clipped** to the bounding box rather than kept or dropped whole.
-  That matters because the Seine's downstream arm is a single polygon running
-  from Mantes at 1.51 E all the way up to 2.16 E: any cutoff tight enough to
-  exclude Mantes also amputated the river just west of Paris, leaving a visible
-  gap. Clipping keeps the part that is on screen and discards the rest, so the
-  box can be generous without carrying geometry nobody will see. The cut edge
-  runs along the box, well outside the frame.
-- **Parks** are the 30 City of Paris green spaces above 4 hectares, excluding
-  cemeteries, plus the Jardin du Luxembourg and the Jardin des Tuileries. Those
-  two are state-owned and so absent from the city's register; they come from
-  OpenStreetMap instead.
-
-Each feature carries `start` and `end`; `end: null` means "still open". A
-feature is drawn for a given date when `start <= date && (end === null || end > date)`.
-
-It also carries `planned`, which separates **record** from **projection**:
-track that has not been built. Planned features are drawn dashed, with hollow
-stations, and stay that way at every year — they never resolve into solid
-lines, because they never happened. See [Projections](#projections).
-
-### Extending the timeline
-
-The two history GeoJSONs are **generated**, not hand-edited. Add the new
-stations to `data/raw_data/stations_history.csv` and the new inter-station
-links to `data/raw_data/segments_history.csv` — both directions for
-each link, since a station's line set is read from the rows where it appears as
-`from_station` — then re-run `data_set_creation/lines and stations to json.ipynb`
-followed by `tools/build_data.py`. See
-[data_set_creation/README.md](data_set_creation/README.md) for how to run it.
-
-Lines that have not opened go in `data/raw_data/stations_planned.csv` and
-`data/raw_data/segments_planned.csv` instead — same two schemas, read by
-the same notebook, flagged `planned` on the way through. **The day a line opens,
-move its rows into the `*_history` pair**: that promotion is the whole point
-of the split, and nothing else marks a projection as having come true.
-
-Leave `end_date` empty for anything still open. The notebook
-closes those rows on a single sentinel — one day past the last opening in the
-data, or the day it runs, whichever is later — and `build_data.py` derives that
-sentinel back out rather than hard-coding a date. Nothing in the app or the
-scripts needs touching to move either end of the timeline.
-
-The record runs to **29 August 2026**, ending with Villejuif - Gustave Roussy
-on line 14, 18 January 2025. The projection runs to **December 2028** and holds
-the five Grand Paris Express sections already in testing: line 18 to Christ de
-Saclay, line 15 South, the first sections of lines 16 and 17, and line 16's
-completion to Noisy-Champs. The later sections — 15 West and East, 17 to
-Le Mesnil-Amelot, 18 to Versailles — are deliberately left out: their dates have
-moved repeatedly and none is in testing.
+Parks are the 30 City of Paris green spaces above 4 hectares, excluding
+cemeteries, plus the Jardin du Luxembourg and the Jardin des Tuileries — both
+state-owned, so absent from the city's register, and taken from OpenStreetMap
+instead.
 
 ## Design system
 
-Typography is **Archivo** (SIL OFL), self-hosted in `app/fonts/` as a single
-88 KB variable file. One file covers both widths: the interface runs at normal
-width and the year readout at `font-stretch: 76%`, which is close to the
-condensing Parisine gets from its own 90% compression. Self-hosted rather than
-linked, because the app is meant to run from `file://` where a CDN stylesheet
-would not load. Latin subset only — nothing in the data or the interface goes
-above U+00FF.
+**Archivo** (SIL OFL), self-hosted in `app/fonts/` as a single 88 KB variable
+file. One file covers both widths: the interface runs at normal width and the
+year readout at `font-stretch: 76%`, close to the condensing Parisine gets from
+its own compression. Self-hosted rather than linked, because the app is meant to
+run from `file://` where a CDN stylesheet would not load.
 
-The accent is the cobalt of the enamel station plate, the one colour continuous
-across the network's whole life. It replaces a red that belonged to no era but
-Motte's.
+**The accent is the cobalt of the enamel station plate**, the one colour
+continuous across the network's whole life. It replaces a red that belonged to
+no era but Motte's.
 
-**Line casings** are the reason the map is legible. The RATP line colours were
+**Line casings are the reason the map is legible.** The RATP line colours were
 drawn for white paper and enamel: measured against the map's land tone, twelve
 of the twenty-two fell below the 3:1 WCAG floor for graphical objects, line 1's
 yellow reaching only 1.19:1. Rather than alter canonical colours, every line is
 drawn twice — a casing path 1px wider beneath it, in a shade of the line's own
-hue. That keeps the identity while restoring the edge, and takes all 22 lines
-above 3:1 in **both** themes. Line and casing come to 3px together, against
-2.6px for the bare line before casing existed, so the edge costs almost nothing
-in apparent weight.
+hue — which takes all 22 above 3:1 in **both** themes. The shade has to follow
+the theme: darkening rescues the pale colours on the light map but does nothing
+for line 2's navy on the dark one, so the casing always moves away from whatever
+ground it sits on.
 
-The shade has to follow the theme: darkening rescues the pale colours on the
-light map but does nothing for line 2's navy on the dark one, so the casing moves
-away from whichever ground it sits on. `syncCasings()` checks the theme on each
-render rather than relying only on the `matchMedia` change event, since that
-event is the only thing standing between a theme switch and 740 wrongly-shaded
-strokes.
-
-### Projections
-
-The dataset now holds two different kinds of thing, and the design's job is to
-keep them apart: 126 years of **record**, and a handful of lines that are
-**projection**. Presenting a planned line in the same visual language as the
-1900 opening of line 1 would be a claim the data cannot support.
-
-So planned track is **dashed** and planned stations are **hollow rings**, at
+**Projections are drawn in a different language.** Presenting a planned line the
+way the 1900 opening of line 1 is presented would be a claim the data cannot
+support, so planned track is dashed and planned stations are hollow rings, at
 every year — a projection never resolves into a solid line, however far the
 scrubber travels. Dashes rather than a fade, because opacity is already spoken
-for by the hover dim: a dimmed built line and a highlighted planned one would
-come out the same grey. The distinction survives both themes and carries no
-colour information, so it holds for colour-blind readers too. The casing takes
-the same dash pattern, or it would read as a solid line under a dotted one.
+for by the hover dim, and because a dash carries no colour information and so
+holds for colour-blind readers. The timeline says it twice more: the stretch
+past today is dashed with a rule marking the boundary, and past it the year
+readout itself is labelled *projet* / *planned*.
 
-The timeline says it twice more. The stretch of track past today is drawn in
-the same dashed language, with a rule marking the boundary, and past it the
-year readout itself is labelled *projet* / *planned* — the one signal that
-cannot be missed at a glance. Tooltips drop "depuis 1900" for "en projet ·
-ouverture prévue en 2027".
-
-**The map is still framed on the built network alone.** Grand Paris Express
-reaches Saclay and Chelles; fitting the frame to include them would shrink the
-historic core to about 60% at every year, spending the map's whole budget on
-track nobody has ridden. The planned lines run off the edges instead, and the
-zoom floor was lowered from 1 to 0.5 — it used to be impossible to pull back
-from the initial fit — so you can zoom out to see where they go. *Reset view*
-returns to the built frame.
+**The map stays framed on the built network alone.** Grand Paris Express reaches
+Saclay and Chelles; fitting the frame to include them would shrink the historic
+core to about 60% at every year, spending the map's whole budget on track nobody
+has ridden. The planned lines run off the edges instead, and the zoom floor was
+lowered to 0.5 so you can pull back to see where they go. *Reset view* returns
+to the built frame.
 
 ## Notes on the data
 

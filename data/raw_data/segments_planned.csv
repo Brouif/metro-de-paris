@@ -1,4 +1,4 @@
-De,Vers,Ouverture,Fermeture,Ligne
+from_station,to_station,start_date,end_date,line
 Massy - Palaiseau,Polytechnique,2026-12-01,,Ligne 18
 Polytechnique,Massy - Palaiseau,2026-12-01,,Ligne 18
 Polytechnique,Université Paris-Saclay,2026-12-01,,Ligne 18

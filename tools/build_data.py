@@ -143,7 +143,7 @@ def build(lines_src, stations_src):
     colors = {}
     for feature in lines_src["features"]:
         props = feature["properties"]
-        colors.setdefault(props["ligne"], props["couleur"])
+        colors.setdefault(props["line"], props["color"])
     colors.update({k: v for k, v in HISTORICAL_COLOURS.items() if k in colors})
 
     # Every feature that is still open carries the same sentinel end_date, which
@@ -167,21 +167,22 @@ def build(lines_src, stations_src):
         else:
             segments = [round_ring(s) for s in geom["coordinates"]]
         lines.append({
-            "line": props["ligne"],
+            "line": props["line"],
             "start": props["start_date"],
             "end": end_of(props["end_date"]),
             # A projection rather than a record: track that has not been built.
             # It comes from the source files, not from comparing dates to the
             # clock, so a line stays projected until someone says otherwise.
-            "planned": bool(props.get("projet")),
+            "planned": bool(props.get("planned")),
             "geometry": {"type": "MultiLineString", "coordinates": segments},
         })
 
-    # "nom de référence" is a lineage key, not the modern name. It usually is the
-    # modern name, but for stations later merged into a bigger complex it is the
-    # older one: the Marbeuf lineage ends as Franklin D. Roosevelt, Montparnasse
-    # and Avenue du Maine both end as Montparnasse - Bienvenüe. Reading it as
-    # "current name" therefore inverts the label on those ten lineages.
+    # "lineage" identifies the run of records that are one station over time. It
+    # is not the modern name: usually the two coincide, but for stations later
+    # merged into a bigger complex the lineage keeps the older name — the Marbeuf
+    # lineage ends as Franklin D. Roosevelt, Montparnasse and Avenue du Maine both
+    # end as Montparnasse - Bienvenüe. Reading it as "current name" therefore
+    # inverts the label on those ten lineages.
     #
     # So derive the current name instead: whatever the lineage's still-open
     # record calls itself. Lineages with no open record are closed stations
@@ -190,7 +191,7 @@ def build(lines_src, stations_src):
     lineage = {}
     for feature in stations_src["features"]:
         props = feature["properties"]
-        lineage.setdefault(props["nom de référence"], []).append(props)
+        lineage.setdefault(props["lineage"], []).append(props)
 
     # A record ends whenever anything about the station changes — a line arriving,
     # the platforms moving — not only when the station closes. Reporting a
@@ -210,7 +211,7 @@ def build(lines_src, stations_src):
         while i < len(ordered):
             j = i
             while (j + 1 < len(ordered)
-                   and ordered[j + 1]["nom"] == ordered[i]["nom"]
+                   and ordered[j + 1]["name"] == ordered[i]["name"]
                    and ordered[j + 1]["start_date"] == ordered[j]["end_date"]):
                 j += 1
             run = (ordered[i]["start_date"], end_of(ordered[j]["end_date"]))
@@ -222,7 +223,7 @@ def build(lines_src, stations_src):
     for key, group in lineage.items():
         still_open = [p for p in group if end_of(p["end_date"]) is None]
         if still_open:
-            current_name[key] = max(still_open, key=lambda p: p["start_date"])["nom"]
+            current_name[key] = max(still_open, key=lambda p: p["start_date"])["name"]
 
     # The reverse view: what a station standing today used to be called. Keyed by
     # the present-day name rather than by lineage, so a station formed by a merger
@@ -235,31 +236,31 @@ def build(lines_src, stations_src):
             continue
         earlier = former_names.setdefault(today, [])
         for props in sorted(group, key=lambda p: p["start_date"]):
-            if props["nom"] != today and props["nom"] not in earlier:
-                earlier.append(props["nom"])
+            if props["name"] != today and props["name"] not in earlier:
+                earlier.append(props["name"])
 
     stations = []
     for feature in stations_src["features"]:
         props = feature["properties"]
         lon, lat = feature["geometry"]["coordinates"]
-        colour = props["couleur"]
+        colour = props["color"]
         # Single-line stations take their line's colour, so they inherit the
         # restatement above; interchanges keep the shared beige.
-        if colour != INTERCHANGE and len(props["lignes"]) == 1:
-            colour = colors.get(props["lignes"][0], colour)
-        now = current_name.get(props["nom de référence"])
-        renamed_since = bool(now) and now != props["nom"]
+        if colour != INTERCHANGE and len(props["lines"]) == 1:
+            colour = colors.get(props["lines"][0], colour)
+        now = current_name.get(props["lineage"])
+        renamed_since = bool(now) and now != props["name"]
         stations.append({
-            "name": props["nom"],
+            "name": props["name"],
             # Two complementary views of a rename, never both at once:
             #   now  - on a historic record, what the station is called today
             #   was  - on a present-day record, what it used to be called
             "now": now if renamed_since else None,
             "was": (former_names.get(now) or None) if now and not renamed_since else None,
-            "lines": props["lignes"],
+            "lines": props["lines"],
             "color": colour,
             "interchange": colour == INTERCHANGE,
-            "planned": bool(props.get("projet")),
+            "planned": bool(props.get("planned")),
             "start": props["start_date"],
             # The run this record belongs to, rather than the record itself:
             # what the tooltip should say the station's dates are.
@@ -285,8 +286,8 @@ def build(lines_src, stations_src):
 
 def main():
     print("Building app/js/data.js")
-    lines_src = load("lignes_historiques.geojson")
-    stations_src = load("stations_historiques.geojson")
+    lines_src = load("lines_history.geojson")
+    stations_src = load("stations_history.geojson")
 
     payload = build(lines_src, stations_src)
     payload["water"] = build_polygon_layer("water.geojson", WATER_TOLERANCE, "water:")

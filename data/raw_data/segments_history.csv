@@ -1,4 +1,4 @@
-De,Vers,Ouverture,Fermeture,Ligne
+from_station,to_station,start_date,end_date,line
 Porte de Vincenne,Nation,1900-07-19,,Ligne 1
 Nation,Gare de Lyon,1900-07-19,1900-08-20,Ligne 1
 Gare de Lyon,Bastille,1900-07-19,,Ligne 1

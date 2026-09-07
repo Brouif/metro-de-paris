@@ -115,20 +115,20 @@ lines, because they never happened. See [Projections](#projections).
 ### Extending the timeline
 
 The two history GeoJSONs are **generated**, not hand-edited. Add the new
-stations to `data/raw_data/evolution_station.csv` and the new inter-station
-links to `data/raw_data/evolution_correspondances.csv` — both directions for
+stations to `data/raw_data/stations_history.csv` and the new inter-station
+links to `data/raw_data/segments_history.csv` — both directions for
 each link, since a station's line set is read from the rows where it appears as
-`De` — then re-run `data_set_creation/lines and stations to json.ipynb`
+`from_station` — then re-run `data_set_creation/lines and stations to json.ipynb`
 followed by `tools/build_data.py`. See
 [data_set_creation/README.md](data_set_creation/README.md) for how to run it.
 
-Lines that have not opened go in `data/raw_data/futur_station.csv` and
-`data/raw_data/futur_correspondances.csv` instead — same two schemas, read by
-the same notebook, flagged `projet` on the way through. **The day a line opens,
-move its rows into the `evolution_*` pair**: that promotion is the whole point
+Lines that have not opened go in `data/raw_data/stations_planned.csv` and
+`data/raw_data/segments_planned.csv` instead — same two schemas, read by
+the same notebook, flagged `planned` on the way through. **The day a line opens,
+move its rows into the `*_history` pair**: that promotion is the whole point
 of the split, and nothing else marks a projection as having come true.
 
-Leave `end_date` / `Fermeture` empty for anything still open. The notebook
+Leave `end_date` empty for anything still open. The notebook
 closes those rows on a single sentinel — one day past the last opening in the
 data, or the day it runs, whichever is later — and `build_data.py` derives that
 sentinel back out rather than hard-coding a date. Nothing in the app or the
@@ -207,7 +207,7 @@ returns to the built frame.
 - Large interchanges carry several records, one per platform cluster — Châtelet
   has three, Franklin D. Roosevelt four. They are all drawn; the legend counts
   distinct station names, which is why its totals match the real network.
-- `nom de référence` in the source is a **lineage key, not the current name**.
+- `lineage` in the source is a **lineage key, not the current name**.
   It usually is the modern name, but for stations later merged into a larger
   complex it is the older one: the `Marbeuf` and `Rond-point des Champs-Élysées`
   lineages both end as Franklin D. Roosevelt, and `Montparnasse` and

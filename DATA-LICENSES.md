@@ -9,7 +9,7 @@ ODbL for all of the geography.
 
 ## Per file
 
-### `data/stations_historiques.geojson`, `data/lignes_historiques.geojson`
+### `data/stations_history.geojson`, `data/lines_history.geojson`
 
 Station and line history — names, opening and closing dates, geometry.
 
@@ -24,11 +24,11 @@ Station and line history — names, opening and closing dates, geometry.
   must be released under the same terms
 
 The files also hold a **projection**: five Grand Paris Express sections that
-have not opened, carried on the `projet` property and sourced the same way —
+have not opened, carried on the `planned` property and sourced the same way —
 dates from the per-line articles, coordinates from the `Modèle:Grand Paris
 Express/*` station tables. Same licence, different epistemic status: those
 features record what is announced, not what exists, and the announced dates
-have moved before. They live in `data/raw_data/futur_*.csv` upstream, kept
+have moved before. They live in `data/raw_data/*_planned.csv` upstream, kept
 apart from the historical record on purpose.
 
 This is the project's oldest data and, until now, the least documented. The

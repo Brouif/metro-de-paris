@@ -1,13 +1,17 @@
 # How the station and line data was built
 
-These notebooks are the provenance record for
+Six notebooks are the provenance record for
 `data/lines_history.geojson` and `data/stations_history.geojson`, the two
-files everything else in the project is derived from. They are kept so the origin
+files everything else in the project is derived from — one of them here, the
+five it replaced under `archive/data_set_creation/`. They are kept so the origin
 of the data — and its **CC BY-SA** obligation, inherited from Wikipedia — stays
 auditable. See [DATA-LICENSES.md](../DATA-LICENSES.md).
 
 The first five were run once, in 2020: a historical record, not maintained code.
-Read the caveats below before assuming any of it re-runs. **The last one,
+They live under `archive/data_set_creation/`, beside the intermediates they read
+and wrote in `archive/data/` — `archive/` mirrors the live tree, so a file's
+place there says what it used to be. Read the caveats below before assuming any
+of it re-runs. **The one notebook left in this directory,
 `lines and stations to json.ipynb`, is live** — it was re-run on 29 August 2026 to
 extend the timeline from 2013 to 2026, and is how the two GeoJSONs should be
 regenerated whenever the CSVs change.
@@ -15,27 +19,28 @@ regenerated whenever the CSVs change.
 ## The chain
 
 ```
-Wikipedia scrapping.ipynb                            scrape the station list
+archive/data_set_creation/
+  Wikipedia scrapping.ipynb                          scrape the station list
     fr.wikipedia.org (Liste des stations du métro de Paris)
-    -> archive/station_extract.csv
+    -> archive/data/station_extract.csv
 
-Match stations from lines with location.ipynb        attach coordinates
-    archive/station_extract.csv
-  + archive/Lignes du metro.xlsx                     ("metro lines")
-    -> archive/station_info_raw.csv
+  Match stations from lines with location.ipynb      attach coordinates
+    archive/data/station_extract.csv
+  + archive/data/Lignes du metro.xlsx                ("metro lines")
+    -> archive/data/station_info_raw.csv
 
     [MANUAL] name-change corrections, made by hand
-    -> archive/station_info_avec_changement_de_nom.csv   ("with name changes")
+    -> archive/data/station_info_avec_changement_de_nom.csv  ("with name changes")
 
-Stations - Correct dates.ipynb                       parse French date strings
-    archive/station_info_avec_changement_de_nom.csv
-    -> archive/station_info_avec_changement_de_nom_date_formatted.csv
+  Stations - Correct dates.ipynb                     parse French date strings
+    archive/data/station_info_avec_changement_de_nom.csv
+    -> archive/data/station_info_avec_changement_de_nom_date_formatted.csv
 
     [MANUAL] renamed by hand
     -> data/raw_data/stations_history.csv
 
-Segments - Format dates.ipynb                        parse French date strings
-    data/raw_data/correspondances_date_non_formatees.xlsx  ("unformatted dates")
+  Segments - Format dates.ipynb                      parse French date strings
+    archive/data/correspondances_date_non_formatees.xlsx  ("unformatted dates")
     -> data/raw_data/segments_history.csv
 
 lines and stations to json.ipynb                     <- the final step
@@ -59,7 +64,7 @@ to do with these notebooks — into `app/js/data.js`.
 
 ## Why `archive/` is still in French
 
-The files under `archive/` keep their original names and column headers on purpose.
+The files under `archive/data/` keep their original names and column headers on purpose.
 They are a capture of the French Wikipedia station infoboxes, whose fields really are
 `mise en service`, `nom inaugural` and `station précédente 1`; renaming them would
 misreport what was scraped. The glosses above are there so the chain still reads in
@@ -82,12 +87,12 @@ repeatable.
 json.ipynb` uses repo-root-relative paths (`data/raw_data/…`, `data/*.geojson`) and
 must be run from the repository root. The other five use bare filenames from when
 everything sat in one folder, so each expects to be run from the directory holding
-its inputs — `archive/` for the station chain, `data/raw_data/` for
-`Segments - Format dates.ipynb`. The paths are left as they were rather than
-rewritten, so what each notebook actually did stays legible.
+its inputs — now `archive/data/` for all five, since that is where every file they
+touch ended up. The paths are left as they were rather than rewritten, so what each
+notebook actually did stays legible.
 
 **`Convert edited extract to json .ipynb` is a dead end.** It reads
-`archive/station_extract_with_edits.csv` and ends on a bare `to_json()` whose result
+`archive/data/station_extract_with_edits.csv` and ends on a bare `to_json()` whose result
 is never written anywhere. Nothing downstream depends on it. It is kept only as a
 record of an approach that was tried.
 

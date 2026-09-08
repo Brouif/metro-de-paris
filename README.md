@@ -26,7 +26,8 @@ timeline and the network assembles itself.
 <!-- TODO: live URL goes here -->
 
 ![The map at 1928, zoomed on the inner network: ten numbered lines plus the
-Nord-Sud company's A and B, two years before they became 12 and 13](docs/screenshot.png)
+Nord-Sud company's A and B, two years before they became 12 and
+13](docs/screenshot.png)
 
 ## What it does
 
@@ -100,10 +101,11 @@ Map and slider approach adapted from Mike Bostock and John Walley.
 - **Station and line history.** Scraped from
   [fr.wikipedia.org](https://fr.wikipedia.org/wiki/Liste_des_stations_du_métro_de_Paris)
   (see [`archive/`](archive/README.md)). **CC BY-SA**, share-alike applies.
-- **Water.** [Apur](https://opendata.apur.org/datasets/5e20951f1b7148d48503dceb480f7f6f_0),
+- **Water.**
+  [Apur](https://opendata.apur.org/datasets/5e20951f1b7148d48503dceb480f7f6f_0),
   *PLAN EAU*. **ODbL 1.0**.
-- **Parks.** Ville de Paris `espaces_verts` (**ODbL**) plus
-  © OpenStreetMap contributors (**ODbL**) for Luxembourg and the Tuileries.
+- **Parks.** Ville de Paris `espaces_verts` (**ODbL**) plus © OpenStreetMap
+  contributors (**ODbL**) for Luxembourg and the Tuileries.
 - **Software.** D3 (ISC), Archivo (SIL OFL 1.1).
 
 | | |

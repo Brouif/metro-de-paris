@@ -2,19 +2,19 @@
 
 These five notebooks and the files they read and wrote are the provenance record
 for `data/raw_data/stations_history.csv` and
-`data/raw_data/segments_history.csv` — the hand-maintained CSVs the live
-pipeline starts from. They are kept so the origin of the data, and its
-**CC BY-SA** obligation inherited from Wikipedia, stays auditable. See
+`data/raw_data/segments_history.csv`, the hand-maintained CSVs the live pipeline
+starts from. They are kept so the origin of the data, and its **CC BY-SA**
+obligation inherited from Wikipedia, stays auditable. See
 [DATA-LICENSES.md](../DATA-LICENSES.md).
 
 They were run once, in 2020. Nothing here is maintained code, and two steps in
-the chain cannot be reproduced at all — read the caveats before assuming any of
-it re-runs. The one notebook that is still live is
-[`data_set_creation/lines and stations to json.ipynb`](../data_set_creation/README.md),
-which takes over where this chain ends.
+the chain cannot be reproduced at all. Read the caveats before assuming any of
+it re-runs. The one notebook that is still live is [`data_set_creation/lines and
+stations to json.ipynb`](../data_set_creation/README.md), which takes over where
+this chain ends.
 
-This directory mirrors the live tree — `archive/data_set_creation/` for the
-notebooks, `archive/data/` for what they read and wrote — so a file's place here
+This directory mirrors the live tree: `archive/data_set_creation/` for the
+notebooks, `archive/data/` for what they read and wrote. A file's place here
 says what it used to be.
 
 ## The chain
@@ -57,12 +57,12 @@ The files under `archive/data/` keep their original names and column headers on
 purpose. They are a capture of the French Wikipedia station infoboxes, whose
 fields really are `mise en service`, `nom inaugural` and `station précédente 1`;
 renaming them would misreport what was scraped. The glosses above are there so
-the chain still reads in English. The live pipeline — everything under `data/` —
+the chain still reads in English. The live pipeline, everything under `data/`,
 uses English names throughout.
 
 One artefact worth knowing about: `Fermetrue` in this chain is a misspelling of
-`Fermeture` (closure). It propagated through three files and two notebooks and is
-left as it is, for the same reason.
+`Fermeture` (closure). It propagated through three files and two notebooks and
+is left as it is, for the same reason.
 
 ## Caveats
 
@@ -75,7 +75,7 @@ repeatable.
 
 **All five expect to be run from `archive/data/`.** They use bare filenames from
 when everything sat in one folder, so each expects the directory holding its
-inputs — which is now `archive/data/` for every one of them. The paths are left
+inputs, which is now `archive/data/` for every one of them. The paths are left
 as they were rather than rewritten, so what each notebook actually did stays
 legible. (The live notebook is the exception: it uses repo-root-relative paths
 and runs from the repository root.)

@@ -33,12 +33,12 @@ Everything it needs is in the four CSVs, so it re-runs on its own. From the
 repository root:
 
 ```
-python3 -m venv .venv
+python -m venv .venv
 .venv/bin/pip install pandas numpy geopandas shapely
 ```
 
 It uses repo-root-relative paths (`data/raw_data/…`, `data/*.geojson`), so **run
-it from the repository root**, then `python3 tools/build_data.py` after it. Open
+it from the repository root**, then `python tools/build_data.py` after it. Open
 dates are left blank in the CSVs and closed by a sentinel this notebook
 computes, so **`data.js` must be rebuilt from the same pass** — see
 [The projection](#the-projection).

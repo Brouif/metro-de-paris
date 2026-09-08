@@ -51,34 +51,6 @@ The water and parks underneath are separate, and unrelated to the metro
 pipeline: Apur's *PLAN EAU* (ODbL) and the City of Paris green-space register
 (ODbL) plus two state-owned gardens from OpenStreetMap.
 
-### The chain
-
-Four hand-maintained CSVs are the editable source of truth. Everything below
-them is generated, and should never be edited by hand.
-
-```
-data/raw_data/stations_history.csv    one row per version of a station
-data/raw_data/segments_history.csv    one row per adjacent pair on a line
-data/raw_data/stations_planned.csv    the same two schemas, for lines
-data/raw_data/segments_planned.csv    that have not been built
-        |
-        |  data_set_creation/lines and stations to json.ipynb
-        v
-data/stations_history.geojson         641 points
-data/lines_history.geojson            168 line snapshots
-        |
-        |  tools/build_data.py   (+ data/water.geojson, data/parks.geojson)
-        v
-app/js/data.js                        what the app actually loads
-```
-
-The five earlier notebooks are the 2020 provenance record — a scrape, a
-spreadsheet join, two date-parsing passes and one dead end — and are not
-maintained code. They live under `archive/`, with the intermediates they read
-and wrote, because keeping them beside the live notebook implied they still ran.
-Two steps in that chain were done by hand and cannot be re-run. See
-[archive/README.md](archive/README.md) for the full account.
-
 ### The vocabulary
 
 Three words carry most of the weight, and reading any of them the obvious way
@@ -134,6 +106,31 @@ projected line from the output entirely.
 The practical consequence: **the notebook and `build_data.py` must be run in the
 same pass**, because the second derives a value the first computed.
 
+### The chain
+
+Four hand-maintained CSVs are the editable source of truth. Everything below
+them is generated, and should never be edited by hand.
+
+```
+data/raw_data/stations_history.csv    one row per version of a station
+data/raw_data/segments_history.csv    one row per adjacent pair on a line
+data/raw_data/stations_planned.csv    the same two schemas, for lines
+data/raw_data/segments_planned.csv    that have not been built
+        |
+        |  data_set_creation/lines and stations to json.ipynb
+        v
+data/stations_history.geojson         641 points
+data/lines_history.geojson            168 line snapshots
+        |
+        |  tools/build_data.py   (+ data/water.geojson, data/parks.geojson)
+        v
+app/js/data.js                        what the app actually loads
+```
+
+The 2020 notebooks that first produced those CSVs are retired under
+[`archive/`](archive/README.md), which records where the data came from and why
+none of it re-runs.
+
 ## The file system
 
 ```
@@ -185,10 +182,10 @@ rather than fetched — `fetch()` is blocked by CORS on `file://` pages, a
 To serve it over HTTP instead:
 
 ```bash
-python3 tools/serve.py 8000
+python tools/serve.py 8000
 ```
 
-That serves `app/` with caching disabled. `python3 -m http.server` works too,
+That serves `app/` with caching disabled. `python -m http.server` works too,
 but it sends `Last-Modified`, so browsers hold on to `app.css` and `index.html`
 and will quietly show you a stale build after an edit.
 
@@ -227,15 +224,15 @@ by hand.
    design.
 
 4. **Re-run** `data_set_creation/lines and stations to json.ipynb` **from the
-   repository root** — it uses repo-root-relative paths, unlike the archived
-   notebooks. It needs pandas, numpy, geopandas and shapely; see
+   repository root** — it uses repo-root-relative paths. It needs pandas, numpy,
+   geopandas and shapely; see
    [data_set_creation/README.md](data_set_creation/README.md) for the venv.
 
-5. **Then run `python3 tools/build_data.py`**, in the same pass — see
+5. **Then run `python tools/build_data.py`**, in the same pass — see
    [The open sentinel](#the-open-sentinel).
 
    ```bash
-   python3 tools/build_data.py
+   python tools/build_data.py
    ```
 
    It builds a line-name → colour lookup, rounds coordinates to 5 decimals,

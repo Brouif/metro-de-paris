@@ -36,10 +36,13 @@ window.METRO_I18N = {
     "tip.range": "%s–%s",
     "tip.today": "aujourd'hui : %s",
     "tip.was": "autrefois : %s",
-    "credits.open": "Sources et licences",
+    "credits.open": "Crédits et licences",
     "credits.close": "Fermer",
-    "credits.title": "Sources et licences",
+    "credits.title": "Crédits et licences",
     "credits.body":
+      "<p class='credits-by'>Créé par <a href='https://github.com/Brouif' " +
+      "target='_blank' rel='noopener'>Brouif</a>, entre les lignes 2 et 4.</p>" +
+
       "<p><b>Histoire des stations et des lignes</b><br>" +
       "D'après <a href='https://fr.wikipedia.org/wiki/Liste_des_stations_du_m%C3%A9tro_de_Paris' " +
       "target='_blank' rel='noopener'>fr.wikipedia.org</a> — " +
@@ -107,10 +110,13 @@ window.METRO_I18N = {
     "tip.range": "%s–%s",
     "tip.today": "today: %s",
     "tip.was": "formerly: %s",
-    "credits.open": "Sources and licences",
+    "credits.open": "Credits and licences",
     "credits.close": "Close",
-    "credits.title": "Sources and licences",
+    "credits.title": "Credits and licences",
     "credits.body":
+      "<p class='credits-by'>Built by <a href='https://github.com/Brouif' " +
+      "target='_blank' rel='noopener'>Brouif</a>, between lines 2 and 4.</p>" +
+
       "<p><b>Station and line history</b><br>" +
       "From <a href='https://fr.wikipedia.org/wiki/Liste_des_stations_du_m%C3%A9tro_de_Paris' " +
       "target='_blank' rel='noopener'>fr.wikipedia.org</a> — " +

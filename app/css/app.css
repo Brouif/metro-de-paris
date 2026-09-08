@@ -731,6 +731,11 @@ main {
 .credits-body b { font-weight: 600; }
 .credits-body a { color: var(--accent); }
 
+.credits-by {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+
 .credits-note {
   color: var(--muted);
   font-size: 12px;

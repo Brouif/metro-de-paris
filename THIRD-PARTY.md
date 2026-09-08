@@ -54,8 +54,15 @@ itself.
 
 That version has been removed from the working tree. It is still in git history —
 commit `ad4bdf8` contains it — and it vendored D3 5.0.0 (BSD-3-Clause), Bootstrap
-3.3.7, jQuery 3.2.1, jQuery UI 1.12.1 and d3-tip (all MIT). If it is ever restored
-or published separately, its provenance should be confirmed first.
+3.3.7, jQuery 3.2.1, jQuery UI 1.12.1 and d3-tip (all MIT), each carrying its own
+notice.
+
+This repository is public, so that history is public with it: the adapted page can
+be read at `ad4bdf8:map/index.html`. The terms of the two examples it was adapted
+from have never been confirmed, and nothing here claims them. Neither does
+[LICENSE](LICENSE), which grants MIT over `app/`, `tools/` and the notebooks and has
+never extended to `map/`. Anyone reusing that tree rather than the current app
+should establish its provenance first.
 
 `app/` is an independent rewrite — different D3 major version, different
 architecture — and carries no code from either example. It is now the only place in

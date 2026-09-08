@@ -1,5 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- U+1F687 METRO. Drawn by the viewer's emoji font, so the art differs by
-       platform; there is no vector here to restyle. -->
-  <text x="16" y="17" font-size="30" text-anchor="middle" dominant-baseline="central">&#128647;</text>
+  <!-- The station plate: enamel blue disc, white M. Drawn as paths, because a
+       favicon renders without the page's fonts and text would come out empty. -->
+  <circle cx="16" cy="16" r="16" fill="#0e3a76"/>
+  <path d="M8.6 22.6V10.4l7.4 7.8 7.4-7.8v12.2" fill="none" stroke="#ffffff"
+        stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

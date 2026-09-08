@@ -66,6 +66,16 @@ will quietly show you a stale build after an edit.
 To deploy, copy `app/` anywhere static. No configuration is needed, and a
 `.nojekyll` file is already in place for GitHub Pages.
 
+It currently runs on a Cloudflare Worker serving static assets, with no build
+command and `app` as the output directory. That configuration lives in the
+Cloudflare dashboard, not in this repository, which is why there is no
+`wrangler` file here. Pushing to `main` deploys; every other branch gets its own
+preview URL.
+
+`serve.py` is a development server and must never be given as a build command.
+It ends in `serve_forever()`, so a build that runs it hangs until the timeout
+and produces nothing.
+
 To correct or extend the data, see
 [docs/adding-a-station.md](docs/adding-a-station.md). `data/*.geojson` and
 `app/js/data.js` are generated. Never hand-edit either.

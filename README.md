@@ -77,7 +77,7 @@ spreadsheet join, two date-parsing passes and one dead end — and are not
 maintained code. They live under `archive/`, with the intermediates they read
 and wrote, because keeping them beside the live notebook implied they still ran.
 Two steps in that chain were done by hand and cannot be re-run. See
-[data_set_creation/README.md](data_set_creation/README.md) for the full account.
+[archive/README.md](archive/README.md) for the full account.
 
 ### The vocabulary
 
@@ -165,11 +165,12 @@ tools/
   build_context.py        raw water + park sources -> data/{water,parks}.geojson
   serve.py                no-cache dev server for app/
 data_set_creation/
-  lines and stations to json.ipynb   the live step — see its README
-  README.md
+  lines and stations to json.ipynb   the live step
+  README.md               how to run it, and what it does
 archive/                  the 2020 chain, retired. Mirrors the tree above, so
   data_set_creation/      a file's place says what it used to be. French names
   data/                   and one propagated typo kept on purpose.
+  README.md               the provenance record, and why none of it re-runs
 docs/                     images for this file
 ```
 
@@ -377,7 +378,7 @@ Map and slider approach adapted from Mike Bostock and John Walley.
 
 - **Station and line history** — scraped from
   [fr.wikipedia.org](https://fr.wikipedia.org/wiki/Liste_des_stations_du_métro_de_Paris)
-  (see [`data_set_creation/`](data_set_creation/README.md)). **CC BY-SA**,
+  (see [`archive/`](archive/README.md)). **CC BY-SA**,
   share-alike applies.
 - **Water** — [Apur](https://opendata.apur.org/datasets/5e20951f1b7148d48503dceb480f7f6f_0),
   *PLAN EAU* — **ODbL 1.0**. *(Earlier versions of this file credited Ville de

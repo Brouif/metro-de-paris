@@ -40,6 +40,9 @@ window.METRO_I18N = {
     "credits.close": "Fermer",
     "credits.title": "Sources et licences",
     "credits.body":
+      "<p class='credits-by'>Réalisé par <a href='https://github.com/Brouif' " +
+      "target='_blank' rel='noopener'>Brouif</a>.</p>" +
+
       "<p><b>Histoire des stations et des lignes</b><br>" +
       "D'après <a href='https://fr.wikipedia.org/wiki/Liste_des_stations_du_m%C3%A9tro_de_Paris' " +
       "target='_blank' rel='noopener'>fr.wikipedia.org</a> — " +
@@ -64,9 +67,7 @@ window.METRO_I18N = {
       "Cartographie&nbsp;: <a href='https://d3js.org' target='_blank' rel='noopener'>D3</a> " +
       "© Mike Bostock — <a href='js/d3-LICENSE.txt'>ISC</a>.<br>" +
       "Caractère&nbsp;: Archivo, Omnibus-Type — <a href='fonts/OFL.txt'>SIL OFL&nbsp;1.1</a>.<br>" +
-      "Code de l'application&nbsp;: licence MIT.<br>" +
-      "Réalisé par <a href='https://github.com/Brouif' " +
-      "target='_blank' rel='noopener'>Brouif</a>.</p>" +
+      "Code de l'application&nbsp;: licence MIT.</p>" +
 
       "<p class='credits-note'>Les textes de licence liés ici sont en anglais. " +
       "C'est voulu&nbsp;: seule la version originale fait foi, les traductions " +
@@ -113,6 +114,9 @@ window.METRO_I18N = {
     "credits.close": "Close",
     "credits.title": "Sources and licences",
     "credits.body":
+      "<p class='credits-by'>Built by <a href='https://github.com/Brouif' " +
+      "target='_blank' rel='noopener'>Brouif</a>.</p>" +
+
       "<p><b>Station and line history</b><br>" +
       "From <a href='https://fr.wikipedia.org/wiki/Liste_des_stations_du_m%C3%A9tro_de_Paris' " +
       "target='_blank' rel='noopener'>fr.wikipedia.org</a> — " +
@@ -136,9 +140,7 @@ window.METRO_I18N = {
       "Mapping: <a href='https://d3js.org' target='_blank' rel='noopener'>D3</a> " +
       "© Mike Bostock — <a href='js/d3-LICENSE.txt'>ISC</a>.<br>" +
       "Typeface: Archivo, Omnibus-Type — <a href='fonts/OFL.txt'>SIL OFL&nbsp;1.1</a>.<br>" +
-      "Application code: MIT licence.<br>" +
-      "Built by <a href='https://github.com/Brouif' " +
-      "target='_blank' rel='noopener'>Brouif</a>.</p>" +
+      "Application code: MIT licence.</p>" +
 
       "<p class='credits-note'>Numbered line colours are RATP's own, reproduced to identify " +
       "the lines. This is an independent project, unaffiliated.</p>",

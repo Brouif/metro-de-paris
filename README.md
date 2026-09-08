@@ -18,7 +18,7 @@ This is a map of all of it. Every station and every stretch of track has an
 opening date, and a closing date if it ever closed. Pick any year since 1900 and
 you see the network as it stood. Drag the timeline and watch it build.
 
-<!-- TODO: live URL goes here -->
+**[metro-de-paris.puzzled-data.com](https://metro-de-paris.puzzled-data.com/)**
 
 ![The map at 1928, zoomed on the inner network: ten numbered lines plus the
 Nord-Sud company's A and B, two years before they became 12 and

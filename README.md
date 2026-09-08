@@ -56,38 +56,9 @@ will quietly show you a stale build after an edit.
 To deploy, copy `app/` anywhere static — no configuration needed. A `.nojekyll`
 file is in place for GitHub Pages.
 
-## Adding a station
-
-Edit the CSVs, then regenerate. Never hand-edit `data/*.geojson` or
-`app/js/data.js`.
-
-1. Add **one row per version of the station** to
-   `data/raw_data/stations_history.csv`:
-   `name,end_date,start_date,latitude,longitude,lineage,note`.
-   Leave `end_date` empty if it is still open.
-
-2. Add **one row per adjacent pair, in both directions**, to
-   `data/raw_data/segments_history.csv`:
-   `from_station,to_station,start_date,end_date,line`. These match on `lineage`,
-   not `name`.
-
-3. For a line that has **not opened yet**, use `stations_planned.csv` and
-   `segments_planned.csv` instead. Moving those rows into the `*_history` pair is
-   what promotes a projection to record, and it is manual by design.
-
-4. Re-run `data_set_creation/lines and stations to json.ipynb` **from the
-   repository root**.
-
-5. Run `python tools/build_data.py` **in the same pass** — the notebook computes
-   a sentinel that this script reads back out.
-
-If any of those terms are unfamiliar — *version*, *lineage*, *projection* — read
-[data/README.md](data/README.md) first. Getting `lineage` wrong mislabels ten
-stations.
-
-To add a UI string, add the key to both languages in `app/js/i18n.js` and mark
-the element in `index.html` with `data-i18n`, `data-i18n-html` or
-`data-i18n-aria-label`. No code change is needed.
+To correct or extend the data, see
+[docs/adding-a-station.md](docs/adding-a-station.md). `data/*.geojson` and
+`app/js/data.js` are generated — never hand-edit either.
 
 ## Where things live
 
@@ -102,6 +73,7 @@ docs/                design notes and images
 
 | | |
 |---|---|
+| [docs/adding-a-station.md](docs/adding-a-station.md) | how to add or correct station and line data |
 | [data/README.md](data/README.md) | the dataset: schemas, vocabulary, oddities |
 | [data_set_creation/README.md](data_set_creation/README.md) | how to regenerate the GeoJSONs |
 | [docs/design.md](docs/design.md) | typography, line casings, how projections are drawn |

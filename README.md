@@ -16,11 +16,12 @@ renumbered, pushed out into the suburbs. It has not stopped: four Grand Paris
 Express lines are in testing now, due out to 2028. A hundred and twenty-six
 years, and still a building site.
 
-A metro map is normally a snapshot — the network on the day it was printed, with
-nothing in it about how it got that way. This one has a time axis. Every station
-and every stretch of track carries the dates it was true, so the network can be
-drawn at any date across those 126 years. Drag the timeline and it assembles
-itself.
+A metro map is normally a snapshot: the network on the day it was printed, with
+nothing in it about how it got that way. This one is not stuck on a single day.
+Every station and every stretch of track knows when it opened, and when it closed
+if it ever did — so you can pick any day between 1900 and today and see exactly
+what was running, or push past today and see what is planned. Drag the timeline
+and the network assembles itself.
 
 <!-- TODO: live URL goes here -->
 

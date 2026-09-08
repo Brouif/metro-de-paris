@@ -1,13 +1,26 @@
-# Chronologie du métro de Paris
+# The Paris Métro through time
 
-You take it every day without looking at it. But the station you stand on has a
-history: it may have carried a different name, been run by a company that no
-longer exists, or stood three hundred metres from where it stands now.
+You take it every day without looking at it. But the station you stand on has
+not always been called that — Marbeuf became Franklin D. Roosevelt, Avenue du
+Maine was swallowed by Montparnasse - Bienvenüe. Some have moved:
+Victor Hugo sits three hundred metres from where it opened. And three of them —
+Arsenal, Croix-Rouge, Saint-Martin — closed on 3 September 1939, the day France
+declared war, and never opened again.
 
-The Paris metro took 126 years to build and is still being built. This is every
-year of it on one map — from the ten stations of 19 July 1900 to the Grand Paris
-Express sections in testing for 2028 — with every station and every line carrying
-the dates it was true.
+None of that was built by one hand. Ten stations opened between Porte Maillot
+and Porte de Vincennes on 19 July 1900, in time for the Exposition Universelle.
+For the next thirty years two rival companies dug against each other under the
+same streets, the Nord-Sud tiling its stations in its own colours until the CMP
+swallowed it in 1930 and its lines A and B became 12 and 13. Lines were absorbed,
+renumbered, pushed out into the suburbs. It has not stopped: four Grand Paris
+Express lines are in testing now, due out to 2028. A hundred and twenty-six
+years, and still a building site.
+
+A metro map is normally a snapshot — the network on the day it was printed, with
+nothing in it about how it got that way. This one has a time axis. Every station
+and every stretch of track carries the dates it was true, so the network can be
+drawn at any date across those 126 years. Drag the timeline and it assembles
+itself.
 
 <!-- TODO: live URL goes here -->
 

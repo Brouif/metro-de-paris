@@ -1,27 +1,22 @@
 # The Paris Métro through time
 
-You take it every day without looking at it. But the station you stand on has
-not always been called that. Marbeuf became Franklin D. Roosevelt. Avenue du
-Maine was swallowed by Montparnasse - Bienvenüe. Some stations have moved:
-Victor Hugo sits three hundred metres from where it opened. And three of them
-closed on 3 September 1939, the day France declared war, and never opened again:
-Arsenal, Croix-Rouge, Saint-Martin.
+Stand on the platform at Franklin D. Roosevelt, below the Champs-Élysées, and
+you are standing in two stations. Marbeuf opened on line 1 in 1900. Rond-point
+des Champs-Élysées opened on line 9 in 1923. In 1942 they were joined under a
+single name, and in 1946 that name became Franklin D. Roosevelt. Nothing down
+there tells you.
 
-None of that was built by one hand. Ten stations opened between Porte Maillot
-and Porte de Vincennes on 19 July 1900, in time for the Exposition Universelle.
-For the next thirty years two rival companies dug against each other under the
-same streets. The Nord-Sud tiled its stations in its own colours until the CMP
-swallowed it in 1930, and its lines A and B became 12 and 13. Lines were
-absorbed, renumbered, pushed out into the suburbs. It has not stopped: four
-Grand Paris Express lines are in testing now, due out to 2028. A hundred and
-twenty-six years, and still a building site.
+The network is full of this. Victor Hugo sits three hundred metres from where it
+opened. Arsenal, Croix-Rouge and Saint-Martin closed on 3 September 1939, the
+day France declared war, and were never reopened. Ten stations opened for the
+Exposition Universelle on 19 July 1900, and two rival companies spent the next
+thirty years tunnelling against each other under the same streets until one
+bought the other in 1930. The digging has never stopped. Four Grand Paris
+Express lines are in testing now.
 
-A metro map is normally a snapshot: the network on the day it was printed, with
-nothing in it about how it got that way. This one is not stuck on a single day.
-Every station and every stretch of track has an opening date, and a closing date
-if it ever closed. Pick any day between 1900 and today and you see exactly what
-was running. Push past today and you see what is planned instead. Drag the
-timeline and the network assembles itself.
+This is a map of all of it. Every station and every stretch of track has an
+opening date, and a closing date if it ever closed. Pick any year since 1900 and
+you see the network as it stood. Drag the timeline and watch it build.
 
 <!-- TODO: live URL goes here -->
 

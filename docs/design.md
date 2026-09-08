@@ -23,13 +23,13 @@ the network's whole life. It replaces a red that belonged to no era but Motte's.
 ## Line casings
 
 **This is the reason the map is legible.** The RATP line colours were drawn for
-white paper and enamel. Measured against the map's land tone, twelve of the
-twenty-two fell below the 3:1 WCAG floor for graphical objects, line 1's yellow
-reaching only 1.19:1.
+white paper and enamel. Measured against the map's light land tone, seventeen of
+the twenty-six fall below the 3:1 WCAG floor for graphical objects, line 1's
+yellow reaching only 1.19:1. Five more fall below it on the dark ground.
 
 Rather than alter canonical colours, every line is drawn twice: a casing path
 1px wider beneath it, in a shade of the line's own hue. That keeps the identity
-while restoring the edge, and takes all 22 above 3:1 in **both** themes. Line
+while restoring the edge, and takes all 26 above 3:1 in **both** themes. Line
 and casing come to 3px together, against 2.6px for the bare line before casings
 existed, so the edge costs almost nothing in apparent weight.
 

@@ -59,16 +59,16 @@ name, but for stations later merged into a larger complex it is the older one:
 the `Marbeuf` and `Rond-point des Champs-Élysées` lineages both end as Franklin
 D. Roosevelt, and `Montparnasse` and `Avenue du Maine` both end as Montparnasse
 - Bienvenüe. Reading it as "current name" inverts the label on those ten
-lineages. `build_data.py` therefore derives the current name from whichever
-record in a lineage is still open. Each station then carries the two
-complementary views of a rename, never both at once: `now` on a historic record
-(what it is called today) and `was` on a present-day record (what it used to be
-called). `was` is keyed by the modern name rather than by lineage, so a station
-formed by a merger lists everything it was assembled from. Montparnasse -
-Bienvenüe reports Avenue du Maine, Bienvenüe and Montparnasse. Lineages with no
-open record are closed stations (Arsenal, Croix-Rouge, Saint-Martin) and get
-neither field. `from_station` and `to_station` match against `lineage`, not
-`name`.
+  lineages. `build_data.py` therefore derives the current name from whichever
+  record in a lineage is still open. Each station then carries the two
+  complementary views of a rename, never both at once: `now` on a historic
+  record (what it is called today) and `was` on a present-day record (what it
+  used to be called). `was` is keyed by the modern name rather than by lineage,
+  so a station formed by a merger lists everything it was assembled from.
+  Montparnasse - Bienvenüe reports Avenue du Maine, Bienvenüe and Montparnasse.
+  Lineages with no open record are closed stations (Arsenal, Croix-Rouge,
+  Saint-Martin) and get neither field. `from_station` and `to_station` match
+  against `lineage`, not `name`.
 
 ## Record and projection
 
@@ -122,9 +122,10 @@ multi-cluster interchanges below, by design.
 - Large interchanges carry several records, one per platform cluster. Châtelet
   has three, Franklin D. Roosevelt four. They are all drawn; the legend counts
   distinct station names, which is why its totals match the real network.
-- Sixteen line colours are the official RATP values and are passed through
-  untouched. The other six were invented when the dataset was built and sat in a
-  visibly different colour space, so the historical lines read as mistakes.
+- Twenty of the twenty-six line colours are official and pass through untouched:
+  the sixteen RATP lines in service, plus the four Grand Paris Express lines.
+  The other six were invented when the dataset was built and sat in a visibly
+  different colour space, so the historical lines read as mistakes.
   `HISTORICAL_COLOURS` in `build_data.py` restates them deliberately, in the
   palette of the Nord-Sud company that actually tiled those stations: ochre and
   terminus brown for its own lines A and B, desaturated shades of their

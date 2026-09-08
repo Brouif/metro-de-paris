@@ -40,8 +40,8 @@ window.METRO_I18N = {
     "credits.close": "Fermer",
     "credits.title": "Sources et licences",
     "credits.body":
-      "<p class='credits-by'>Réalisé par <a href='https://github.com/Brouif' " +
-      "target='_blank' rel='noopener'>Brouif</a>.</p>" +
+      "<p class='credits-by'>Créé par <a href='https://github.com/Brouif' " +
+      "target='_blank' rel='noopener'>Brouif</a>, entre les lignes 2 et 4.</p>" +
 
       "<p><b>Histoire des stations et des lignes</b><br>" +
       "D'après <a href='https://fr.wikipedia.org/wiki/Liste_des_stations_du_m%C3%A9tro_de_Paris' " +
@@ -115,7 +115,7 @@ window.METRO_I18N = {
     "credits.title": "Sources and licences",
     "credits.body":
       "<p class='credits-by'>Built by <a href='https://github.com/Brouif' " +
-      "target='_blank' rel='noopener'>Brouif</a>.</p>" +
+      "target='_blank' rel='noopener'>Brouif</a>, between lines 2 and 4.</p>" +
 
       "<p><b>Station and line history</b><br>" +
       "From <a href='https://fr.wikipedia.org/wiki/Liste_des_stations_du_m%C3%A9tro_de_Paris' " +

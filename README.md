@@ -1,13 +1,13 @@
 # Chronologie du métro de Paris
 
-How did the Paris metro come to be? If you live here it is furniture — the thing
-you take without looking, the noise under the pavement. But it is also 126 years
-of continuous construction, begun on 19 July 1900 with ten stations between
-Porte Maillot and Porte de Vincennes, fought over by rival companies until the
-Nord-Sud was absorbed in 1930, and still not finished: sections of four Grand
-Paris Express lines are in testing as this is written. Stations have been
-renamed, merged into each other, closed, and in four cases rebuilt on a
-different site. This is a map of all of it, year by year.
+You take it every day without looking at it. But the station you stand on has a
+history: it may have carried a different name, been run by a company that no
+longer exists, or stood three hundred metres from where it stands now.
+
+The Paris metro took 126 years to build and is still being built. This is every
+year of it on one map — from the ten stations of 19 July 1900 to the Grand Paris
+Express sections in testing for 2028 — with every station and every line
+carrying the dates it was true.
 
 <!-- TODO: live URL goes here -->
 
@@ -57,7 +57,7 @@ Three words carry most of the weight, and reading any of them the obvious way
 gets the data wrong:
 
 - **A station row is one *version* of a station**, not the station. A new row is
-  cut whenever anything changes — a line arriving, the platforms moving — so its
+  cut whenever anything changes (a line arriving, the platforms moving) so its
   dates describe that version, not the station's life.
 - **A segment row is one pair of *adjacent* stations** on a line, with the dates
   that pair was connected. The lines on the map are drawn by joining them up.
@@ -75,9 +75,7 @@ A line's geometry is not fixed. Its segments are melted into one geometry and
 re-sampled at each of the line's key dates, producing a series of snapshots that
 the app switches between as the timeline moves. Station dates are part of those
 key dates, which matters: four stations were rebuilt on a new site, and without
-a cut at the move the line would keep the old position for good — line 2 held
-Victor Hugo 311 m off its 1931 site, visibly detached from the track. Snapshots
-that come out identical are merged again, so the extra cuts cost nothing.
+a cut at the move the line would keep the old position for good.
 
 ### Record and projection
 

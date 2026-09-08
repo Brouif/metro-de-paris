@@ -64,7 +64,9 @@ window.METRO_I18N = {
       "Cartographie&nbsp;: <a href='https://d3js.org' target='_blank' rel='noopener'>D3</a> " +
       "© Mike Bostock — <a href='js/d3-LICENSE.txt'>ISC</a>.<br>" +
       "Caractère&nbsp;: Archivo, Omnibus-Type — <a href='fonts/OFL.txt'>SIL OFL&nbsp;1.1</a>.<br>" +
-      "Code de l'application&nbsp;: licence MIT.</p>" +
+      "Code de l'application&nbsp;: licence MIT.<br>" +
+      "Réalisé par <a href='https://github.com/Brouif' " +
+      "target='_blank' rel='noopener'>Brouif</a>.</p>" +
 
       "<p class='credits-note'>Les textes de licence liés ici sont en anglais. " +
       "C'est voulu&nbsp;: seule la version originale fait foi, les traductions " +
@@ -134,7 +136,9 @@ window.METRO_I18N = {
       "Mapping: <a href='https://d3js.org' target='_blank' rel='noopener'>D3</a> " +
       "© Mike Bostock — <a href='js/d3-LICENSE.txt'>ISC</a>.<br>" +
       "Typeface: Archivo, Omnibus-Type — <a href='fonts/OFL.txt'>SIL OFL&nbsp;1.1</a>.<br>" +
-      "Application code: MIT licence.</p>" +
+      "Application code: MIT licence.<br>" +
+      "Built by <a href='https://github.com/Brouif' " +
+      "target='_blank' rel='noopener'>Brouif</a>.</p>" +
 
       "<p class='credits-note'>Numbered line colours are RATP's own, reproduced to identify " +
       "the lines. This is an independent project, unaffiliated.</p>",

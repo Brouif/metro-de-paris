@@ -49,17 +49,12 @@ used pandas 3.0.5, geopandas 1.1.4 and shapely 2.1.2.
 
 ## The projection
 
-The `*_planned` pair carries lines that have not been built. The notebook reads
-both pairs, tags the rows `planned`, and writes that flag onto every feature it
-produces; `tools/build_data.py` passes it to the app as `planned`, which is what
-draws them dashed.
+What `planned` means, and why it comes from which file a row sits in rather than
+from a date test, is in [data/README.md](../data/README.md#record-and-projection).
+This notebook is where the flag is applied: it reads both pairs, tags the rows,
+and writes the flag onto every feature it produces.
 
-The flag comes from **which file a row is in**, never from comparing its date to
-the clock. A date test would promote line 15 to "built" the first time anyone
-rebuilt after its opening date, asserting as fact something nobody had checked.
-The day a line really opens, move its rows into the `*_history` pair by hand.
-
-Two consequences worth knowing:
+Two implementation consequences worth knowing:
 
 - **The line snapshots are grouped by `(line, planned)`, not by `line`.** The
   union that assembles a snapshot melts its segments into one geometry, so a
